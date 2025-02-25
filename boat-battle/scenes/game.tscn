@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=21 format=3 uid="uid://c0wnepni2pp05"]
 
+[ext_resource type="Shader" path="res://shader/water.gdshader" id="1_3vdj0"]
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="2_ojwl6"]
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="3_gy23p"]
 [ext_resource type="PackedScene" uid="uid://c26pojbwbk3kt" path="res://assets/models/environment/grass-patch.glb" id="4_cnpce"]
@@ -18,11 +19,23 @@
 [ext_resource type="PackedScene" uid="uid://dw0invce8b6mr" path="res://assets/models/environment/rocks-c.glb" id="18_paprd"]
 [ext_resource type="PackedScene" uid="uid://btxh4d7xmhuyc" path="res://assets/models/environment/ship-wreck.glb" id="22_84r7b"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_rcmjn"]
-size = Vector2(100, 100)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvdal"]
+render_priority = 0
+shader = ExtResource("1_3vdj0")
+shader_parameter/WATER_COL = Color(0.366034, 0.602635, 0.995513, 1)
+shader_parameter/WATER2_COL = Color(0.30669, 0.571782, 0.99007, 1)
+shader_parameter/FOAM_COL = Color(0.912162, 0.98169, 0.983239, 1)
+shader_parameter/distortion_speed = 2.0
+shader_parameter/tile = Vector2(5, 5)
+shader_parameter/wave_speed = 1.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g0jxc"]
-albedo_color = Color(0.467583, 0.729967, 0.975573, 1)
+[sub_resource type="QuadMesh" id="QuadMesh_5j3pc"]
+lightmap_size_hint = Vector2i(502, 502)
+material = SubResource("ShaderMaterial_xvdal")
+size = Vector2(25, 25)
+subdivide_width = 500
+subdivide_depth = 500
+orientation = 1
 
 [node name="Game" type="Node3D"]
 
@@ -31,9 +44,7 @@ transform = Transform3D(0.707107, 0.612373, -0.353553, 0, 0.5, 0.866025, 0.70710
 shadow_enabled = true
 
 [node name="Water" type="MeshInstance3D" parent="."]
-transform = Transform3D(23.98, 0, 0, 0, 23.98, 0, 0, 0, 23.98, 0, 0, 0)
-mesh = SubResource("PlaneMesh_rcmjn")
-surface_material_override/0 = SubResource("StandardMaterial3D_g0jxc")
+mesh = SubResource("QuadMesh_5j3pc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 12)
