@@ -88,6 +88,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35164, 0, -17.5329)
 transform = Transform3D(-0.457477, 0.162869, -0.874179, 0.16672, 0.98136, 0.0955897, 0.873453, -0.102013, -0.476103, 3.06839, -0.850654, -26.5042)
 
 [node name="Player" parent="." instance=ExtResource("15_8axcu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.927578, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.927578, 0)
 script = ExtResource("2_ojwl6")
 cannonball_scene = ExtResource("17_8gsus")
