@@ -36,8 +36,8 @@ mesh = SubResource("PlaneMesh_rcmjn")
 surface_material_override/0 = SubResource("StandardMaterial3D_g0jxc")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
-fov = 55.0
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 12)
+fov = 80.0
 script = ExtResource("3_gy23p")
 
 [node name="Island" type="Node3D" parent="."]
