@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=23 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Shader" path="res://shader/water.gdshader" id="1_3vdj0"]
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="2_ojwl6"]
@@ -17,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://b624no6rxtdbj" path="res://scenes/cannonball.tscn" id="17_8gsus"]
 [ext_resource type="PackedScene" uid="uid://bg4pprr7kc8cv" path="res://assets/models/environment/rocks-b.glb" id="17_mbtyw"]
 [ext_resource type="PackedScene" uid="uid://dw0invce8b6mr" path="res://assets/models/environment/rocks-c.glb" id="18_paprd"]
+[ext_resource type="PackedScene" uid="uid://dfc81wp1py788" path="res://assets/models/ships_enemy/ship-pirate-small.glb" id="19_rcoif"]
+[ext_resource type="PackedScene" uid="uid://bd1ta6850r4ql" path="res://assets/models/ships_enemy/ship-pirate-large.glb" id="20_ynvgp"]
 [ext_resource type="PackedScene" uid="uid://btxh4d7xmhuyc" path="res://assets/models/environment/ship-wreck.glb" id="22_84r7b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvdal"]
@@ -24,15 +26,15 @@ render_priority = 0
 shader = ExtResource("1_3vdj0")
 shader_parameter/WATER_COL = Color(0.366034, 0.602635, 0.995513, 1)
 shader_parameter/WATER2_COL = Color(0.30669, 0.571782, 0.99007, 1)
-shader_parameter/FOAM_COL = Color(0.912162, 0.98169, 0.983239, 1)
-shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(5, 5)
+shader_parameter/FOAM_COL = Color(0.8428, 0.977713, 0.98, 1)
+shader_parameter/distortion_speed = 1.2
+shader_parameter/tile = Vector2(200, 200)
 shader_parameter/wave_speed = 1.5
 
 [sub_resource type="QuadMesh" id="QuadMesh_5j3pc"]
 lightmap_size_hint = Vector2i(502, 502)
 material = SubResource("ShaderMaterial_xvdal")
-size = Vector2(25, 25)
+size = Vector2(1000, 1000)
 subdivide_width = 500
 subdivide_depth = 500
 orientation = 1
@@ -102,3 +104,9 @@ transform = Transform3D(-0.457477, 0.162869, -0.874179, 0.16672, 0.98136, 0.0955
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.927578, 0)
 script = ExtResource("2_ojwl6")
 cannonball_scene = ExtResource("17_8gsus")
+
+[node name="ship-pirate-small2" parent="." instance=ExtResource("19_rcoif")]
+transform = Transform3D(0.716911, 0, -0.697165, 0, 1, 0, 0.697165, 0, 0.716911, -30, -0.9, -40)
+
+[node name="ship-pirate-large2" parent="." instance=ExtResource("20_ynvgp")]
+transform = Transform3D(-0.56478, 0, -0.825242, 0, 1, 0, 0.825242, 0, -0.56478, 62.2882, -0.9, -71.3705)
