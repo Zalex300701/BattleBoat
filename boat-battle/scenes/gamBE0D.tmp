@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=20 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="2_ojwl6"]
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="3_gy23p"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bg4pprr7kc8cv" path="res://assets/models/environment/rocks-b.glb" id="17_mbtyw"]
 [ext_resource type="PackedScene" uid="uid://b624no6rxtdbj" path="res://scenes/cannonball.tscn" id="17_umxtd"]
 [ext_resource type="PackedScene" uid="uid://dw0invce8b6mr" path="res://assets/models/environment/rocks-c.glb" id="18_paprd"]
-[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/pirate_medium.tscn" id="20_djtef"]
 [ext_resource type="PackedScene" uid="uid://dp5lyuvq1kbpa" path="res://scenes/ocean.tscn" id="20_xbmqr"]
 [ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="21_q7jir"]
 [ext_resource type="PackedScene" uid="uid://btxh4d7xmhuyc" path="res://assets/models/environment/ship-wreck.glb" id="22_84r7b"]
@@ -88,7 +87,3 @@ cannonball_scene = ExtResource("17_umxtd")
 [node name="Ocean" type="Node3D" parent="."]
 script = ExtResource("21_q7jir")
 ocean_scene = ExtResource("20_xbmqr")
-
-[node name="pirate_medium" parent="." node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91855, 0, -45.3699)
-player = NodePath("../Player")

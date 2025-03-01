@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d3i0vcna7waq5"]
+[gd_scene load_steps=17 format=4 uid="uid://d3i0vcna7waq5"]
 
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qck00"]
 
@@ -236,7 +236,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r6pou")
 
-[node name="Player" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_wamof"]
+size = Vector3(3.90875, 3.7337, 7.20856)
+
+[node name="Player" type="CharacterBody3D"]
 
 [node name="ship-small" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qeg8v")
@@ -273,7 +276,7 @@ mesh = SubResource("ArrayMesh_t6wro")
 skeleton = NodePath("")
 
 [node name="left_cannonball_spawn" type="Marker3D" parent="left_cannon"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96046e-08, 0.637138, 0.812781)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 1)
 
 [node name="right_cannon" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.637, 2.065, -0.553)
@@ -291,4 +294,8 @@ mesh = SubResource("ArrayMesh_t6wro")
 skeleton = NodePath("")
 
 [node name="right_cannonball_spawn" type="Marker3D" parent="right_cannon"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 0.813)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00210571, 2.09451, -0.399628)
+shape = SubResource("BoxShape3D_wamof")

@@ -95,19 +95,26 @@ func handle_rotation_player(delta):
 
 func shoot():
 	if cannonball_scene:
-		var left_cannonball = cannonball_scene.instantiate()
-		var right_cannonball = cannonball_scene.instantiate()
-		get_parent().add_child(left_cannonball)
-		get_parent().add_child(right_cannonball)
+		# Get the cannon markers
+		var left_marker = $left_cannon/left_cannonball_spawn
+		var right_marker = $right_cannon/right_cannonball_spawn
 		
-		# Set position
-		left_cannonball.global_transform.origin = global_transform.origin + Vector3(0,3,0)
-		right_cannonball.global_transform.origin = global_transform.origin + Vector3(0,3,0)
-		
-		# Apply force if it's a RigidBody3D
-		var direction = global_transform.basis.x.normalized()
-		var speed = 50
-		if left_cannonball is RigidBody3D:
-			left_cannonball.linear_velocity = -direction * speed
-		if right_cannonball is RigidBody3D:
-			right_cannonball.linear_velocity = direction * speed
+		if left_marker and right_marker:
+			var left_cannonball = cannonball_scene.instantiate()
+			var right_cannonball = cannonball_scene.instantiate()
+			
+			get_parent().add_child(left_cannonball)
+			get_parent().add_child(right_cannonball)
+			
+			# Set position to marker
+			left_cannonball.global_transform.origin = left_marker.global_transform.origin
+			right_cannonball.global_transform.origin = right_marker.global_transform.origin
+			
+			# Apply force if it's a RigidBody3D
+			var direction = -global_transform.basis.x.normalized()
+			var speed = 50
+			
+			if left_cannonball is RigidBody3D:
+				left_cannonball.linear_velocity = -direction * speed
+			if right_cannonball is RigidBody3D:
+				right_cannonball.linear_velocity = direction * speed
