@@ -1,7 +1,9 @@
 extends CharacterBody3D
 
 @export var player: Node3D
+@export var max_health: int = 3 # Enemy has 3 HP
 
+var current_health: int = max_health
 var max_speed = 3.0
 var acceleration = 1.5
 var deceleration = 1.0
@@ -10,6 +12,7 @@ var turn_speed = 2.0
 
 func _ready():
 	$ship_pirate_medium.rotate_y(deg_to_rad(180))
+	update_health_bar()
 
 func _physics_process(delta):
 	if not player:
@@ -34,3 +37,22 @@ func move_towards_player(delta):
 	# Appliquer la vitesse
 	velocity = -global_transform.basis.z * current_speed
 	move_and_slide()
+	
+# Handle being hit by cannonball
+func take_damage():
+	current_health -= 1
+	print("Enemy hit! Health:", current_health)
+	
+	update_health_bar()
+	
+	if current_health <= 0:
+		die()
+
+# Update UI health bar above enemy
+func update_health_bar():
+	var health_bar = $SubViewport/Panel/ProgressBar
+	health_bar.value = float(current_health) / max_health * 100  # Set percentage
+
+func die():
+	print("Enemy destroyed!")
+	queue_free()

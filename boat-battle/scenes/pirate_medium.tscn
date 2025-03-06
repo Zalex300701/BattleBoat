@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dhk36f43a0gt8"]
+[gd_scene load_steps=26 format=4 uid="uid://dhk36f43a0gt8"]
 
 [ext_resource type="Script" path="res://scripts/pirate_movement.gd" id="1_2l4aj"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_dcbtf"]
@@ -308,7 +308,34 @@ shadow_mesh = SubResource("ArrayMesh_rvf6m")
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdxva"]
 size = Vector3(4.76, 8, 9.5)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_0yuyv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7v1p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulhnv"]
+bg_color = Color(0.901374, 0.368083, 0.357741, 1)
+border_width_bottom = 3
+border_color = Color(0.52568, 0.161148, 0.126541, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuxa6"]
+bg_color = Color(0.376471, 0.721569, 0.482353, 1)
+border_width_bottom = 3
+border_color = Color(0.124642, 0.355877, 0.234083, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+
 [node name="pirate_medium" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.836303, 0)
 script = ExtResource("1_2l4aj")
 
 [node name="ship_pirate_medium" type="MeshInstance3D" parent="."]
@@ -379,3 +406,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.648546, 0.992
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -0.525)
 shape = SubResource("BoxShape3D_mdxva")
+
+[node name="Healthbar" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1812, 0)
+billboard = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_0yuyv")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(400, 32)
+
+[node name="Panel" type="Panel" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g7v1p")
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.018
+anchor_top = 0.5
+anchor_right = 0.978
+anchor_bottom = 0.5
+offset_left = 0.36
+offset_top = -10.0
+offset_right = 0.559967
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ulhnv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fuxa6")
+value = 100.0
+show_percentage = false

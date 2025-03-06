@@ -97,5 +97,13 @@ script = ExtResource("21_q7jir")
 ocean_scene = ExtResource("20_xbmqr")
 
 [node name="pirate_medium" parent="." node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4689, 0, -56.854)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6965, 0, -59.012)
+player = NodePath("../Player")
+
+[node name="pirate_medium2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.078, 0, -93.5427)
+player = NodePath("../Player")
+
+[node name="pirate_medium3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91049, 0, -145.877)
 player = NodePath("../Player")

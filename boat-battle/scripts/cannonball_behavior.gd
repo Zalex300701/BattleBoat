@@ -42,4 +42,9 @@ func launch(dir: Vector3, spd: float):
 func _on_body_entered(body):
 	is_moving = false
 	print("Cannonball hit:", body.name)
+	
+	# Check if the body is an enemy and if it has the take_damage method
+	if body.has_method("take_damage"):
+		body.take_damage() # Call take_damage() on the enemy to reduce health
+	
 	queue_free()  # Remove cannonball on impact
