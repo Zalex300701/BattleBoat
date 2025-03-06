@@ -315,18 +315,18 @@ viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulhnv"]
 bg_color = Color(0.901374, 0.368083, 0.357741, 1)
-border_width_bottom = 3
+border_width_bottom = 5
 border_color = Color(0.52568, 0.161148, 0.126541, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_bottom = 3.0
-shadow_size = 2
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuxa6"]
 bg_color = Color(0.376471, 0.721569, 0.482353, 1)
-border_width_bottom = 3
+border_width_bottom = 5
 border_color = Color(0.124642, 0.355877, 0.234083, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
@@ -432,10 +432,10 @@ anchor_left = 0.018
 anchor_top = 0.5
 anchor_right = 0.978
 anchor_bottom = 0.5
-offset_left = 0.36
-offset_top = -10.0
-offset_right = 0.559967
-offset_bottom = 10.0
+offset_left = 0.264
+offset_top = -15.0
+offset_right = 0.343994
+offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_ulhnv")
