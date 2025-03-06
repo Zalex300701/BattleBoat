@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=22 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Script" path="res://scripts/player_movement.gd" id="2_ojwl6"]
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="3_gy23p"]
@@ -21,6 +21,9 @@
 [ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="21_q7jir"]
 [ext_resource type="PackedScene" uid="uid://btxh4d7xmhuyc" path="res://assets/models/environment/ship-wreck.glb" id="22_84r7b"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kh8v"]
+size = Vector3(15.9331, 5.05817, 15.4117)
+
 [node name="Game" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -32,7 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 12)
 fov = 80.0
 script = ExtResource("3_gy23p")
 
-[node name="Island" type="Node3D" parent="."]
+[node name="Island" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17967, 0)
 
 [node name="grass-patch2" parent="Island" instance=ExtResource("4_cnpce")]
@@ -80,6 +83,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35164, 0, -17.5329)
 [node name="ship-wreck2" parent="Island" instance=ExtResource("22_84r7b")]
 transform = Transform3D(-0.457477, 0.162869, -0.874179, 0.16672, 0.98136, 0.0955897, 0.873453, -0.102013, -0.476103, 3.06839, -0.850654, -26.5042)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03931, 1.1351, -21.6055)
+shape = SubResource("BoxShape3D_8kh8v")
+
 [node name="Player" parent="." instance=ExtResource("15_8axcu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.927578, 0)
 script = ExtResource("2_ojwl6")
@@ -90,5 +97,5 @@ script = ExtResource("21_q7jir")
 ocean_scene = ExtResource("20_xbmqr")
 
 [node name="pirate_medium" parent="." node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91855, 0, -45.3699)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.4689, 0, -56.854)
 player = NodePath("../Player")

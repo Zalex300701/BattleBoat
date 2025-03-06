@@ -3,25 +3,14 @@
 [ext_resource type="Shader" path="res://shader/water.gdshader" id="1_ltf30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_asp12"]
-render_priority = 0
+render_priority = 10
 shader = ExtResource("1_ltf30")
-shader_parameter/WATER_COL = Color(0.364706, 0.603922, 0.996078, 1)
-shader_parameter/WATER2_COL = Color(0.305882, 0.572549, 0.988235, 1)
-shader_parameter/FOAM_COL = Color(0.843137, 0.976471, 0.980392, 1)
-shader_parameter/distortion_speed = 1.2
-shader_parameter/world_tile = 5.0
-shader_parameter/wave_speed = 2.0
-shader_parameter/wave_amplitude = 0.2
-shader_parameter/wave_frequency = 1.5
-shader_parameter/time_offset = 0.0
-shader_parameter/water_size = Vector2(32, 32)
-shader_parameter/water_transparency = 1.0
-shader_parameter/water_depth_factor = 5.0
-shader_parameter/foam_width = 2.0
-shader_parameter/foam_edge_softness = 0.007
-shader_parameter/foam_smoothness = 0.03
-shader_parameter/foam_distortion_speed = 0.5
-shader_parameter/foam_distortion_amount = 0.1
+shader_parameter/WaveSpeed = 0.01
+shader_parameter/WaveIntensity = 0.2
+shader_parameter/WaveColor = Color(0, 1, 0.986607, 1)
+shader_parameter/WaterColor = Color(0, 0.169643, 1, 1)
+shader_parameter/FoamSize = 1.0
+shader_parameter/WaterOpacity = 0.8
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ct15m"]
 material = SubResource("ShaderMaterial_asp12")

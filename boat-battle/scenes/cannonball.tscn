@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://b624no6rxtdbj"]
+[gd_scene load_steps=6 format=4 uid="uid://b624no6rxtdbj"]
 
+[ext_resource type="Script" path="res://scripts/cannonball_behavior.gd" id="1_enh0e"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qt57o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_v1fos"]
@@ -39,7 +40,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hy0n0")
 
-[node name="Cannonball" type="RigidBody3D"]
+[node name="Cannonball" type="Area3D"]
+script = ExtResource("1_enh0e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_v1fos")
@@ -47,3 +49,5 @@ shape = SubResource("SphereShape3D_v1fos")
 [node name="cannon-ball" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_tpa17")
 skeleton = NodePath("")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -110,11 +110,11 @@ func shoot():
 			left_cannonball.global_transform.origin = left_marker.global_transform.origin
 			right_cannonball.global_transform.origin = right_marker.global_transform.origin
 			
-			# Apply force if it's a RigidBody3D
+			# Set movement direction
 			var direction = -global_transform.basis.x.normalized()
 			var speed = 50
 			
-			if left_cannonball is RigidBody3D:
-				left_cannonball.linear_velocity = -direction * speed
-			if right_cannonball is RigidBody3D:
-				right_cannonball.linear_velocity = direction * speed
+			if left_cannonball is Area3D:
+				left_cannonball.launch(-direction, speed)
+			if right_cannonball is Area3D:
+				right_cannonball.launch(direction, speed)
