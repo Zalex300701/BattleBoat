@@ -55,4 +55,20 @@ func update_health_bar():
 
 func die():
 	print("Enemy destroyed!")
+	
+	# Load and instance the explosion scene
+	var explosion_scene = preload("res://scenes/explosion.tscn")  # Adjust the path if needed
+	var explosion_instance = explosion_scene.instantiate()
+
+	# Set the explosion's position to the explosion_marker position
+	var explosion_marker = $explosion_marker  # Make sure the node path is correct
+	explosion_instance.global_transform.origin = explosion_marker.global_transform.origin
+
+	# Add it to the scene
+	get_parent().add_child(explosion_instance)
+	
+	# Call the explosion's explode method
+	explosion_instance.explode()
+
+	# Remove the enemy
 	queue_free()
