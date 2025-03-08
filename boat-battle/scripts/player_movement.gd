@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var cannonball_scene: PackedScene
+@export var explosion_scene: PackedScene
 
 # Player movement variables
 var max_forward_speed: float = 5.0
@@ -35,9 +36,9 @@ func _ready():
 func _physics_process(delta):
 	handle_position_player(delta)
 	handle_rotation_player(delta)
-	apply_buoyancy(delta)
+	apply_buoyancy()
 
-func apply_buoyancy(delta):
+func apply_buoyancy():
 	# Vertical movement
 	position.y = initial_y + sin(Time.get_ticks_msec() * 0.001 * bobbing_speed) * bobbing_amplitude
 	
@@ -118,3 +119,23 @@ func shoot():
 				left_cannonball.launch(-direction, speed)
 			if right_cannonball is Area3D:
 				right_cannonball.launch(direction, speed)
+			
+			# Load and instance the explosion scene
+			var left_explosion = explosion_scene.instantiate()
+			var right_explosion = explosion_scene.instantiate()
+			
+			# Set position of the effect
+			left_explosion.global_transform.origin = left_cannonball.global_transform.origin
+			right_explosion.global_transform.origin = right_cannonball.global_transform.origin
+			
+			# Set rotation of the effect (boat reference)
+			left_explosion.rotation = rotation
+			right_explosion.rotation = rotation + Vector3(0, deg_to_rad(180), 0)
+			
+			# Add it to the scene
+			get_parent().add_child(left_explosion)
+			get_parent().add_child(right_explosion)
+	
+			# Call the explosion's explode method
+			left_explosion.cannon_explosion()
+			right_explosion.cannon_explosion()

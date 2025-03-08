@@ -36,7 +36,7 @@ background_mode = 2
 sky = SubResource("Sky_3xrsu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8kh8v"]
-size = Vector3(15.9331, 2.06131, 15.4117)
+size = Vector3(15.9331, 5.05817, 15.4117)
 
 [node name="Game" type="Node3D"]
 
@@ -101,7 +101,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35164, 0, -17.5329)
 transform = Transform3D(-0.457477, 0.162869, -0.874179, 0.16672, 0.98136, 0.0955897, 0.873453, -0.102013, -0.476103, 3.06839, -0.850654, -26.5042)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Island"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03931, -0.363329, -21.6055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03931, 1.1351, -21.6055)
 shape = SubResource("BoxShape3D_8kh8v")
 
 [node name="Player" parent="." instance=ExtResource("15_8axcu")]

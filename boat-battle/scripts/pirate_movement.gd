@@ -68,7 +68,7 @@ func die():
 	get_parent().add_child(explosion_instance)
 	
 	# Call the explosion's explode method
-	explosion_instance.explode()
+	explosion_instance.die_explosion()
 
 	# Remove the enemy
 	queue_free()
