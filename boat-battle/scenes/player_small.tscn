@@ -237,7 +237,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r6pou")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wamof"]
-size = Vector3(3.90875, 3.7337, 7.20856)
+size = Vector3(4, 2.7, 6.8)
 
 [node name="Player" type="CharacterBody3D"]
 
@@ -297,5 +297,5 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00210571, 2.09451, -0.399628)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00210571, 1.64699, -0.256179)
 shape = SubResource("BoxShape3D_wamof")

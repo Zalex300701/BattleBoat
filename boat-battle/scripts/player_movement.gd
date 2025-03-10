@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 @export var cannonball_scene: PackedScene
 @export var explosion_scene: PackedScene
@@ -29,18 +29,29 @@ var max_turn_tilt: float = 5.0
 var tilt_angle: float = 0.0
 var tilt_smoothness: float = 3.0
 
+# Shooting variables
+var can_shoot: bool = true
+var shoot_cooldown: float = 1.0
+var current_cooldown: float = 0.0
+
 func _ready():
-	initial_y = position.y
+	initial_y = global_transform.origin.y
 	initial_rotation = rotation_degrees
 
 func _physics_process(delta):
 	handle_position_player(delta)
 	handle_rotation_player(delta)
-	apply_buoyancy()
+	apply_buoyancy(delta)
+	# Update shooting cooldown
+	if not can_shoot:
+		current_cooldown -= delta
+		if current_cooldown <= 0:
+			can_shoot = true
 
-func apply_buoyancy():
-	# Vertical movement
-	position.y = initial_y + sin(Time.get_ticks_msec() * 0.001 * bobbing_speed) * bobbing_amplitude
+func apply_buoyancy(delta):
+	# Vertical bobbing (apply as part of velocity)
+	var bobbing_offset = sin(Time.get_ticks_msec() * 0.001 * bobbing_speed) * bobbing_amplitude
+	velocity.y = (initial_y + bobbing_offset - global_transform.origin.y) / delta
 	
 	# Roll and pitch
 	var roll = sin(Time.get_ticks_msec() * 0.001 * rotation_speed) * rotation_amplitude
@@ -51,8 +62,11 @@ func apply_buoyancy():
 	
 func _input(event: InputEvent):
 	# Shoot
-	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE:
+	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE and can_shoot:
 		shoot()
+		# Launch cooldown
+		can_shoot = false
+		current_cooldown = shoot_cooldown
 
 func handle_position_player(delta):
 	# Default speed when no input
@@ -69,8 +83,10 @@ func handle_position_player(delta):
 	elif current_speed > target_speed:
 		current_speed -= deceleration * delta
 	
-	# Apply movement
-	position += transform.basis.z * current_speed * delta
+	# Apply movement with physics (along local Z-axis)
+	velocity.x = transform.basis.z.x * current_speed
+	velocity.z = transform.basis.z.z * current_speed
+	move_and_slide()
 
 func handle_rotation_player(delta):
 	# Default turn speed when no input
