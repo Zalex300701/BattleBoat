@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export var player: Node3D
-@export var max_health: int = 3 # Enemy has 3 HP
+@export var max_health: int = 3
 
 var current_health: int = max_health
 var max_speed = 3.0
