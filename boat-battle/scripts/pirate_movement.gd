@@ -4,11 +4,11 @@ extends CharacterBody3D
 @export var max_health: int = 3
 
 var current_health: int = max_health
-var max_speed = 3.0
+var max_speed = 2.5
 var acceleration = 1.5
 var deceleration = 1.0
 var current_speed = 0.0
-var turn_speed = 2.0
+var turn_speed = 1.5
 
 func _ready():
 	$ship_pirate_medium.rotate_y(deg_to_rad(180))

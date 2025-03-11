@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bome4c52dlklu"
-path="res://.godot/imported/boat-row-small.glb-9e62f45137b5a4df5a064db2d0807f05.scn"
+uid="uid://bdblupqnrk56a"
+path="res://.godot/imported/boat-row-large.glb-1fce08c545e047df7b6de22dc5f68d44.scn"
 
 [deps]
 
-source_file="res://assets/models/boat-row-small.glb"
-dest_files=["res://.godot/imported/boat-row-small.glb-9e62f45137b5a4df5a064db2d0807f05.scn"]
+source_file="res://assets/models/ships_player/boat-row-large.glb"
+dest_files=["res://.godot/imported/boat-row-large.glb-1fce08c545e047df7b6de22dc5f68d44.scn"]
 
 [params]
 
