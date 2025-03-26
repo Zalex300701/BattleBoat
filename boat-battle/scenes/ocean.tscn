@@ -1,17 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp5lyuvq1kbpa"]
+[gd_scene load_steps=5 format=3 uid="uid://dp5lyuvq1kbpa"]
 
-[ext_resource type="Shader" path="res://shader/test_shader.gdshader" id="1_2gnd7"]
+[ext_resource type="Shader" path="res://shader/ocean.gdshader" id="1_n4f5w"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_asp12"]
-render_priority = 10
-shader = ExtResource("1_2gnd7")
-shader_parameter/WaterColor = Color(0.156863, 0.537255, 1, 1)
+[sub_resource type="ViewportTexture" id="ViewportTexture_kwvu6"]
+viewport_path = NodePath("/root/Ocean")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ct15m"]
-material = SubResource("ShaderMaterial_asp12")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0bkq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_n4f5w")
+shader_parameter/WaterColor = Color(0, 0.65, 1, 1)
+shader_parameter/FoamColor = Color(1, 1, 1, 1)
+shader_parameter/FoamThreshold = 0.05
+shader_parameter/FoamWidth = 0.1
+shader_parameter/depth_texture = SubResource("ViewportTexture_kwvu6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gxgic"]
+material = SubResource("ShaderMaterial_b0bkq")
 size = Vector2(128, 128)
 subdivide_width = 32
 subdivide_depth = 32
 
-[node name="Ocean" type="MeshInstance3D"]
-mesh = SubResource("PlaneMesh_ct15m")
+[node name="Ocean" type="Node3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_gxgic")
