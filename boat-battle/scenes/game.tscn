@@ -155,7 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03931, -0.363329, -21.6055)
 shape = SubResource("BoxShape3D_8kh8v")
 
 [node name="Player" parent="." instance=ExtResource("15_8axcu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 script = ExtResource("2_ojwl6")
 cannonball_scene = ExtResource("17_umxtd")
 explosion_scene = ExtResource("18_wnxhs")
@@ -167,23 +167,8 @@ ocean_scene = ExtResource("20_xbmqr")
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 
-[node name="pirate_medium" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6965, 0, -59.012)
-player = NodePath("../../Player")
-cannonball_scene = ExtResource("17_umxtd")
-explosion_scene = ExtResource("18_wnxhs")
-
-[node name="pirate_medium2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.078, 0, -93.5427)
-player = NodePath("../../Player")
-cannonball_scene = ExtResource("17_umxtd")
-explosion_scene = ExtResource("18_wnxhs")
-
-[node name="pirate_medium3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.91049, 0, -145.877)
-player = NodePath("../../Player")
-cannonball_scene = ExtResource("17_umxtd")
-explosion_scene = ExtResource("18_wnxhs")
+[node name="pirate_medium" parent="Enemies" instance=ExtResource("20_djtef")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.496, 0.063697, -77.4238)
 
 [node name="Models" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36585, 0, 60.0949)

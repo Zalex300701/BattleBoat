@@ -65,5 +65,4 @@ func _on_body_entered(body):
 		explosion_instance.damage()
 		
 		body.take_damage() # Call take_damage() on the enemy to reduce health
-	
 	queue_free()  # Remove cannonball on impact

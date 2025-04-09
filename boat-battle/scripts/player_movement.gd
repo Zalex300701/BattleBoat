@@ -73,9 +73,9 @@ func handle_position_player(delta):
 	var target_speed = 0.0
 	
 	if Input.is_action_pressed("move_forward"):
-		target_speed = max_forward_speed
+		target_speed = -max_forward_speed # - Because boat points -Z
 	elif Input.is_action_pressed("move_backward"):
-		target_speed = -max_backward_speed
+		target_speed = max_backward_speed
 	
 	# Smooth position acceleration/deceleration
 	if current_speed < target_speed:

@@ -239,9 +239,10 @@ shadow_mesh = SubResource("ArrayMesh_r6pou")
 [sub_resource type="BoxShape3D" id="BoxShape3D_wamof"]
 size = Vector3(4, 2.7, 6.8)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 
 [node name="ship-small" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qeg8v")
 skeleton = NodePath("")
 

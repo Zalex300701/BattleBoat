@@ -1,7 +1,11 @@
-[gd_scene load_steps=26 format=4 uid="uid://dhk36f43a0gt8"]
+[gd_scene load_steps=33 format=4 uid="uid://dhk36f43a0gt8"]
 
-[ext_resource type="Script" path="res://scripts/pirate_movement.gd" id="1_2l4aj"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_dcbtf"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_ijdjf"]
+[ext_resource type="Script" path="res://scripts/state machine/state_machine.gd" id="3_k7w7j"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_wander.gd" id="4_vruwl"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_chase.gd" id="5_illlv"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_dying.gd" id="6_yaj8m"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6e6co"]
 _surfaces = [{
@@ -306,7 +310,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rvf6m")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mdxva"]
-size = Vector3(4.76, 8, 9.5)
+size = Vector3(4.76, 3.70288, 9.51733)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0yuyv"]
 viewport_path = NodePath("SubViewport")
@@ -334,11 +338,48 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_bottom = 3.0
 
+[sub_resource type="Animation" id="Animation_r86l5"]
+resource_name = "sink"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bqfgg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_108oj"]
+_data = {
+"RESET": SubResource("Animation_bqfgg"),
+"sink": SubResource("Animation_r86l5")
+}
+
 [node name="pirate_medium" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.836303, 0)
-script = ExtResource("1_2l4aj")
+script = ExtResource("1_ijdjf")
 
 [node name="ship_pirate_medium" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8mrq8")
 skeleton = NodePath("")
 
@@ -368,7 +409,7 @@ mesh = SubResource("ArrayMesh_21gm0")
 skeleton = NodePath("")
 
 [node name="left_cannon" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.64112, 2.08984, -0.553868)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.641, 2.09, 0.554)
 mesh = SubResource("ArrayMesh_15ewa")
 skeleton = NodePath("")
 
@@ -386,7 +427,7 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.648546, 0.992544)
 
 [node name="right_cannon" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1.641, 2.09, -0.554)
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 1.641, 2.09, 0.554)
 mesh = SubResource("ArrayMesh_15ewa")
 skeleton = NodePath("")
 
@@ -404,10 +445,10 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.648546, 0.992544)
 
 [node name="explosion_marker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46492, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93776, 1.19951)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -0.525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10803, 0.352564)
 shape = SubResource("BoxShape3D_mdxva")
 
 [node name="Healthbar" type="Sprite3D" parent="."]
@@ -446,3 +487,21 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ulhnv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fuxa6")
 value = 100.0
 show_percentage = false
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
+script = ExtResource("3_k7w7j")
+InitialState = NodePath("EnemyChase")
+
+[node name="EnemyWander" type="Node" parent="StateMachine"]
+script = ExtResource("4_vruwl")
+
+[node name="EnemyChase" type="Node" parent="StateMachine"]
+script = ExtResource("5_illlv")
+
+[node name="EnemyDying" type="Node" parent="StateMachine"]
+script = ExtResource("6_yaj8m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_108oj")
+}
