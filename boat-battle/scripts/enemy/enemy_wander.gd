@@ -25,6 +25,10 @@ func process(delta: float):
 	
 	if enemy.global_position.distance_to(player.global_position) < enemy.ChaseDistance:
 		emit_signal("Transitioned", self, "EnemyChase")
+	
+	if wander_direction.length() > 0:  # Ensure there's a direction to rotate toward
+		var target_rotation = atan2(-wander_direction.x, -wander_direction.z)
+		enemy.rotation.y = lerp_angle(enemy.rotation.y, target_rotation, delta * enemy.rotation_speed)
 
 func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.WanderSpeed

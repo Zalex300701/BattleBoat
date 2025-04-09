@@ -11,6 +11,11 @@ func process(_delta: float):
 	if enemy.global_position.distance_to(player.global_position) > enemy.ChaseDistance:
 		emit_signal("Transitioned", self, "EnemyWander")
 
-func physics_process(_delta: float) -> void:
-	enemy.look_at(Vector3(player.global_position.x, enemy.global_position.y, player.global_position.z))
-	enemy.velocity = (player.global_transform.origin - enemy.global_transform.origin).normalized() * enemy.RunSpeed
+func physics_process(delta: float) -> void:
+	var direction = (player.global_position - enemy.global_position).normalized()
+	direction.y = 0
+	
+	if direction.length() > 0:
+		enemy.rotation.y = lerp_angle(enemy.rotation.y, atan2(-direction.x, -direction.z), delta * enemy.rotation_speed)
+
+	enemy.velocity = direction * enemy.RunSpeed

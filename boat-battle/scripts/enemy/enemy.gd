@@ -4,6 +4,8 @@ extends CharacterBody3D
 @export var RunSpeed: float = 3.0
 @export var ChaseDistance: float = 80.0
 
+var rotation_speed: float = 1.0
+
 var max_health: int = 3
 var current_health: int = max_health
 

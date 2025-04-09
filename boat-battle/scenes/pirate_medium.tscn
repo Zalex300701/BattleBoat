@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dhk36f43a0gt8"]
+[gd_scene load_steps=36 format=4 uid="uid://dhk36f43a0gt8"]
 
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_dcbtf"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_ijdjf"]
@@ -338,28 +338,12 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_bottom = 3.0
 
-[sub_resource type="Animation" id="Animation_4tfrw"]
-resource_name = "sink"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ship_pirate_medium:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -10, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_1068p"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ship_pirate_medium:position")
+tracks/0/path = NodePath("ship_model:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -368,80 +352,207 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4tfrw"]
+resource_name = "sink_1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -7, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-1.0472, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ujhhf"]
+resource_name = "sink_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(1.13446, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4ui6j"]
+resource_name = "sink_3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -7, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.698132, -3.14159, -1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_gg6f3"]
+resource_name = "sink_4"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -7, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.698132, -3.14159, 1.5708)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rlyi8"]
 _data = {
 "RESET": SubResource("Animation_1068p"),
-"sink": SubResource("Animation_4tfrw")
+"sink_1": SubResource("Animation_4tfrw"),
+"sink_2": SubResource("Animation_ujhhf"),
+"sink_3": SubResource("Animation_4ui6j"),
+"sink_4": SubResource("Animation_gg6f3")
 }
 
 [node name="pirate_medium" type="CharacterBody3D"]
 script = ExtResource("1_ijdjf")
 
-[node name="ship_pirate_medium" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+[node name="ship_model" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8mrq8")
 skeleton = NodePath("")
 
-[node name="left_cannon" type="MeshInstance3D" parent="ship_pirate_medium"]
+[node name="left_cannon" type="MeshInstance3D" parent="ship_model"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.641, 2.09, -0.554)
 mesh = SubResource("ArrayMesh_15ewa")
 skeleton = NodePath("")
 
-[node name="Group" type="MeshInstance3D" parent="ship_pirate_medium/left_cannon"]
+[node name="Group" type="MeshInstance3D" parent="ship_model/left_cannon"]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.228792, 0.3, -0.825)
 mesh = SubResource("ArrayMesh_0mi1k")
 skeleton = NodePath("")
 
-[node name="Group2" type="MeshInstance3D" parent="ship_pirate_medium/left_cannon"]
+[node name="Group2" type="MeshInstance3D" parent="ship_model/left_cannon"]
 transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.51857, 0.222354, -0.825)
 mesh = SubResource("ArrayMesh_b11jh")
 skeleton = NodePath("")
 
-[node name="left_cannonball_spawn" type="Marker3D" parent="ship_pirate_medium/left_cannon"]
+[node name="left_cannonball_spawn" type="Marker3D" parent="ship_model/left_cannon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.648546, 0.992544)
 
-[node name="right_cannon" type="MeshInstance3D" parent="ship_pirate_medium"]
+[node name="right_cannon" type="MeshInstance3D" parent="ship_model"]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -1.641, 2.09, -0.554)
 mesh = SubResource("ArrayMesh_15ewa")
 skeleton = NodePath("")
 
-[node name="Group" type="MeshInstance3D" parent="ship_pirate_medium/right_cannon"]
+[node name="Group" type="MeshInstance3D" parent="ship_model/right_cannon"]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.228792, 0.3, -0.825)
 mesh = SubResource("ArrayMesh_0mi1k")
 skeleton = NodePath("")
 
-[node name="Group2" type="MeshInstance3D" parent="ship_pirate_medium/right_cannon"]
+[node name="Group2" type="MeshInstance3D" parent="ship_model/right_cannon"]
 transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.51857, 0.222354, -0.825)
 mesh = SubResource("ArrayMesh_b11jh")
 skeleton = NodePath("")
 
-[node name="right_cannonball_spawn" type="Marker3D" parent="ship_pirate_medium/right_cannon"]
+[node name="right_cannonball_spawn" type="Marker3D" parent="ship_model/right_cannon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0.648546, 0.992544)
 
-[node name="Cosmetics" type="Node3D" parent="ship_pirate_medium"]
+[node name="Cosmetics" type="Node3D" parent="ship_model"]
 
-[node name="sail-a" type="MeshInstance3D" parent="ship_pirate_medium/Cosmetics"]
+[node name="sail-a" type="MeshInstance3D" parent="ship_model/Cosmetics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55271e-15, 3.13852, 0.666628)
 mesh = SubResource("ArrayMesh_3y0c8")
 skeleton = NodePath("")
 
-[node name="flag-c" type="MeshInstance3D" parent="ship_pirate_medium/Cosmetics"]
+[node name="flag-c" type="MeshInstance3D" parent="ship_model/Cosmetics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.23797, -4.00727)
 mesh = SubResource("ArrayMesh_vhhu4")
 skeleton = NodePath("")
 
-[node name="flag-b" type="MeshInstance3D" parent="ship_pirate_medium/Cosmetics"]
+[node name="flag-b" type="MeshInstance3D" parent="ship_model/Cosmetics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.06581e-14, 8.83798, 0.680234)
 mesh = SubResource("ArrayMesh_8ohyp")
 skeleton = NodePath("")
 
-[node name="flag-a" type="MeshInstance3D" parent="ship_pirate_medium/Cosmetics"]
+[node name="flag-a" type="MeshInstance3D" parent="ship_model/Cosmetics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.48098, 2.96532)
 mesh = SubResource("ArrayMesh_2i3m4")
 skeleton = NodePath("")
 
-[node name="sail-b" type="MeshInstance3D" parent="ship_pirate_medium/Cosmetics"]
+[node name="sail-b" type="MeshInstance3D" parent="ship_model/Cosmetics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.54746, -4.00727)
 mesh = SubResource("ArrayMesh_21gm0")
 skeleton = NodePath("")

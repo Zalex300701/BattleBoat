@@ -1,19 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp5lyuvq1kbpa"]
+[gd_scene load_steps=6 format=3 uid="uid://dp5lyuvq1kbpa"]
 
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="1_n4f5w"]
+[ext_resource type="Texture2D" uid="uid://bon46hdxykqd6" path="res://assets/textures/water_texture.jpg" id="2_ft5s3"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_kwvu6"]
-viewport_path = NodePath("/root/Ocean")
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gf304"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0bkq"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_n4f5w")
-shader_parameter/WaterColor = Color(0, 0.65, 1, 1)
-shader_parameter/FoamColor = Color(1, 1, 1, 1)
-shader_parameter/FoamThreshold = 0.05
-shader_parameter/FoamWidth = 0.1
-shader_parameter/depth_texture = SubResource("ViewportTexture_kwvu6")
+shader_parameter/albedo = Color(0.2366, 0.595747, 0.91, 1)
+shader_parameter/scroll_speed1 = Vector2(0.02, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.008, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/scale1 = Vector2(2, 2)
+shader_parameter/scale2 = Vector2(2, 2)
+shader_parameter/wave_strength = 0.1
+shader_parameter/wave_scale = 0.02
+shader_parameter/pixelation_level = 256
+shader_parameter/FoamSize = 0.5
+shader_parameter/WaterOpacity = 1.0
+shader_parameter/FoamGlowIntensity = 0.3
+shader_parameter/water_texture1 = ExtResource("2_ft5s3")
+shader_parameter/water_texture2 = ExtResource("2_ft5s3")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_gf304")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gxgic"]
 material = SubResource("ShaderMaterial_b0bkq")
