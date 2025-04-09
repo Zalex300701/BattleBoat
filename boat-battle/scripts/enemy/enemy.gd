@@ -15,7 +15,7 @@ func _ready() -> void:
 	player = get_tree().get_nodes_in_group("Player")[0]
 	update_health_bar()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func take_damage():
@@ -29,5 +29,4 @@ func update_health_bar():
 	health_bar.value = float(current_health) / max_health * 100
 
 func die():
-	print("test")
 	state_machine.on_child_transitioned(state_machine.current_state, "EnemyDying")

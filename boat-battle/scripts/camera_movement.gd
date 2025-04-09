@@ -23,7 +23,7 @@ var yaw = 0.0 # Store the Y rotation angle
 func _ready() -> void:
 	update_camera_position()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_camera_position()
 
 func _input(event):

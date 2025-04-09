@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func randomize_variables():
 	wander_direction = Vector3(randf_range(-1.0, 1.0), 0.0, randf_range(-1.0, 1.0)).normalized()
-	wander_time =randf_range(5.0, 20.0)
+	wander_time = randf_range(5.0, 20.0)
 
 func enter():
 	randomize_variables()
@@ -26,5 +26,5 @@ func process(delta: float):
 	if enemy.global_position.distance_to(player.global_position) < enemy.ChaseDistance:
 		emit_signal("Transitioned", self, "EnemyChase")
 
-func physics_process(delta: float):
+func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.WanderSpeed
