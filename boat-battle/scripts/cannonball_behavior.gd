@@ -33,13 +33,17 @@ func _process(delta):
 		if global_transform.origin.y <= despawn_depth:
 			queue_free()
 
-func launch(dir: Vector3, spd: float):
+func launch(dir: Vector3, spd: float, firing_owner: Node3D = null):
 	direction = dir
 	speed = spd
+	owner = firing_owner
 	fixed_y = global_transform.origin.y  # Store the Y position at launch
 	is_moving = true
 
 func _on_body_entered(body):
+	if body == owner:
+		return
+	
 	is_moving = false
 	print("Cannonball hit:", body.name)
 	

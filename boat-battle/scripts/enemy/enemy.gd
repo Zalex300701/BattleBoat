@@ -1,10 +1,12 @@
 extends CharacterBody3D
 
 @export var WanderSpeed: float = 1.5
-@export var RunSpeed: float = 3.0
-@export var ChaseDistance: float = 40.0
-@export var AttackDistance: float = 20.0
-@export var RotationSpeed: float = 1.0
+@export var RunSpeed: float = 2.5
+@export var ChaseDistance: float = 100.0
+@export var AttackDistance: float = 50.0
+@export var RotationSpeed: float = 0.5
+@export var CannonballSpeed: float = 50.0
+@export var CannonCooldown: float = 3.0
 
 var max_health: int = 3
 var current_health: int = max_health

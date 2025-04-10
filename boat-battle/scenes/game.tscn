@@ -173,7 +173,7 @@ ocean_scene = ExtResource("20_xbmqr")
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -50)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6369, 0, -103.312)
 
 [node name="Models" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366, 0.9, 60.095)
