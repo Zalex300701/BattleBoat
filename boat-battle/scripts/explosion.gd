@@ -12,7 +12,7 @@ func die_explosion():
 	debris.emitting = true
 	smoke.emitting = true
 	fire.emitting = true
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(2.0).timeouts
 	queue_free()
 
 func cannon_explosion():
