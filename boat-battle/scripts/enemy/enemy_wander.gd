@@ -28,7 +28,7 @@ func process(delta: float):
 	
 	if wander_direction.length() > 0:  # Ensure there's a direction to rotate toward
 		var target_rotation = atan2(-wander_direction.x, -wander_direction.z)
-		enemy.rotation.y = lerp_angle(enemy.rotation.y, target_rotation, delta * enemy.rotation_speed)
+		enemy.rotation.y = lerp_angle(enemy.rotation.y, target_rotation, delta * enemy.RotationSpeed)
 
 func physics_process(_delta: float):
 	enemy.velocity = wander_direction * enemy.WanderSpeed

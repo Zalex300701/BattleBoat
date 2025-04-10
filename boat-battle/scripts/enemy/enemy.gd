@@ -2,9 +2,9 @@ extends CharacterBody3D
 
 @export var WanderSpeed: float = 1.5
 @export var RunSpeed: float = 3.0
-@export var ChaseDistance: float = 80.0
-
-var rotation_speed: float = 1.0
+@export var ChaseDistance: float = 40.0
+@export var AttackDistance: float = 20.0
+@export var RotationSpeed: float = 1.0
 
 var max_health: int = 3
 var current_health: int = max_health
@@ -19,6 +19,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
+	debug_lines()
 
 func take_damage():
 	current_health -= 1
@@ -32,3 +33,22 @@ func update_health_bar():
 
 func die():
 	state_machine.on_child_transitioned(state_machine.current_state, "EnemyDying")
+
+func debug_lines():
+	var to_player = player.global_transform.origin - global_transform.origin
+	to_player.y = 0
+	var direction = to_player.normalized()
+	var right_side = global_transform.basis.x.normalized()
+	var left_side = -right_side
+	var dot_right = right_side.dot(direction)
+	var dot_left = left_side.dot(direction)
+	
+	var target_side = right_side if dot_right > dot_left else left_side
+	
+	# Debug visualization
+	var pos = global_position
+	pos.y = 10.5
+	DebugDraw3D.draw_line(pos, pos + right_side, Color(1, 0, 0)) # Red
+	DebugDraw3D.draw_line(pos, pos + left_side, Color(0, 0, 1)) # Blue
+	DebugDraw3D.draw_line(pos, pos + to_player, Color(0, 1, 0)) # Green
+	DebugDraw3D.draw_line(pos, pos + target_side, Color(1, 1, 0)) # Yellow 

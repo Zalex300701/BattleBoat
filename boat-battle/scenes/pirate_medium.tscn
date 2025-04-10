@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=4 uid="uid://dhk36f43a0gt8"]
+[gd_scene load_steps=37 format=4 uid="uid://dhk36f43a0gt8"]
 
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_dcbtf"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_ijdjf"]
 [ext_resource type="Script" path="res://scripts/state machine/state_machine.gd" id="3_k7w7j"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_wander.gd" id="4_vruwl"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_chase.gd" id="5_illlv"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_attack.gd" id="6_fs3ah"]
 [ext_resource type="Script" path="res://scripts/enemy/enemy_dying.gd" id="6_yaj8m"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6e6co"]
@@ -610,6 +611,9 @@ script = ExtResource("4_vruwl")
 
 [node name="EnemyChase" type="Node" parent="StateMachine"]
 script = ExtResource("5_illlv")
+
+[node name="EnemyAttack" type="Node" parent="StateMachine"]
+script = ExtResource("6_fs3ah")
 
 [node name="EnemyDying" type="Node" parent="StateMachine"]
 script = ExtResource("6_yaj8m")

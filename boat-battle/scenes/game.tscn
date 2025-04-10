@@ -73,8 +73,8 @@
 [ext_resource type="PackedScene" uid="uid://jt6te1qlb71e" path="res://assets/models/building/tower-watch.glb" id="71_qywcp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bn25v"]
-sky_top_color = Color(0.611749, 0.873734, 0.958417, 1)
-sky_horizon_color = Color(0.156863, 0.537255, 1, 1)
+sky_top_color = Color(0.940149, 0.848164, 0.694235, 1)
+sky_horizon_color = Color(0.540935, 0.735667, 1, 1)
 ground_bottom_color = Color(0.156863, 0.576471, 1, 1)
 ground_horizon_color = Color(0.156863, 0.537255, 1, 1)
 
@@ -86,7 +86,7 @@ background_mode = 2
 sky = SubResource("Sky_3xrsu")
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(0.156863, 0.537255, 1, 1)
+fog_light_color = Color(0.298512, 0.601815, 1, 1)
 fog_density = 1.0
 fog_sky_affect = 0.9
 fog_depth_begin = 0.0
@@ -110,7 +110,7 @@ fov = 80.0
 script = ExtResource("3_gy23p")
 
 [node name="Island" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17967, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0736, 0.72, -24.4831)
 
 [node name="grass-patch2" parent="Island" instance=ExtResource("4_cnpce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14249, 0.620069, -20.6501)
@@ -162,7 +162,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03931, -0.363329, -21.6055)
 shape = SubResource("BoxShape3D_8kh8v")
 
 [node name="Player" parent="." instance=ExtResource("15_8axcu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 script = ExtResource("2_ojwl6")
 cannonball_scene = ExtResource("17_umxtd")
 explosion_scene = ExtResource("18_wnxhs")
@@ -172,19 +171,12 @@ script = ExtResource("21_q7jir")
 ocean_scene = ExtResource("20_xbmqr")
 
 [node name="Enemies" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
 
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 0, -65)
-
-[node name="pirate_medium2" parent="Enemies" instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.8008, 0, -72.8551)
-
-[node name="pirate_medium3" parent="Enemies" instance=ExtResource("20_djtef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6769, 0, -108.545)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -50)
 
 [node name="Models" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36585, 0, 60.0949)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366, 0.9, 60.095)
 
 [node name="Models for player" type="Node3D" parent="Models"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -20.0052)
