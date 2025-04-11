@@ -7,7 +7,6 @@ extends Node3D
 @onready var cannon_damage_smoke: GPUParticles3D = $Cannon_damage_smoke
 @onready var cannon_damage_wood: GPUParticles3D = $Cannon_damage_wood
 
-
 func die_explosion():
 	debris.emitting = true
 	smoke.emitting = true

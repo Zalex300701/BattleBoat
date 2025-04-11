@@ -5,7 +5,7 @@
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gf304"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0bkq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1sju"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_n4f5w")
@@ -26,7 +26,7 @@ shader_parameter/water_texture2 = ExtResource("2_ft5s3")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_gf304")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_gxgic"]
-material = SubResource("ShaderMaterial_b0bkq")
+material = SubResource("ShaderMaterial_s1sju")
 size = Vector2(128, 128)
 subdivide_width = 32
 subdivide_depth = 32
@@ -34,5 +34,5 @@ subdivide_depth = 32
 [node name="Ocean" type="Node3D"]
 
 [node name="Plane" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("PlaneMesh_gxgic")
