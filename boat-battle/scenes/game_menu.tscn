@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://lddt3byglos5"]
+[gd_scene load_steps=30 format=3 uid="uid://lddt3byglos5"]
 
+[ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_f5kv5"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="1_jpwea"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="3_7rgo8"]
 [ext_resource type="Texture2D" uid="uid://bon46hdxykqd6" path="res://assets/textures/water_texture.jpg" id="4_oxt3i"]
@@ -86,14 +87,11 @@ transform = Transform3D(0.707107, 0.612373, -0.353553, 0, 0.5, 0.866025, 0.70710
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.707107, -0.0616284, 0.704416, 0, 0.996195, 0.0871557, -0.707107, -0.0616284, 0.704416, 9.86, 6.73, 9.99)
+transform = Transform3D(-0.481754, -0.0763752, 0.872972, 0, 0.996195, 0.0871557, -0.876307, 0.0419876, -0.47992, 12, 6.36, -6)
+script = ExtResource("1_f5kv5")
 
 [node name="Environment" type="Node3D" parent="."]
-transform = Transform3D(0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 0, 0, 0)
-
-[node name="Player" parent="Environment" instance=ExtResource("20_kkweh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.100508, 0, 0.276778)
-script = ExtResource("1_jpwea")
+transform = Transform3D(0.999996, 0, -0.00279266, 0, 1, 0, 0.00279266, 0, 0.999996, -0.436213, 0, 0.813159)
 
 [node name="Ocean" type="Node3D" parent="Environment"]
 transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 0, 0, 0)
@@ -187,7 +185,11 @@ transform = Transform3D(-0.00293215, 0, -0.699994, 0, 0.7, 0, 0.699994, 0, -0.00
 [node name="tool-shovel2" parent="Environment/Land/Props" instance=ExtResource("21_fb370")]
 transform = Transform3D(-0.422717, -0.150071, 0.537391, 0.05171, 0.660766, 0.2252, -0.555551, 0.175692, -0.387938, -14.4532, 1.61268, 9.86551)
 
-[node name="Control" type="Control" parent="."]
+[node name="Player" parent="Environment" instance=ExtResource("20_kkweh")]
+transform = Transform3D(0.999996, 0, 0.00279266, 0, 1, 0, -0.00279266, 0, 0.999996, 0.142, 0, -1)
+script = ExtResource("1_jpwea")
+
+[node name="Menu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,19 +198,32 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("22_fpp4o")
 
-[node name="Button" type="Button" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -20.5
-offset_right = 60.0
-offset_bottom = 20.5
+offset_left = -46.5
+offset_top = -20.0
+offset_right = 46.5
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Start_button" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
 text = "Start game"
 
-[connection signal="pressed" from="Control/Button" to="Control" method="_on_start_pressed"]
+[node name="Boathouse_button" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Boathouse"
+
+[node name="Exit_button" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="Menu/VBoxContainer/Start_button" to="Menu" method="_on_start_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Boathouse_button" to="Menu" method="_on_boathouse_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Exit_button" to="Menu" method="_on_exit_button_pressed"]
