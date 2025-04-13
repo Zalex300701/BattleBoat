@@ -87,7 +87,7 @@ transform = Transform3D(0.707107, 0.612373, -0.353553, 0, 0.5, 0.866025, 0.70710
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.481754, -0.0763752, 0.872972, 0, 0.996195, 0.0871557, -0.876307, 0.0419876, -0.47992, 12, 6.36, -6)
+transform = Transform3D(-0.481754, -0.0763752, 0.872972, 0, 0.996195, 0.0871557, -0.876307, 0.0419876, -0.47992, 12, 6.5, -6)
 script = ExtResource("1_f5kv5")
 
 [node name="Environment" type="Node3D" parent="."]
@@ -189,7 +189,15 @@ transform = Transform3D(-0.422717, -0.150071, 0.537391, 0.05171, 0.660766, 0.225
 transform = Transform3D(0.999996, 0, 0.00279266, 0, 1, 0, -0.00279266, 0, 0.999996, 0.142, 0, -1)
 script = ExtResource("1_jpwea")
 
-[node name="Menu" type="Control" parent="."]
+[node name="Markers" type="Node3D" parent="."]
+
+[node name="Menu_marker" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6.5, -6)
+
+[node name="Boathouse_marker" type="Marker3D" parent="Markers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6.5, -6)
+
+[node name="Menus" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,32 +206,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("22_fpp4o")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
-layout_mode = 1
+[node name="Main_menu" type="Node" parent="Menus"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/Main_menu"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -46.5
-offset_top = -20.0
+offset_top = -50.5
 offset_right = 46.5
-offset_bottom = 20.0
+offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Start_button" type="Button" parent="Menu/VBoxContainer"]
+[node name="Start_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
 layout_mode = 2
 text = "Start game"
 
-[node name="Boathouse_button" type="Button" parent="Menu/VBoxContainer"]
+[node name="Boathouse_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
 layout_mode = 2
 text = "Boathouse"
 
-[node name="Exit_button" type="Button" parent="Menu/VBoxContainer"]
+[node name="Exit_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="Menu/VBoxContainer/Start_button" to="Menu" method="_on_start_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Boathouse_button" to="Menu" method="_on_boathouse_button_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Exit_button" to="Menu" method="_on_exit_button_pressed"]
+[node name="Boathouse_menu" type="Node" parent="Menus"]
+
+[node name="Back_boathouse" type="Button" parent="Menus/Boathouse_menu"]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Start_button" to="Menus" method="_on_start_pressed"]
+[connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Boathouse_button" to="Menus" method="_on_boathouse_button_pressed"]
+[connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Exit_button" to="Menus" method="_on_exit_button_pressed"]
