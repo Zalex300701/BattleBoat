@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=4 uid="uid://d3i0vcna7waq5"]
+[gd_scene load_steps=18 format=4 uid="uid://d3i0vcna7waq5"]
 
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qck00"]
+[ext_resource type="PackedScene" uid="uid://bvrnry7a8guuy" path="res://scenes/pause.tscn" id="2_5uno3"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d1byq"]
 _surfaces = [{
@@ -300,3 +301,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00210571, 1.64699, -0.256179)
 shape = SubResource("BoxShape3D_wamof")
+
+[node name="Pause" parent="." instance=ExtResource("2_5uno3")]
+visible = false

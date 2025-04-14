@@ -1,0 +1,35 @@
+extends Control
+
+@onready var pause = $"."
+var paused = false
+var game_menu_scene: String = "res://scenes/game_menu.tscn"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		pause_menu()
+
+func _on_resume_button_pressed() -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		self.hide()
+		get_tree().paused = false
+		pause = false
+
+func _on_exit_button_pressed() -> void:
+	get_tree().change_scene_to_file(game_menu_scene)
+
+func pause_menu():
+	if paused:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		self.hide()
+		get_tree().paused = false
+	else:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		self.show()
+	paused = !paused

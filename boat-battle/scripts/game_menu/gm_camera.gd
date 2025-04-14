@@ -1,7 +1,7 @@
 extends Camera3D
 
 @onready var player: CharacterBody3D = get_node("/root/GameMenu/Environment/Player") 
-@onready var menu_marker: Marker3D = get_node("/root/GameMenu/Markers/Menu_marker")
+@onready var main_marker: Marker3D = get_node("/root/GameMenu/Markers/Main_marker")
 @onready var boathouse_marker: Marker3D = get_node("/root/GameMenu/Markers/Boathouse_marker")
 
 var target_position: Vector3
@@ -24,6 +24,6 @@ func boathouse_position():
 	target_position = boathouse_marker.position
 	is_transitioning = true
 
-func menu_position():
-	target_position = menu_marker.position
+func main_position():
+	target_position = main_marker.position
 	is_transitioning = true
