@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://lddt3byglos5"]
+[gd_scene load_steps=31 format=3 uid="uid://lddt3byglos5"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_f5kv5"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="1_jpwea"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="20_kkweh"]
 [ext_resource type="PackedScene" uid="uid://ci0gdvyih3x18" path="res://assets/models/props/tool-shovel.glb" id="21_fb370"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="22_fpp4o"]
+[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="24_80rpt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlluh"]
 sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
@@ -221,23 +222,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.5
-offset_top = -50.5
-offset_right = 46.5
-offset_bottom = 50.5
+offset_left = -111.0
+offset_top = -247.0
+offset_right = 112.0
+offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("24_80rpt")
+alignment = 1
 
 [node name="Start_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
+theme = ExtResource("24_80rpt")
 text = "Start game"
 
 [node name="Boathouse_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
+custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
+theme = ExtResource("24_80rpt")
 text = "Boathouse"
 
-[node name="Exit_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
+[node name="Options_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+text = "Options"
+
+[node name="Exit_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("24_80rpt")
 text = "Exit"
 
 [node name="Boathouse_menu" type="Control" parent="Menus"]
@@ -249,19 +263,51 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Skins" type="TabContainer" parent="Menus/Boathouse_menu"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -602.0
+offset_top = -287.0
+offset_right = -79.0
+offset_bottom = 287.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("24_80rpt")
+current_tab = 0
+
+[node name="Sail" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Hull" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Flag" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
 [node name="Back_boathouse" type="Button" parent="Menus/Boathouse_menu"]
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -29.0
-offset_top = -52.0
-offset_right = 29.0
-offset_bottom = -18.0
+offset_left = -44.0
+offset_top = -96.0
+offset_right = 44.0
+offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("24_80rpt")
 text = "Back"
 
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Start_button" to="Menus" method="_on_start_pressed"]

@@ -10,7 +10,7 @@ var initial_rotation: Vector3
 
 # Departure settings
 var is_leaving := false
-var leave_speed: float = 7.0
+var leave_speed: float = 10.0
 var scene_to_load: String = "res://scenes/game.tscn"
 var exit_z_threshold: float = -20.0
 var current_speed: float = 0.0

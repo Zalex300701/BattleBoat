@@ -12,7 +12,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
-		pause_menu()
+		var current_scene = get_tree().current_scene
+		if current_scene.scene_file_path != game_menu_scene:
+			pause_menu()
 
 func _on_resume_button_pressed() -> void:
 	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:

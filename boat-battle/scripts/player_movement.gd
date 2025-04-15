@@ -151,7 +151,7 @@ func shoot():
 			# Add it to the scene
 			get_parent().add_child(left_explosion)
 			get_parent().add_child(right_explosion)
-	
+			
 			# Call the explosion's explode method
 			left_explosion.cannon_explosion()
 			right_explosion.cannon_explosion()
