@@ -8,9 +8,8 @@ var game_menu_scene: String = "res://scenes/game_menu.tscn"
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		var current_scene = get_tree().current_scene
 		if current_scene.scene_file_path != game_menu_scene:

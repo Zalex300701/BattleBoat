@@ -25,6 +25,7 @@ var initial_rotation: Vector3
 var tilt_angle: float = 0.0  # Current tilt angle
 var last_rotation_y: float  # To calculate turn speed
 var turn_speed: float = 0.0  # Current turn speed (radians/sec)
+var is_dying: bool = false
 
 var player: CharacterBody3D = null
 @onready var state_machine = $StateMachine
@@ -75,8 +76,8 @@ func apply_turn_tilt(delta: float):
 	# Smoothly adjust tilt
 	tilt_angle = lerp(tilt_angle, target_tilt, delta * tilt_smoothness)
 
-func take_damage():
-	current_health -= 1
+func take_damage(amount: float):
+	current_health -= amount
 	update_health_bar()
 	if current_health <= 0:
 		die()
@@ -86,6 +87,7 @@ func update_health_bar():
 	health_bar.value = float(current_health) / max_health * 100
 
 func die():
+	is_dying = true
 	state_machine.on_child_transitioned(state_machine.current_state, "EnemyDying")
 
 func debug_lines():

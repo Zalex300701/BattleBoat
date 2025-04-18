@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bb6jvd7apfd7k"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bb6jvd7apfd7k"]
 
 [ext_resource type="FontFile" uid="uid://doyawtcmrr7x5" path="res://assets/fonts/LeagueSpartan-Bold.otf" id="1_nc001"]
 
@@ -48,6 +48,37 @@ expand_margin_top = 2.0
 expand_margin_right = 5.0
 shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hr0ue"]
+bg_color = Color(0.941176, 0.615686, 0.317647, 1)
+border_width_bottom = 5
+border_color = Color(0.633982, 0.374032, 0.105141, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 10.0
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qs7sn"]
+bg_color = Color(0.506414, 0.911577, 0.509102, 1)
+border_color = Color(0.633982, 0.374032, 0.105141, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 5
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y6v8"]
 bg_color = Color(0.941176, 0.615686, 0.317647, 1)
@@ -114,6 +145,8 @@ Button/styles/focus = SubResource("StyleBoxEmpty_pm5m3")
 Button/styles/hover = SubResource("StyleBoxFlat_1esns")
 Button/styles/normal = SubResource("StyleBoxFlat_fbalb")
 Button/styles/pressed = SubResource("StyleBoxFlat_2pv1n")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_hr0ue")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_qs7sn")
 TabContainer/colors/font_unselected_color = Color(0.941176, 0.933333, 0.92549, 1)
 TabContainer/font_sizes/font_size = 30
 TabContainer/fonts/font = ExtResource("1_nc001")

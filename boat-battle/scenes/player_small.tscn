@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://d3i0vcna7waq5"]
+[gd_scene load_steps=25 format=4 uid="uid://d3i0vcna7waq5"]
 
+[ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_7p18m"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qck00"]
 [ext_resource type="PackedScene" uid="uid://bvrnry7a8guuy" path="res://scenes/pause.tscn" id="2_5uno3"]
 
@@ -240,62 +241,211 @@ shadow_mesh = SubResource("ArrayMesh_ptb6s")
 [sub_resource type="BoxShape3D" id="BoxShape3D_wamof"]
 size = Vector3(4, 2.7, 6.8)
 
-[node name="Player" type="CharacterBody3D" groups=["Player"]]
+[sub_resource type="Animation" id="Animation_yo6rh"]
+resource_name = "player_sink_1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.6245, 1.6245),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.707107, 0.707107),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(1.0472, -3.14159, 0)]
+}
 
-[node name="ship-small" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+[sub_resource type="Animation" id="Animation_sp20y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_small:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_small:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_coqef"]
+resource_name = "player_sink_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.6245, 1.6245),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.707107, 0.707107),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-1.0472, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7y8pn"]
+resource_name = "player_sink_3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.6245, 1.6245),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.707107, 0.707107),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-1.0472, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rqu0u"]
+resource_name = "player_sink_4"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_small:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.6245, 1.6245),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_small:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.707107, 0.707107),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.349066, -3.14159, 0.872665)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddt7s"]
+_data = {
+"RESET": SubResource("Animation_sp20y"),
+"player_sink_1": SubResource("Animation_yo6rh"),
+"player_sink_2": SubResource("Animation_coqef"),
+"player_sink_3": SubResource("Animation_7y8pn"),
+"player_sink_4": SubResource("Animation_rqu0u")
+}
+
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_7p18m")
+
+[node name="ship_small" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qeg8v")
 skeleton = NodePath("")
 
-[node name="flag-2" type="MeshInstance3D" parent="ship-small"]
+[node name="flag-2" type="MeshInstance3D" parent="ship_small"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15506e-14, 8.83798, -0.619766)
 mesh = SubResource("ArrayMesh_y1kgx")
 skeleton = NodePath("")
 
-[node name="flag-1" type="MeshInstance3D" parent="ship-small"]
+[node name="flag-1" type="MeshInstance3D" parent="ship_small"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15506e-14, 5.48098, 2.26532)
 mesh = SubResource("ArrayMesh_cvlos")
 skeleton = NodePath("")
 
-[node name="sail-1" type="MeshInstance3D" parent="ship-small"]
+[node name="sail-1" type="MeshInstance3D" parent="ship_small"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13852, -0.633372)
 mesh = SubResource("ArrayMesh_06rfp")
 skeleton = NodePath("")
 
-[node name="left_cannon" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.63708, 2.06453, -0.553113)
+[node name="left_cannon" type="MeshInstance3D" parent="ship_small"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.63708, 2.06453, 0.553113)
 mesh = SubResource("ArrayMesh_g2wjk")
 skeleton = NodePath("")
 
-[node name="Group" type="MeshInstance3D" parent="left_cannon"]
+[node name="Group" type="MeshInstance3D" parent="ship_small/left_cannon"]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.228792, 0.3, -0.825)
 mesh = SubResource("ArrayMesh_t875q")
 skeleton = NodePath("")
 
-[node name="Group2" type="MeshInstance3D" parent="left_cannon"]
+[node name="Group2" type="MeshInstance3D" parent="ship_small/left_cannon"]
 transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.51857, 0.222354, -0.825)
 mesh = SubResource("ArrayMesh_t6wro")
 skeleton = NodePath("")
 
-[node name="left_cannonball_spawn" type="Marker3D" parent="left_cannon"]
+[node name="left_cannonball_spawn" type="Marker3D" parent="ship_small/left_cannon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 1)
 
-[node name="right_cannon" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.637, 2.065, -0.553)
+[node name="right_cannon" type="MeshInstance3D" parent="ship_small"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.637, 2.065, 0.553)
 mesh = SubResource("ArrayMesh_g2wjk")
 skeleton = NodePath("")
 
-[node name="Group" type="MeshInstance3D" parent="right_cannon"]
+[node name="Group" type="MeshInstance3D" parent="ship_small/right_cannon"]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.228792, 0.3, -0.825)
 mesh = SubResource("ArrayMesh_t875q")
 skeleton = NodePath("")
 
-[node name="Group2" type="MeshInstance3D" parent="right_cannon"]
+[node name="Group2" type="MeshInstance3D" parent="ship_small/right_cannon"]
 transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.51857, 0.222354, -0.825)
 mesh = SubResource("ArrayMesh_t6wro")
 skeleton = NodePath("")
 
-[node name="right_cannonball_spawn" type="Marker3D" parent="right_cannon"]
+[node name="right_cannonball_spawn" type="Marker3D" parent="ship_small/right_cannon"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -304,3 +454,8 @@ shape = SubResource("BoxShape3D_wamof")
 
 [node name="Pause" parent="." instance=ExtResource("2_5uno3")]
 visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ddt7s")
+}

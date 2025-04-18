@@ -14,7 +14,7 @@ var current_cooldown: float = 0.0
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
-func process(delta: float) -> void:
+func process(_delta: float) -> void:
 	if enemy.global_position.distance_to(player.global_position) > enemy.AttackDistance:
 		emit_signal("Transitioned", self, "EnemyChase")
 
@@ -54,8 +54,8 @@ func align_for_firing(delta: float, direction: Vector3):
 	enemy.rotation.y = lerp_angle(enemy.rotation.y, target_rotation, delta * enemy.RotationSpeed)
 
 	# Check if the enemy is aligned well enough to fire
-	var angle_difference = abs(wrapf(enemy.rotation.y - target_rotation, -PI, PI))
-	if angle_difference < 0.2 and can_shoot:  # Adjust threshold for firing (wider tolerance for continuous firing)
+	var angle_diff = abs(wrapf(enemy.rotation.y - target_rotation, -PI, PI))
+	if angle_diff < 0.2 and can_shoot:  # Adjust threshold for firing (wider tolerance for continuous firing)
 		fire_cannons(direction, firing_right_side)
 
 func fire_cannons(player_direction: Vector3, firing_right_side: bool):

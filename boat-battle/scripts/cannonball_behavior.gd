@@ -48,12 +48,12 @@ func _on_body_entered(body):
 	print("Cannonball hit:", body.name)
 	
 	# Check if the body is an enemy and if it has the take_damage method
-	if body.has_method("take_damage"):
+	if body.has_method("take_damage") and !body.is_dying:
 		
 		# Load and instance the explosion scene
 		var explosion_scene = preload("res://scenes/explosion.tscn")  # Adjust the path if needed
 		var explosion_instance = explosion_scene.instantiate()
-
+		
 		# Set the damage's position to the point of impact between cannonball and enemy
 		explosion_instance.global_transform.origin = self.global_transform.origin
 		
@@ -64,9 +64,9 @@ func _on_body_entered(body):
 		
 		# Add it to the scene
 		get_parent().add_child(explosion_instance)
-	
+		
 		# Call the explosion's damage method
 		explosion_instance.damage()
 		
-		body.take_damage() # Call take_damage() on the enemy to reduce health
-	queue_free()  # Remove cannonball on impact
+		body.take_damage(1)
+	queue_free()

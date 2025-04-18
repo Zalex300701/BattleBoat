@@ -34,19 +34,39 @@ var can_shoot: bool = true
 var shoot_cooldown: float = 1.0
 var current_cooldown: float = 0.0
 
+# Health variables
+@export var max_health: float = 2.0
+var current_health: float = max_health
+signal health_changed(new_health, max_health)
+var has_initialized_health: bool = false
+
+# Death variables
+@onready var animation_player = $"AnimationPlayer"
+var sink_animations := ["player_sink_1", "player_sink_2", "player_sink_3", "player_sink_4"]
+var is_dying = false
+
 func _ready():
 	initial_y = global_transform.origin.y
 	initial_rotation = rotation_degrees
+	current_health = max_health
+	is_dying = false
+
+func _process(_delta):
+	# Emit health_changed on the first frame after _ready
+	if not has_initialized_health:
+		emit_signal("health_changed", current_health, max_health)
+		has_initialized_health = true
 
 func _physics_process(delta):
-	handle_position_player(delta)
-	handle_rotation_player(delta)
-	apply_buoyancy(delta)
-	# Update shooting cooldown
-	if not can_shoot:
-		current_cooldown -= delta
-		if current_cooldown <= 0:
-			can_shoot = true
+	if !is_dying:
+		handle_position_player(delta)
+		handle_rotation_player(delta)
+		apply_buoyancy(delta)
+		# Update shooting cooldown
+		if not can_shoot:
+			current_cooldown -= delta
+			if current_cooldown <= 0:
+				can_shoot = true
 
 func apply_buoyancy(delta):
 	# Vertical bobbing (apply as part of velocity)
@@ -113,8 +133,8 @@ func handle_rotation_player(delta):
 func shoot():
 	if cannonball_scene:
 		# Get the cannon markers
-		var left_marker = $left_cannon/left_cannonball_spawn
-		var right_marker = $right_cannon/right_cannonball_spawn
+		var left_marker = $ship_small/left_cannon/left_cannonball_spawn
+		var right_marker = $ship_small/right_cannon/right_cannonball_spawn
 		
 		if left_marker and right_marker:
 			var left_cannonball = cannonball_scene.instantiate()
@@ -155,3 +175,21 @@ func shoot():
 			# Call the explosion's explode method
 			left_explosion.cannon_explosion()
 			right_explosion.cannon_explosion()
+
+func take_damage(amount: float):
+	current_health = clamp(current_health - amount, 0, max_health)
+	emit_signal("health_changed", current_health, max_health)
+	if current_health <= 0:
+		is_dying = true
+		die()
+
+func heal(amount: float):
+	current_health = clamp(current_health + amount, 0, max_health)
+	emit_signal("health_changed", current_health, max_health)
+
+func die():
+	self.set_physics_process(false)
+	$CollisionShape3D.disabled = true
+	var chosen_animation = sink_animations[randi() % sink_animations.size()]
+	animation_player.play(chosen_animation)
+	await animation_player.animation_finished

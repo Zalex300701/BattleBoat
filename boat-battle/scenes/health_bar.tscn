@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://5nwty3u5t10l"]
+
+[ext_resource type="Script" path="res://scripts/player/player_health_bar.gd" id="1_wk267"]
+[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="2_ddn18"]
+
+[node name="HealthBar" type="Control"]
+light_mask = 16
+visibility_layer = 16
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1421.0
+offset_bottom = -970.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wk267")
+
+[node name="HealthProgress" type="ProgressBar" parent="."]
+light_mask = 16
+visibility_layer = 16
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 529.0
+offset_bottom = 51.0
+theme = ExtResource("2_ddn18")
+max_value = 10.0
+value = 5.0
+show_percentage = false

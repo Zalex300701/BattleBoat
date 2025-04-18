@@ -369,30 +369,6 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_4tfrw"]
 resource_name = "sink_1"
 length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ship_model:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1.8025, 1.8025),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -7, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ship_model:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1.7411, 1.7411),
-"update": 0,
-"values": [Vector3(0, -3.14159, 0), Vector3(-1.0472, -3.14159, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_ujhhf"]
 resource_name = "sink_2"
