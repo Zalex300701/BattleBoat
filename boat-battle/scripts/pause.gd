@@ -2,7 +2,7 @@ extends Control
 
 @onready var pause = $"."
 var paused = false
-var game_menu_scene: String = "res://scenes/game_menu.tscn"
+var game_menu_scene: String = "res://scenes/levels/game_menu.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

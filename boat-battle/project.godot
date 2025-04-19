@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Boat Battle"
-run/main_scene="res://scenes/levels/game.tscn"
+run/main_scene="res://scenes/levels/game_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerSettings="*res://scripts/player_settings.gd"
 
 [display]
 

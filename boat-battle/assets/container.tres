@@ -1,0 +1,54 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bx6id4c70pdar"]
+
+[ext_resource type="Texture2D" uid="uid://7yde2cp66uef" path="res://assets/textures/icons/sail_white.png" id="1_a5sbo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thvlt"]
+bg_color = Color(1, 0.857, 0.67, 0.72549)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.811429, 0.573914, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.02, 0.0104, 0.01344, 0.0392157)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awc0o"]
+bg_color = Color(1, 0.857, 0.67, 0.494118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.811429, 0.573914, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.02, 0.0104, 0.01344, 0.0392157)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xxw5"]
+bg_color = Color(0.28, 0.23996, 0.1876, 0.494118)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.811429, 0.573914, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_color = Color(0.02, 0.0104, 0.01344, 0.0392157)
+shadow_size = 5
+
+[resource]
+Button/icons/icon = ExtResource("1_a5sbo")
+Button/styles/hover = SubResource("StyleBoxFlat_thvlt")
+Button/styles/normal = SubResource("StyleBoxFlat_awc0o")
+Button/styles/pressed = SubResource("StyleBoxFlat_6xxw5")

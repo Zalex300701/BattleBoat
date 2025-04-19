@@ -20,7 +20,7 @@ func _input(event: InputEvent) -> void:
 		if event.keycode == KEY_A:
 			shoot_left()
 			start_cooldown()
-		elif event.keycode == KEY_D:
+		elif event.keycode == KEY_E:
 			shoot_right()
 			start_cooldown()
 

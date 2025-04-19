@@ -22,7 +22,7 @@ var initial_y: float
 var initial_rotation: Vector3
 
 # Maximum roll angle when turning
-var max_turn_tilt: float = 5.0
+var max_turn_tilt: float = -5.0
 var tilt_angle: float = 0.0
 var tilt_smoothness: float = 3.0
 
@@ -38,6 +38,7 @@ var sink_animations := ["player_sink_1", "player_sink_2", "player_sink_3", "play
 var is_dying = false
 
 func _ready():
+	apply_sail_skin(PlayerSettings.get_sail_skin())
 	initial_y = global_transform.origin.y
 	initial_rotation = rotation_degrees
 	current_health = max_health
@@ -126,3 +127,38 @@ func die():
 	var chosen_animation = sink_animations[randi() % sink_animations.size()]
 	animation_player.play(chosen_animation)
 	await animation_player.animation_finished
+
+func apply_sail_skin(sail_color: String) -> void:
+	# Accéder à la MeshInstance3D de la voile (sail-1)
+	var sail = get_node("ship_small/sail-1")
+	if not sail or not sail is MeshInstance3D:
+		print("Erreur : Voile non trouvée ou n'est pas une MeshInstance3D")
+		return
+	
+	# Charger le modèle de la voile de la couleur choisie
+	var sail_resource = load("res://assets/models/skins/sail/%s.glb" % sail_color)
+	if not sail_resource:
+		print("Erreur : Impossible de charger %s.glb" % sail_color)
+		return
+	
+	# Instancier la scène pour accéder à son contenu
+	var sail_instance = sail_resource.instantiate()
+	
+	# Trouver la MeshInstance3D dans le modèle chargé
+	var sail_mesh = null
+	for child in sail_instance.get_children():
+		if child is MeshInstance3D:
+			sail_mesh = child
+			break
+	
+	if not sail_mesh:
+		print("Erreur : Aucun MeshInstance3D trouvé dans %s.glb" % sail_color)
+		return
+	
+	# Appliquer le mesh de la voile à sail-1
+	sail.mesh = sail_mesh.mesh
+	
+	# Nettoyer l'instance pour éviter les fuites de mémoire
+	sail_instance.queue_free()
+	
+	print("Skin de la voile appliqué : %s" % sail_color)
