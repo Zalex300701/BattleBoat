@@ -1,29 +1,29 @@
 [gd_scene load_steps=31 format=3 uid="uid://lddt3byglos5"]
 
-[ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_f5kv5"]
-[ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="1_jpwea"]
-[ext_resource type="Shader" path="res://shader/ocean.gdshader" id="3_7rgo8"]
-[ext_resource type="Texture2D" uid="uid://bon46hdxykqd6" path="res://assets/textures/water_texture.jpg" id="4_oxt3i"]
-[ext_resource type="PackedScene" uid="uid://dqhwxyhwaj3fj" path="res://assets/models/environment/patch-grass-foliage.glb" id="5_av1sc"]
-[ext_resource type="PackedScene" uid="uid://c7x5bpd7jldo5" path="res://assets/models/environment/patch-sand-foliage.glb" id="6_wm6bk"]
-[ext_resource type="PackedScene" uid="uid://bi5s1qftag4dg" path="res://assets/models/environment/patch-sand.glb" id="7_gyslt"]
-[ext_resource type="PackedScene" uid="uid://d1sx2dcf55wh7" path="res://assets/models/environment/patch-grass.glb" id="8_n4q35"]
-[ext_resource type="PackedScene" uid="uid://b7fxjpi6im04c" path="res://assets/models/environment/rocks-a.glb" id="9_8mewu"]
-[ext_resource type="PackedScene" uid="uid://bg4pprr7kc8cv" path="res://assets/models/environment/rocks-b.glb" id="10_wkrod"]
-[ext_resource type="PackedScene" uid="uid://dw0invce8b6mr" path="res://assets/models/environment/rocks-c.glb" id="11_8rx4s"]
-[ext_resource type="PackedScene" uid="uid://cb6eyx677b7dg" path="res://assets/models/building/platform-planks.glb" id="12_sc4h6"]
-[ext_resource type="PackedScene" uid="uid://cgkl28kckrj55" path="res://assets/models/building/structure-platform-dock.glb" id="13_abcix"]
-[ext_resource type="PackedScene" uid="uid://cibtb1h3qtsu0" path="res://assets/models/building/structure-platform.glb" id="14_6masd"]
-[ext_resource type="PackedScene" uid="uid://qkude71s1yle" path="res://assets/models/building/structure-roof.glb" id="15_ronxh"]
-[ext_resource type="PackedScene" uid="uid://em5k2r6a4jqd" path="res://assets/models/environment/palm-bend.glb" id="16_skxrl"]
-[ext_resource type="PackedScene" uid="uid://b31v6qt0oivca" path="res://assets/models/environment/palm-detailed-bend.glb" id="17_ir71c"]
-[ext_resource type="PackedScene" uid="uid://cwtkkc8qecxaq" path="res://assets/models/props/barrel.glb" id="18_3fddj"]
-[ext_resource type="PackedScene" uid="uid://tyvsewm28lq8" path="res://assets/models/props/chest.glb" id="19_vci68"]
-[ext_resource type="PackedScene" uid="uid://c5mugpqp71bjp" path="res://assets/models/props/crate-bottles.glb" id="20_cldjs"]
-[ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="20_kkweh"]
-[ext_resource type="PackedScene" uid="uid://ci0gdvyih3x18" path="res://assets/models/props/tool-shovel.glb" id="21_fb370"]
-[ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="22_fpp4o"]
-[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="24_80rpt"]
+[ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_1db28"]
+[ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_6a0f8"]
+[ext_resource type="Texture2D" uid="uid://bon46hdxykqd6" path="res://assets/textures/water_texture.jpg" id="3_eexu5"]
+[ext_resource type="PackedScene" uid="uid://dqhwxyhwaj3fj" path="res://assets/models/environment/patch-grass-foliage.glb" id="4_ftc4g"]
+[ext_resource type="PackedScene" uid="uid://c7x5bpd7jldo5" path="res://assets/models/environment/patch-sand-foliage.glb" id="5_scsth"]
+[ext_resource type="PackedScene" uid="uid://bi5s1qftag4dg" path="res://assets/models/environment/patch-sand.glb" id="6_0gfov"]
+[ext_resource type="PackedScene" uid="uid://d1sx2dcf55wh7" path="res://assets/models/environment/patch-grass.glb" id="7_ewojc"]
+[ext_resource type="PackedScene" uid="uid://b7fxjpi6im04c" path="res://assets/models/environment/rocks-a.glb" id="8_vsve1"]
+[ext_resource type="PackedScene" uid="uid://bg4pprr7kc8cv" path="res://assets/models/environment/rocks-b.glb" id="9_rb8we"]
+[ext_resource type="PackedScene" uid="uid://dw0invce8b6mr" path="res://assets/models/environment/rocks-c.glb" id="10_v3ugl"]
+[ext_resource type="PackedScene" uid="uid://cb6eyx677b7dg" path="res://assets/models/building/platform-planks.glb" id="11_8cnv0"]
+[ext_resource type="PackedScene" uid="uid://cgkl28kckrj55" path="res://assets/models/building/structure-platform-dock.glb" id="12_le55m"]
+[ext_resource type="PackedScene" uid="uid://cibtb1h3qtsu0" path="res://assets/models/building/structure-platform.glb" id="13_lu4c8"]
+[ext_resource type="PackedScene" uid="uid://qkude71s1yle" path="res://assets/models/building/structure-roof.glb" id="14_p22iv"]
+[ext_resource type="PackedScene" uid="uid://em5k2r6a4jqd" path="res://assets/models/environment/palm-bend.glb" id="15_liv1f"]
+[ext_resource type="PackedScene" uid="uid://b31v6qt0oivca" path="res://assets/models/environment/palm-detailed-bend.glb" id="16_la8m8"]
+[ext_resource type="PackedScene" uid="uid://cwtkkc8qecxaq" path="res://assets/models/props/barrel.glb" id="17_pg01n"]
+[ext_resource type="PackedScene" uid="uid://tyvsewm28lq8" path="res://assets/models/props/chest.glb" id="18_osbgc"]
+[ext_resource type="PackedScene" uid="uid://c5mugpqp71bjp" path="res://assets/models/props/crate-bottles.glb" id="19_2p0md"]
+[ext_resource type="PackedScene" uid="uid://ci0gdvyih3x18" path="res://assets/models/props/tool-shovel.glb" id="20_8yvvk"]
+[ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="21_gyx25"]
+[ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="22_qhq3n"]
+[ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="23_jqhwf"]
+[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="24_2aq3f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlluh"]
 sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
@@ -55,7 +55,7 @@ adjustment_enabled = true
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b0bkq"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("3_7rgo8")
+shader = ExtResource("2_6a0f8")
 shader_parameter/albedo = Color(0.2366, 0.595747, 0.91, 1)
 shader_parameter/scroll_speed1 = Vector2(0.02, 0)
 shader_parameter/scroll_speed2 = Vector2(-0.008, 0)
@@ -68,8 +68,8 @@ shader_parameter/pixelation_level = 256
 shader_parameter/FoamSize = 0.5
 shader_parameter/WaterOpacity = 1.0
 shader_parameter/FoamGlowIntensity = 0.3
-shader_parameter/water_texture1 = ExtResource("4_oxt3i")
-shader_parameter/water_texture2 = ExtResource("4_oxt3i")
+shader_parameter/water_texture1 = ExtResource("3_eexu5")
+shader_parameter/water_texture2 = ExtResource("3_eexu5")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_jkt0a")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_unwso"]
@@ -89,7 +89,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.481754, -0.0763752, 0.872972, 0, 0.996195, 0.0871557, -0.876307, 0.0419876, -0.47992, 12, 6.5, -6)
-script = ExtResource("1_f5kv5")
+script = ExtResource("1_1db28")
 
 [node name="Environment" type="Node3D" parent="."]
 transform = Transform3D(0.999996, 0, -0.00279266, 0, 1, 0, 0.00279266, 0, 0.999996, -0.436213, 0, 0.813159)
@@ -123,72 +123,72 @@ transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 
 [node name="Ground" type="Node3D" parent="Environment/Land"]
 transform = Transform3D(0.776299, 0, 0.630364, 0, 1, 0, -0.630364, 0, 0.776299, -2.52489, 0, -9.85879)
 
-[node name="patch-grass-foliage2" parent="Environment/Land/Ground" instance=ExtResource("5_av1sc")]
+[node name="patch-grass-foliage2" parent="Environment/Land/Ground" instance=ExtResource("4_ftc4g")]
 transform = Transform3D(1.72643, 0, 2.45346, 0, 3, 0, -2.45346, 0, 1.72643, -22.0821, 0.85, 8.46462)
 
-[node name="patch-sand-foliage2" parent="Environment/Land/Ground" instance=ExtResource("6_wm6bk")]
+[node name="patch-sand-foliage2" parent="Environment/Land/Ground" instance=ExtResource("5_scsth")]
 transform = Transform3D(1.33792, 0, 1.48659, 0, 2, 0, -1.48659, 0, 1.33792, -11.8716, 0.85, 0.334193)
 
-[node name="patch-sand2" parent="Environment/Land/Ground" instance=ExtResource("7_gyslt")]
+[node name="patch-sand2" parent="Environment/Land/Ground" instance=ExtResource("6_0gfov")]
 transform = Transform3D(-0.835925, 0, -1.81693, 0, 2, 0, 1.81693, 0, -0.835925, -14.5388, 0.726367, 6.60557)
 
-[node name="patch-grass2" parent="Environment/Land/Ground" instance=ExtResource("8_n4q35")]
+[node name="patch-grass2" parent="Environment/Land/Ground" instance=ExtResource("7_ewojc")]
 transform = Transform3D(2.25924, 0, 1.97378, 0, 3, 0, -1.97378, 0, 2.25924, -21.2764, 0.964223, -2.20388)
 
-[node name="rocks-a2" parent="Environment/Land/Ground" instance=ExtResource("9_8mewu")]
+[node name="rocks-a2" parent="Environment/Land/Ground" instance=ExtResource("8_vsve1")]
 transform = Transform3D(2.24649, 0, 1.98829, 0, 3, 0, -1.98829, 0, 2.24649, -18.2502, 0.85, -9.51886)
 
-[node name="rocks-b2" parent="Environment/Land/Ground" instance=ExtResource("10_wkrod")]
+[node name="rocks-b2" parent="Environment/Land/Ground" instance=ExtResource("9_rb8we")]
 transform = Transform3D(-1.60651, 0, -2.5336, 0, 3, 0, 2.5336, 0, -1.60651, -30.8753, 0.85, 12.3979)
 
-[node name="rocks-c2" parent="Environment/Land/Ground" instance=ExtResource("11_8rx4s")]
+[node name="rocks-c2" parent="Environment/Land/Ground" instance=ExtResource("10_v3ugl")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -30.1767, 0.85, -0.632948)
 
 [node name="Building" type="Node3D" parent="Environment/Land"]
 
-[node name="platform-planks2" parent="Environment/Land/Building" instance=ExtResource("12_sc4h6")]
+[node name="platform-planks2" parent="Environment/Land/Building" instance=ExtResource("11_8cnv0")]
 transform = Transform3D(0.636105, 0, 0.771602, 0, 1, 0, -0.771602, 0, 0.636105, -13.6459, 1.57673, 12.045)
 
-[node name="structure-platform-dock2" parent="Environment/Land/Building" instance=ExtResource("13_abcix")]
+[node name="structure-platform-dock2" parent="Environment/Land/Building" instance=ExtResource("12_le55m")]
 transform = Transform3D(0.987212, 0, 0.159416, 0, 1, 0, -0.159416, 0, 0.987212, 0.951306, 0.661002, 4.20392)
 
-[node name="structure-platform-dock3" parent="Environment/Land/Building" instance=ExtResource("13_abcix")]
+[node name="structure-platform-dock3" parent="Environment/Land/Building" instance=ExtResource("12_le55m")]
 transform = Transform3D(0.987212, 0, 0.159416, 0, 1, 0, -0.159416, 0, 0.987212, -4.12327, 0.661002, 5.04292)
 
-[node name="structure-platform2" parent="Environment/Land/Building" instance=ExtResource("14_6masd")]
+[node name="structure-platform2" parent="Environment/Land/Building" instance=ExtResource("13_lu4c8")]
 transform = Transform3D(0.987203, 0, 0.159468, 0, 1, 0, -0.159468, 0, 0.987203, -1.56991, 0.62694, 4.62135)
 
-[node name="structure-roof2" parent="Environment/Land/Building" instance=ExtResource("15_ronxh")]
+[node name="structure-roof2" parent="Environment/Land/Building" instance=ExtResource("14_p22iv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7798, 1.61585, 4.43758)
 
 [node name="Folliage" type="Node3D" parent="Environment/Land"]
 
-[node name="palm-bend2" parent="Environment/Land/Folliage" instance=ExtResource("16_skxrl")]
+[node name="palm-bend2" parent="Environment/Land/Folliage" instance=ExtResource("15_liv1f")]
 transform = Transform3D(-0.330481, 0, 0.943812, 0, 1, 0, -0.943812, 0, -0.330481, -9.66849, 1.09253, 0.915947)
 
-[node name="palm-detailed-bend2" parent="Environment/Land/Folliage" instance=ExtResource("17_ir71c")]
+[node name="palm-detailed-bend2" parent="Environment/Land/Folliage" instance=ExtResource("16_la8m8")]
 transform = Transform3D(-0.339198, 0, -0.940715, 0, 1, 0, 0.940715, 0, -0.339198, -11.6675, 1.09253, -5.1024)
 
-[node name="palm-detailed-bend3" parent="Environment/Land/Folliage" instance=ExtResource("17_ir71c")]
+[node name="palm-detailed-bend3" parent="Environment/Land/Folliage" instance=ExtResource("16_la8m8")]
 transform = Transform3D(-0.762465, 0, -0.647029, 0, 1, 0, 0.647029, 0, -0.762465, -15.6461, 1.38471, 8.33035)
 
 [node name="Props" type="Node3D" parent="Environment/Land"]
 
-[node name="barrel2" parent="Environment/Land/Props" instance=ExtResource("18_3fddj")]
+[node name="barrel2" parent="Environment/Land/Props" instance=ExtResource("17_pg01n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2542, 1.58692, 10.5492)
 
-[node name="chest2" parent="Environment/Land/Props" instance=ExtResource("19_vci68")]
+[node name="chest2" parent="Environment/Land/Props" instance=ExtResource("18_osbgc")]
 transform = Transform3D(-0.534352, 0, 0.845262, 0, 1, 0, -0.845262, 0, -0.534352, -4.672, 1.157, 8.019)
 
-[node name="crate-bottles2" parent="Environment/Land/Props" instance=ExtResource("20_cldjs")]
+[node name="crate-bottles2" parent="Environment/Land/Props" instance=ExtResource("19_2p0md")]
 transform = Transform3D(-0.00293215, 0, -0.699994, 0, 0.7, 0, 0.699994, 0, -0.00293215, -0.779225, 1.55678, 5.29628)
 
-[node name="tool-shovel2" parent="Environment/Land/Props" instance=ExtResource("21_fb370")]
+[node name="tool-shovel2" parent="Environment/Land/Props" instance=ExtResource("20_8yvvk")]
 transform = Transform3D(-0.422717, -0.150071, 0.537391, 0.05171, 0.660766, 0.2252, -0.555551, 0.175692, -0.387938, -14.4532, 1.61268, 9.86551)
 
-[node name="Player" parent="Environment" instance=ExtResource("20_kkweh")]
+[node name="Player" parent="Environment" instance=ExtResource("21_gyx25")]
 transform = Transform3D(0.999996, 0, 0.00279266, 0, 1, 0, -0.00279266, 0, 0.999996, 0.142, 0, -1)
-script = ExtResource("1_jpwea")
+script = ExtResource("22_qhq3n")
 
 [node name="Markers" type="Node3D" parent="."]
 
@@ -205,7 +205,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("22_fpp4o")
+script = ExtResource("23_jqhwf")
 
 [node name="Main_menu" type="Control" parent="Menus"]
 layout_mode = 1
@@ -228,19 +228,19 @@ offset_right = 112.0
 offset_bottom = 247.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("24_80rpt")
+theme = ExtResource("24_2aq3f")
 alignment = 1
 
 [node name="Start_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = ExtResource("24_80rpt")
+theme = ExtResource("24_2aq3f")
 text = "Start game"
 
 [node name="Boathouse_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = ExtResource("24_80rpt")
+theme = ExtResource("24_2aq3f")
 text = "Boathouse"
 
 [node name="Options_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
@@ -251,7 +251,7 @@ text = "Options"
 [node name="Exit_button" type="Button" parent="Menus/Main_menu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("24_80rpt")
+theme = ExtResource("24_2aq3f")
 text = "Exit"
 
 [node name="Boathouse_menu" type="Control" parent="Menus"]
@@ -276,7 +276,7 @@ offset_right = -79.0
 offset_bottom = 287.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("24_80rpt")
+theme = ExtResource("24_2aq3f")
 current_tab = 0
 
 [node name="Sail" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
@@ -307,7 +307,7 @@ offset_right = 44.0
 offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("24_80rpt")
+theme = ExtResource("24_2aq3f")
 text = "Back"
 
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Start_button" to="Menus" method="_on_start_pressed"]

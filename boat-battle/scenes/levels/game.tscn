@@ -1,0 +1,388 @@
+[gd_scene load_steps=75 format=3 uid="uid://c0wnepni2pp05"]
+
+[ext_resource type="Script" path="res://scripts/camera_movement.gd" id="1_p3lqc"]
+[ext_resource type="PackedScene" uid="uid://c26pojbwbk3kt" path="res://assets/models/environment/grass-patch.glb" id="2_c20gh"]
+[ext_resource type="PackedScene" uid="uid://d33kvrkqtxhhh" path="res://assets/models/environment/grass.glb" id="3_hfv6i"]
+[ext_resource type="PackedScene" uid="uid://cxj6pm8onqfx8" path="res://assets/models/environment/hole.glb" id="4_v0w6n"]
+[ext_resource type="PackedScene" uid="uid://em5k2r6a4jqd" path="res://assets/models/environment/palm-bend.glb" id="5_i0ppo"]
+[ext_resource type="PackedScene" uid="uid://b31v6qt0oivca" path="res://assets/models/environment/palm-detailed-bend.glb" id="6_u6dmx"]
+[ext_resource type="PackedScene" uid="uid://w7xgapvc6dbl" path="res://assets/models/environment/palm-detailed-straight.glb" id="7_huluo"]
+[ext_resource type="PackedScene" uid="uid://d1sx2dcf55wh7" path="res://assets/models/environment/patch-grass.glb" id="8_piqqq"]
+[ext_resource type="PackedScene" uid="uid://c7x5bpd7jldo5" path="res://assets/models/environment/patch-sand-foliage.glb" id="9_0egg1"]
+[ext_resource type="PackedScene" uid="uid://bi5s1qftag4dg" path="res://assets/models/environment/patch-sand.glb" id="10_spqda"]
+[ext_resource type="PackedScene" uid="uid://b7fxjpi6im04c" path="res://assets/models/environment/rocks-a.glb" id="11_uo4t2"]
+[ext_resource type="PackedScene" uid="uid://bg4pprr7kc8cv" path="res://assets/models/environment/rocks-b.glb" id="12_d0wia"]
+[ext_resource type="PackedScene" uid="uid://dw0invce8b6mr" path="res://assets/models/environment/rocks-c.glb" id="13_i37mf"]
+[ext_resource type="PackedScene" uid="uid://btxh4d7xmhuyc" path="res://assets/models/environment/ship-wreck.glb" id="14_b0saa"]
+[ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="15_gij1i"]
+[ext_resource type="PackedScene" uid="uid://b3g4u7r1nwbtg" path="res://scenes/weapon_canon.tscn" id="16_50u7j"]
+[ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="18_lt0cd"]
+[ext_resource type="PackedScene" uid="uid://dp5lyuvq1kbpa" path="res://scenes/ocean.tscn" id="19_ohd0w"]
+[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/pirate_medium.tscn" id="20_ydigl"]
+[ext_resource type="PackedScene" uid="uid://bdblupqnrk56a" path="res://assets/models/ships_player/boat-row-large.glb" id="21_pm3pf"]
+[ext_resource type="PackedScene" uid="uid://bome4c52dlklu" path="res://assets/models/ships_player/boat-row-small.glb" id="22_qk0b5"]
+[ext_resource type="PackedScene" uid="uid://cv8s55v6g3m84" path="res://assets/models/ships_player/ship-small.glb" id="23_7pdv5"]
+[ext_resource type="PackedScene" uid="uid://b4c24ieg1rhms" path="res://assets/models/ships_player/ship-medium.glb" id="24_wb2h6"]
+[ext_resource type="PackedScene" uid="uid://boxjxds7gqpxb" path="res://assets/models/ships_player/ship-large.glb" id="25_rqkp0"]
+[ext_resource type="PackedScene" uid="uid://dfc81wp1py788" path="res://assets/models/ships_enemy/ship-pirate-small.glb" id="26_c5bbh"]
+[ext_resource type="PackedScene" uid="uid://cd073tynvguu" path="res://assets/models/ships_enemy/ship-pirate-medium.glb" id="27_u5r4l"]
+[ext_resource type="PackedScene" uid="uid://bd1ta6850r4ql" path="res://assets/models/ships_enemy/ship-pirate-large.glb" id="28_jqmvx"]
+[ext_resource type="PackedScene" uid="uid://c0w2a1arluley" path="res://assets/models/ships_enemy/ship-ghost.glb" id="29_ds456"]
+[ext_resource type="PackedScene" uid="uid://cwtkkc8qecxaq" path="res://assets/models/props/barrel.glb" id="30_q7ltt"]
+[ext_resource type="PackedScene" uid="uid://dj14hy4nl0rv4" path="res://assets/models/props/bottle-large.glb" id="31_3skq4"]
+[ext_resource type="PackedScene" uid="uid://djvb3kl054mtw" path="res://assets/models/props/bottle.glb" id="32_2f53y"]
+[ext_resource type="PackedScene" uid="uid://tyvsewm28lq8" path="res://assets/models/props/chest.glb" id="33_4busm"]
+[ext_resource type="PackedScene" uid="uid://c5mugpqp71bjp" path="res://assets/models/props/crate-bottles.glb" id="34_scufl"]
+[ext_resource type="PackedScene" uid="uid://crchu7b3p7lwk" path="res://assets/models/props/crate.glb" id="35_aoefe"]
+[ext_resource type="PackedScene" uid="uid://buh6336b62nuf" path="res://assets/models/props/flag-high-pennant.glb" id="36_3a7qv"]
+[ext_resource type="PackedScene" uid="uid://bexv62aferw1s" path="res://assets/models/props/flag-high.glb" id="37_0l3ye"]
+[ext_resource type="PackedScene" uid="uid://d3cxohvo3t4sl" path="res://assets/models/props/flag-pennant.glb" id="38_yqob6"]
+[ext_resource type="PackedScene" uid="uid://d26kd0yv6x0kx" path="res://assets/models/props/flag-pirate-high-pennant.glb" id="39_35gvp"]
+[ext_resource type="PackedScene" uid="uid://bbhgkvlp8u2by" path="res://assets/models/props/flag-pirate-high.glb" id="40_pyb7y"]
+[ext_resource type="PackedScene" uid="uid://drus3spdoelm7" path="res://assets/models/props/flag-pirate-pennant.glb" id="41_gg1ec"]
+[ext_resource type="PackedScene" uid="uid://mh0yrivnq1ay" path="res://assets/models/props/flag-pirate.glb" id="42_q3s5x"]
+[ext_resource type="PackedScene" uid="uid://b4vx5vmdhvky5" path="res://assets/models/props/flag.glb" id="43_hyfml"]
+[ext_resource type="PackedScene" uid="uid://jd0siolufdme" path="res://assets/models/props/tool-paddle.glb" id="44_mpnqb"]
+[ext_resource type="PackedScene" uid="uid://ci0gdvyih3x18" path="res://assets/models/props/tool-shovel.glb" id="45_17b83"]
+[ext_resource type="PackedScene" uid="uid://d1dtagnjbygjv" path="res://assets/models/environment/grass-plant.glb" id="46_rl1qw"]
+[ext_resource type="PackedScene" uid="uid://84xu5ooj7st8" path="res://assets/models/environment/palm-straight.glb" id="47_o7m3f"]
+[ext_resource type="PackedScene" uid="uid://dqhwxyhwaj3fj" path="res://assets/models/environment/patch-grass-foliage.glb" id="48_jnyx4"]
+[ext_resource type="PackedScene" uid="uid://qdd12serptu6" path="res://assets/models/environment/rocks-sand-a.glb" id="49_7q3bx"]
+[ext_resource type="PackedScene" uid="uid://bp8hsgbtqdnvo" path="res://assets/models/environment/rocks-sand-b.glb" id="50_d2rca"]
+[ext_resource type="PackedScene" uid="uid://bde5djq6hrgvj" path="res://assets/models/environment/rocks-sand-c.glb" id="51_jlpaf"]
+[ext_resource type="PackedScene" uid="uid://cb6eyx677b7dg" path="res://assets/models/building/platform-planks.glb" id="52_mk4we"]
+[ext_resource type="PackedScene" uid="uid://bodg1kggxdwx0" path="res://assets/models/building/platform.glb" id="53_wb1pa"]
+[ext_resource type="PackedScene" uid="uid://ci5h3a3ap14pw" path="res://assets/models/building/structure-fence-sides.glb" id="54_25kie"]
+[ext_resource type="PackedScene" uid="uid://wq4vy80b5pk3" path="res://assets/models/building/structure-fence.glb" id="55_euy3c"]
+[ext_resource type="PackedScene" uid="uid://dgxxl5b1r7vcs" path="res://assets/models/building/structure-platform-dock-small.glb" id="56_trj52"]
+[ext_resource type="PackedScene" uid="uid://cgkl28kckrj55" path="res://assets/models/building/structure-platform-dock.glb" id="57_6g08v"]
+[ext_resource type="PackedScene" uid="uid://dbwk407xkn00w" path="res://assets/models/building/structure-platform-small.glb" id="58_oyysy"]
+[ext_resource type="PackedScene" uid="uid://cibtb1h3qtsu0" path="res://assets/models/building/structure-platform.glb" id="59_pysc3"]
+[ext_resource type="PackedScene" uid="uid://qkude71s1yle" path="res://assets/models/building/structure-roof.glb" id="60_dq0v4"]
+[ext_resource type="PackedScene" uid="uid://cg2f7ob8gj2ei" path="res://assets/models/building/structure.glb" id="61_6m783"]
+[ext_resource type="PackedScene" uid="uid://xsyllcbhanhf" path="res://assets/models/building/tower-base-door.glb" id="62_mdu4n"]
+[ext_resource type="PackedScene" uid="uid://bostkkqq2omai" path="res://assets/models/building/tower-base.glb" id="63_jdsln"]
+[ext_resource type="PackedScene" uid="uid://ctseq7jp2smv2" path="res://assets/models/building/tower-complete-large.glb" id="64_1oexc"]
+[ext_resource type="PackedScene" uid="uid://bxav3b37le4hf" path="res://assets/models/building/tower-complete-small.glb" id="65_bkmcj"]
+[ext_resource type="PackedScene" uid="uid://ccyk5o8ith2eu" path="res://assets/models/building/tower-middle-windows.glb" id="66_kicwh"]
+[ext_resource type="PackedScene" uid="uid://dtttsgaytwc6i" path="res://assets/models/building/tower-middle.glb" id="67_we77v"]
+[ext_resource type="PackedScene" uid="uid://bdku2g8y0f880" path="res://assets/models/building/tower-roof.glb" id="68_73umr"]
+[ext_resource type="PackedScene" uid="uid://7mg2djqkyw5n" path="res://assets/models/building/tower-top.glb" id="69_tosst"]
+[ext_resource type="PackedScene" uid="uid://jt6te1qlb71e" path="res://assets/models/building/tower-watch.glb" id="70_6bsc8"]
+[ext_resource type="PackedScene" uid="uid://5nwty3u5t10l" path="res://scenes/ui/health_bar.tscn" id="71_w6hix"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bn25v"]
+sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
+sky_horizon_color = Color(0.928497, 0.845944, 0.59001, 1)
+sky_curve = 1.0815
+ground_bottom_color = Color(0.298039, 0.603922, 1, 1)
+ground_horizon_color = Color(0.298039, 0.603922, 1, 1)
+sun_angle_max = 0.0
+sun_curve = 1.06464
+
+[sub_resource type="Sky" id="Sky_5vt1a"]
+sky_material = SubResource("ProceduralSkyMaterial_bn25v")
+
+[sub_resource type="Environment" id="Environment_b0who"]
+background_mode = 2
+sky = SubResource("Sky_5vt1a")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.298512, 0.601815, 1, 1)
+fog_sun_scatter = 1.0
+fog_density = 1.0
+fog_sky_affect = 0.5
+fog_depth_begin = 0.0
+fog_depth_end = 500.0
+adjustment_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8kh8v"]
+size = Vector3(15.9331, 2.06131, 15.4117)
+
+[node name="Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_b0who")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0.612373, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 12)
+fov = 80.0
+script = ExtResource("1_p3lqc")
+
+[node name="Island" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0736, 0.72, -24.4831)
+
+[node name="grass-patch2" parent="Island" instance=ExtResource("2_c20gh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14249, 0.620069, -20.6501)
+
+[node name="grass2" parent="Island" instance=ExtResource("3_hfv6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66173, 0.580957, -21.7531)
+
+[node name="hole2" parent="Island" instance=ExtResource("4_v0w6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61241, 0.249054, -20.038)
+
+[node name="palm-bend2" parent="Island" instance=ExtResource("5_i0ppo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.53802, 0.431065, -23.1466)
+
+[node name="palm-detailed-bend2" parent="Island" instance=ExtResource("6_u6dmx")]
+transform = Transform3D(-0.191734, 0, 0.981447, 0, 1, 0, -0.981447, 0, -0.191734, 3.86904, 0.222725, -21.0646)
+
+[node name="palm-detailed-straight2" parent="Island" instance=ExtResource("7_huluo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.94934, -0.393614, -19.3264)
+
+[node name="patch-grass2" parent="Island" instance=ExtResource("8_piqqq")]
+transform = Transform3D(0.684102, 0, -0.729387, 0, 1, 0, 0.729387, 0, 0.684102, 2.90814, 0.371163, -21.9234)
+
+[node name="patch-grass3" parent="Island" instance=ExtResource("8_piqqq")]
+transform = Transform3D(-0.742023, 0, -0.670375, 0, 1, 0, 0.670375, 0, -0.742023, 1.44445, 0.371163, -21.1509)
+
+[node name="patch-sand-foliage2" parent="Island" instance=ExtResource("9_0egg1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 1.59062, 0, -21.6142)
+
+[node name="patch-sand2" parent="Island" instance=ExtResource("10_spqda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34826, 0, -16.8703)
+
+[node name="patch-sand3" parent="Island" instance=ExtResource("10_spqda")]
+transform = Transform3D(-0.998874, 0, 0.0474377, 0, 1, 0, -0.0474377, 0, -0.998874, -3.0872, 0, -19.3493)
+
+[node name="rocks-a2" parent="Island" instance=ExtResource("11_uo4t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.340573, 0, -25.5337)
+
+[node name="rocks-b2" parent="Island" instance=ExtResource("12_d0wia")]
+transform = Transform3D(-0.311058, 0, -0.950391, 0, 1, 0, 0.950391, 0, -0.311058, -4.22153, 0, -23.9764)
+
+[node name="rocks-c2" parent="Island" instance=ExtResource("13_i37mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35164, 0, -17.5329)
+
+[node name="ship-wreck2" parent="Island" instance=ExtResource("14_b0saa")]
+transform = Transform3D(-0.457477, 0.162869, -0.874179, 0.16672, 0.98136, 0.0955897, 0.873453, -0.102013, -0.476103, 3.06839, -0.850654, -26.5042)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Island"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03931, -0.363329, -21.6055)
+shape = SubResource("BoxShape3D_8kh8v")
+
+[node name="Player" parent="." instance=ExtResource("15_gij1i")]
+
+[node name="WeaponCanon" parent="Player" instance=ExtResource("16_50u7j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90191, 0.527998)
+
+[node name="Ocean" type="Node3D" parent="."]
+script = ExtResource("18_lt0cd")
+ocean_scene = ExtResource("19_ohd0w")
+
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="pirate_medium" parent="Enemies" instance=ExtResource("20_ydigl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6369, 0, -103.312)
+
+[node name="Models" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366, 0.9, 60.095)
+
+[node name="Models for player" type="Node3D" parent="Models"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -20.0052)
+
+[node name="boat-row-large2" parent="Models/Models for player" instance=ExtResource("21_pm3pf")]
+
+[node name="boat-row-small2" parent="Models/Models for player" instance=ExtResource("22_qk0b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26755, 0, 0)
+
+[node name="ship-small2" parent="Models/Models for player" instance=ExtResource("23_7pdv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49642, 0, 0)
+
+[node name="ship-medium2" parent="Models/Models for player" instance=ExtResource("24_wb2h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1156, 0, 0)
+
+[node name="ship-large2" parent="Models/Models for player" instance=ExtResource("25_rqkp0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7216, 0, 0)
+
+[node name="Models for enemy" type="Node3D" parent="Models"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.25352, 0, -4.77615)
+
+[node name="ship-pirate-small2" parent="Models/Models for enemy" instance=ExtResource("26_c5bbh")]
+
+[node name="ship-pirate-medium2" parent="Models/Models for enemy" instance=ExtResource("27_u5r4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.41412, 0, 0)
+
+[node name="ship-pirate-large2" parent="Models/Models for enemy" instance=ExtResource("28_jqmvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2353, 0, 0)
+
+[node name="ship-ghost2" parent="Models/Models for enemy" instance=ExtResource("29_ds456")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7957, 0, 0)
+
+[node name="Props" type="Node3D" parent="Models"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.49874, 0, -21.894)
+
+[node name="barrel2" parent="Models/Props" instance=ExtResource("30_q7ltt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115, 0, -0.508423)
+
+[node name="bottle-large2" parent="Models/Props" instance=ExtResource("31_3skq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34651, 0, -0.508423)
+
+[node name="bottle2" parent="Models/Props" instance=ExtResource("32_2f53y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0397, 0, -0.508423)
+
+[node name="chest2" parent="Models/Props" instance=ExtResource("33_4busm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156308, 0, -2.32131)
+
+[node name="crate-bottles2" parent="Models/Props" instance=ExtResource("34_scufl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65958, 0, -2.32517)
+
+[node name="crate2" parent="Models/Props" instance=ExtResource("35_aoefe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07989, 0, -2.32775)
+
+[node name="flag-high-pennant2" parent="Models/Props" instance=ExtResource("36_3a7qv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.142967, 0, -4.22746)
+
+[node name="flag-high2" parent="Models/Props" instance=ExtResource("37_0l3ye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54198, 0, -4.24086)
+
+[node name="flag-pennant2" parent="Models/Props" instance=ExtResource("38_yqob6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.78291, 0, -4.23206)
+
+[node name="flag-pirate-high-pennant2" parent="Models/Props" instance=ExtResource("39_35gvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.176321, 0, -5.87467)
+
+[node name="flag-pirate-high2" parent="Models/Props" instance=ExtResource("40_pyb7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55062, 0, -5.89794)
+
+[node name="flag-pirate-pennant2" parent="Models/Props" instance=ExtResource("41_gg1ec")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79731, 0, -5.89742)
+
+[node name="flag-pirate2" parent="Models/Props" instance=ExtResource("42_q3s5x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.11564, 0, -5.8815)
+
+[node name="flag2" parent="Models/Props" instance=ExtResource("43_hyfml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.11546, 0, -4.27674)
+
+[node name="tool-paddle2" parent="Models/Props" instance=ExtResource("44_mpnqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79569, 0, -2.37319)
+
+[node name="tool-shovel2" parent="Models/Props" instance=ExtResource("45_17b83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.10917, 0, -2.38414)
+
+[node name="Environment" type="Node3D" parent="Models"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 16.6508, 0, 15.5403)
+
+[node name="grass-patch2" parent="Models/Environment" instance=ExtResource("2_c20gh")]
+
+[node name="grass-plant2" parent="Models/Environment" instance=ExtResource("46_rl1qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81332, 0, 0)
+
+[node name="grass2" parent="Models/Environment" instance=ExtResource("3_hfv6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.31, 0, 0)
+
+[node name="hole2" parent="Models/Environment" instance=ExtResource("4_v0w6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49862, 0, 0)
+
+[node name="palm-bend2" parent="Models/Environment" instance=ExtResource("5_i0ppo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.40638, 0, 0)
+
+[node name="palm-detailed-bend2" parent="Models/Environment" instance=ExtResource("6_u6dmx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4216, 0, 0)
+
+[node name="palm-detailed-straight2" parent="Models/Environment" instance=ExtResource("7_huluo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1542, 0, 0)
+
+[node name="palm-straight2" parent="Models/Environment" instance=ExtResource("47_o7m3f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.7941, 0, 0)
+
+[node name="patch-grass-foliage2" parent="Models/Environment" instance=ExtResource("48_jnyx4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.590302, 0, -4.48682)
+
+[node name="patch-grass2" parent="Models/Environment" instance=ExtResource("8_piqqq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.59509, 0, -4.45779)
+
+[node name="patch-sand-foliage2" parent="Models/Environment" instance=ExtResource("9_0egg1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.479546, 0, -10.666)
+
+[node name="patch-sand2" parent="Models/Environment" instance=ExtResource("10_spqda")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.15529, 0, -10.7)
+
+[node name="rocks-a2" parent="Models/Environment" instance=ExtResource("11_uo4t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.149, 0, -4.74718)
+
+[node name="rocks-b2" parent="Models/Environment" instance=ExtResource("12_d0wia")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7423, 0, -4.55881)
+
+[node name="rocks-c2" parent="Models/Environment" instance=ExtResource("13_i37mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3278, 0, -10.4363)
+
+[node name="rocks-sand-a2" parent="Models/Environment" instance=ExtResource("49_7q3bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.834959, 0, -17.9737)
+
+[node name="rocks-sand-b2" parent="Models/Environment" instance=ExtResource("50_d2rca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.85548, 0, -18.1055)
+
+[node name="rocks-sand-c2" parent="Models/Environment" instance=ExtResource("51_jlpaf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3487, 0, -18.2373)
+
+[node name="ship-wreck2" parent="Models/Environment" instance=ExtResource("14_b0saa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5118, 0, -19.5557)
+
+[node name="Buildings" type="Node3D" parent="Models"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.9974, 0, -6.75014)
+
+[node name="platform-planks2" parent="Models/Buildings" instance=ExtResource("52_mk4we")]
+
+[node name="platform2" parent="Models/Buildings" instance=ExtResource("53_wb1pa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.29362, 0, 0)
+
+[node name="structure-fence-sides2" parent="Models/Buildings" instance=ExtResource("54_25kie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.06748, 0, 0)
+
+[node name="structure-fence2" parent="Models/Buildings" instance=ExtResource("55_euy3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.836, 0, 0)
+
+[node name="structure-platform-dock-small2" parent="Models/Buildings" instance=ExtResource("56_trj52")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0808, 0, 0)
+
+[node name="structure-platform-dock2" parent="Models/Buildings" instance=ExtResource("57_6g08v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2367, 0, 0)
+
+[node name="structure-platform-small2" parent="Models/Buildings" instance=ExtResource("58_oyysy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3768, 0, 0)
+
+[node name="structure-platform2" parent="Models/Buildings" instance=ExtResource("59_pysc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.429, 0, 0)
+
+[node name="structure-roof2" parent="Models/Buildings" instance=ExtResource("60_dq0v4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.1656, 0, 0)
+
+[node name="structure2" parent="Models/Buildings" instance=ExtResource("61_6m783")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.775, 0, 0)
+
+[node name="tower-base-door2" parent="Models/Buildings" instance=ExtResource("62_mdu4n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.50469)
+
+[node name="tower-base2" parent="Models/Buildings" instance=ExtResource("63_jdsln")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.86773, 0, 4.57966)
+
+[node name="tower-complete-large2" parent="Models/Buildings" instance=ExtResource("64_1oexc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.51763, 0, 4.66189)
+
+[node name="tower-complete-small2" parent="Models/Buildings" instance=ExtResource("65_bkmcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5777, 0, 4.61093)
+
+[node name="tower-middle-windows2" parent="Models/Buildings" instance=ExtResource("66_kicwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4402, 0, 4.7781)
+
+[node name="tower-middle2" parent="Models/Buildings" instance=ExtResource("67_we77v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.3899, 0, 4.72788)
+
+[node name="tower-roof2" parent="Models/Buildings" instance=ExtResource("68_73umr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5436, 0, 4.7154)
+
+[node name="tower-top2" parent="Models/Buildings" instance=ExtResource("69_tosst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5112, 0, 4.74693)
+
+[node name="tower-watch2" parent="Models/Buildings" instance=ExtResource("70_6bsc8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4229, 0, 4.62317)
+
+[node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
+visible = false
+
+[connection signal="health_changed" from="Player" to="HealthBar" method="update_health"]

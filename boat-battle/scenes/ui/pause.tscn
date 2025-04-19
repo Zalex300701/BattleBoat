@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvrnry7a8guuy"]
 
-[ext_resource type="Script" path="res://scripts/pause.gd" id="1_qtsvp"]
-[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="2_tk4cx"]
+[ext_resource type="Script" path="res://scripts/pause.gd" id="1_tpboe"]
+[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="2_sakyn"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_qtsvp")
+script = ExtResource("1_tpboe")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_tk4cx")
+theme = ExtResource("2_sakyn")
 color = Color(1, 1, 1, 0.25)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -48,20 +48,20 @@ alignment = 1
 [node name="resume_button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 40)
 layout_mode = 2
-theme = ExtResource("2_tk4cx")
+theme = ExtResource("2_sakyn")
 text = "Resume"
 
 [node name="options_button" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("2_tk4cx")
+theme = ExtResource("2_sakyn")
 text = "Options"
 
 [node name="exit_button" type="Button" parent="MarginContainer/VBoxContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
-theme = ExtResource("2_tk4cx")
+theme = ExtResource("2_sakyn")
 text = "Exit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/resume_button" to="." method="_on_resume_button_pressed"]

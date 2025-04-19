@@ -1,8 +1,5 @@
 extends CharacterBody3D
 
-@export var cannonball_scene: PackedScene
-@export var explosion_scene: PackedScene
-
 # Player movement variables
 var max_forward_speed: float = 5.0
 var max_backward_speed: float = 2.0
@@ -28,11 +25,6 @@ var initial_rotation: Vector3
 var max_turn_tilt: float = 5.0
 var tilt_angle: float = 0.0
 var tilt_smoothness: float = 3.0
-
-# Shooting variables
-var can_shoot: bool = true
-var shoot_cooldown: float = 1.0
-var current_cooldown: float = 0.0
 
 # Health variables
 @export var max_health: float = 2.0
@@ -62,11 +54,6 @@ func _physics_process(delta):
 		handle_position_player(delta)
 		handle_rotation_player(delta)
 		apply_buoyancy(delta)
-		# Update shooting cooldown
-		if not can_shoot:
-			current_cooldown -= delta
-			if current_cooldown <= 0:
-				can_shoot = true
 
 func apply_buoyancy(delta):
 	# Vertical bobbing (apply as part of velocity)
@@ -79,14 +66,6 @@ func apply_buoyancy(delta):
 	
 	rotation_degrees.x = initial_rotation.x + roll
 	rotation_degrees.z = initial_rotation.z + pitch + tilt_angle
-	
-func _input(event: InputEvent):
-	# Shoot
-	if event is InputEventKey and event.pressed and event.keycode == KEY_SPACE and can_shoot:
-		shoot()
-		# Launch cooldown
-		can_shoot = false
-		current_cooldown = shoot_cooldown
 
 func handle_position_player(delta):
 	# Default speed when no input
@@ -129,52 +108,6 @@ func handle_rotation_player(delta):
 	# Apply roll tilt based on turn speed
 	var target_tilt = (current_turn_speed / max_turn_speed) * max_turn_tilt
 	tilt_angle = lerp(tilt_angle, target_tilt, delta * tilt_smoothness)
-
-func shoot():
-	if cannonball_scene:
-		# Get the cannon markers
-		var left_marker = $ship_small/left_cannon/left_cannonball_spawn
-		var right_marker = $ship_small/right_cannon/right_cannonball_spawn
-		
-		if left_marker and right_marker:
-			var left_cannonball = cannonball_scene.instantiate()
-			var right_cannonball = cannonball_scene.instantiate()
-			
-			get_parent().add_child(left_cannonball)
-			get_parent().add_child(right_cannonball)
-			
-			# Set position to marker
-			left_cannonball.global_transform.origin = left_marker.global_transform.origin
-			right_cannonball.global_transform.origin = right_marker.global_transform.origin
-			
-			# Set movement direction
-			var direction = -global_transform.basis.x.normalized()
-			var speed = 50
-			
-			if left_cannonball is Area3D:
-				left_cannonball.launch(-direction, speed)
-			if right_cannonball is Area3D:
-				right_cannonball.launch(direction, speed)
-			
-			# Load and instance the explosion scene
-			var left_explosion = explosion_scene.instantiate()
-			var right_explosion = explosion_scene.instantiate()
-			
-			# Set position of the effect
-			left_explosion.global_transform.origin = left_cannonball.global_transform.origin
-			right_explosion.global_transform.origin = right_cannonball.global_transform.origin
-			
-			# Set rotation of the effect (boat reference)
-			left_explosion.rotation = rotation
-			right_explosion.rotation = rotation + Vector3(0, deg_to_rad(180), 0)
-			
-			# Add it to the scene
-			get_parent().add_child(left_explosion)
-			get_parent().add_child(right_explosion)
-			
-			# Call the explosion's explode method
-			left_explosion.cannon_explosion()
-			right_explosion.cannon_explosion()
 
 func take_damage(amount: float):
 	current_health = clamp(current_health - amount, 0, max_health)
