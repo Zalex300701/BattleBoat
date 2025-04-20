@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwawhdbe4uy4j"
-path="res://.godot/imported/sail_brown.png-b6679f6c5c06ee4ac995021ed397e2a6.ctex"
+uid="uid://bshqnvfdy10c2"
+path="res://.godot/imported/ship_small_hull_brown.png-5de08f3b716fb8476b5ac416e9ec72fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/icons/sail_brown.png"
-dest_files=["res://.godot/imported/sail_brown.png-b6679f6c5c06ee4ac995021ed397e2a6.ctex"]
+source_file="res://assets/textures/icons/hull/ship_small_hull_brown.png"
+dest_files=["res://.godot/imported/ship_small_hull_brown.png-5de08f3b716fb8476b5ac416e9ec72fe.ctex"]
 
 [params]
 

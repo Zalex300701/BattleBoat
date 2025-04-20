@@ -4,10 +4,11 @@ extends Node
 @onready var camera = $"../Camera3D"
 
 func _ready() -> void:
-	# Charger le skin sauvegardé au démarrage (optionnel, si tu utilises un fichier)
-	#PlayerSettings.load_from_file()
-	# Appliquer le skin sauvegardé au joueur actuel
+	# Load skins from file
+	PlayerSettings.load_from_file()
+	# Load saved skins
 	apply_sail_skin(PlayerSettings.get_sail_skin())
+	apply_hull_skin(PlayerSettings.get_hull_skin())
 
 func _on_start_pressed():
 	if player and player.has_method("leave_and_start"):
@@ -65,11 +66,35 @@ func _on_sail_pink_pressed() -> void:
 func _on_sail_purple_pressed() -> void:
 	_on_sail_color_button_pressed("sail_purple")
 
+func _on_hull_brown_pressed() -> void:
+	_on_hull_color_button_pressed("ship_small_hull_brown")
+
+func _on_hull_black_pressed() -> void:
+	_on_hull_color_button_pressed("ship_small_hull_black")
+
+func _on_hull_red_pressed() -> void:
+	_on_hull_color_button_pressed("ship_small_hull_red")
+
+func _on_hull_green_pressed() -> void:
+	_on_hull_color_button_pressed("ship_small_hull_green")
+
+func _on_hull_blue_pressed() -> void:
+	_on_hull_color_button_pressed("ship_small_hull_blue")
+
+func _on_hull_pink_pressed() -> void:
+	_on_hull_color_button_pressed("ship_small_hull_pink")
+
 func _on_sail_color_button_pressed(sail_color: String) -> void:
 	# Sauvegarder le skin dans PlayerSettings
 	PlayerSettings.set_sail_skin(sail_color)
 	# Appliquer le skin
 	apply_sail_skin(sail_color)
+
+func _on_hull_color_button_pressed(hull_color: String) -> void:
+	# Sauvegarder le skin dans PlayerSettings
+	PlayerSettings.set_hull_skin(hull_color)
+	# Appliquer le skin
+	apply_hull_skin(hull_color)
 
 func apply_sail_skin(sail_color: String) -> void:
 	# Vérifier que le joueur existe
@@ -110,3 +135,34 @@ func apply_sail_skin(sail_color: String) -> void:
 	sail_instance.queue_free()
 	
 	print("Skin de la voile changé en %s" % sail_color)
+
+func apply_hull_skin(hull_color: String) -> void:
+	if not player:
+		print("Erreur : Joueur non trouvé")
+		return
+	
+	var hull = player.get_node("ship_small")
+	if not hull or not hull is MeshInstance3D:
+		print("Erreur : Coque non trouvée ou n'est pas une MeshInstance3D")
+		return
+	
+	var hull_resource = load("res://assets/models/skins/hull/%s.glb" % hull_color)
+	if not hull_resource:
+		print("Erreur : Impossible de charger %s.glb" % hull_color)
+		return
+	
+	var hull_instance = hull_resource.instantiate()
+	var hull_mesh = null
+	for child in hull_instance.get_children():
+		if child is MeshInstance3D:
+			hull_mesh = child
+			break
+	
+	if not hull_mesh:
+		print("Erreur : Aucun MeshInstance3D trouvé dans %s.glb" % hull_color)
+		return
+	
+	hull.mesh = hull_mesh.mesh
+	hull_instance.queue_free()
+	
+	print("Skin de la coque changé en %s" % hull_color)

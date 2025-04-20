@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bui5nuh5uaj4w"
-path="res://.godot/imported/sail_red.png-8803bad030889bc83b3b535defeb9fc7.ctex"
+uid="uid://cabr6osshngpe"
+path="res://.godot/imported/sail_purple.png-1d7a7584ba4c37647c53ea4c6740e5e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/icons/sail_red.png"
-dest_files=["res://.godot/imported/sail_red.png-8803bad030889bc83b3b535defeb9fc7.ctex"]
+source_file="res://assets/textures/icons/sail/sail_purple.png"
+dest_files=["res://.godot/imported/sail_purple.png-1d7a7584ba4c37647c53ea4c6740e5e0.ctex"]
 
 [params]
 

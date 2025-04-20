@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://d3i0vcna7waq5"]
+[gd_scene load_steps=20 format=4 uid="uid://d3i0vcna7waq5"]
 
-[ext_resource type="Script" path="res://scripts/player/player_movement.gd" id="1_7p18m"]
+[ext_resource type="Script" path="res://scripts/player/player_main.gd" id="1_7p18m"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qck00"]
 [ext_resource type="PackedScene" uid="uid://bvrnry7a8guuy" path="res://scenes/ui/pause.tscn" id="2_5uno3"]
+[ext_resource type="PackedScene" uid="uid://bccglomej840" path="res://scenes/weapon_canon.tscn" id="3_e22xx"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d1byq"]
 _surfaces = [{
@@ -313,6 +314,11 @@ skeleton = NodePath("")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13852, -0.633372)
 mesh = SubResource("ArrayMesh_06rfp")
 skeleton = NodePath("")
+
+[node name="Weapons" type="Node3D" parent="."]
+
+[node name="WeaponCanon" parent="Weapons" instance=ExtResource("3_e22xx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04613, 0.552111)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00210571, 1.64699, -0.256179)

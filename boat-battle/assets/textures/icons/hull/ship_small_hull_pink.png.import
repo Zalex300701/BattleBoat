@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doorwbp1nbwo1"
-path="res://.godot/imported/sail_pink.png-a417a23d2e0a4e5662ce7ec2c4f3b818.ctex"
+uid="uid://mgaqwqxpbbe3"
+path="res://.godot/imported/ship_small_hull_pink.png-c0c254409c4c093927a57b8c5a4927d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/icons/sail_pink.png"
-dest_files=["res://.godot/imported/sail_pink.png-a417a23d2e0a4e5662ce7ec2c4f3b818.ctex"]
+source_file="res://assets/textures/icons/hull/ship_small_hull_pink.png"
+dest_files=["res://.godot/imported/ship_small_hull_pink.png-c0c254409c4c093927a57b8c5a4927d7.ctex"]
 
 [params]
 

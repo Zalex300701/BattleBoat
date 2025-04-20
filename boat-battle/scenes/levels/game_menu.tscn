@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://lddt3byglos5"]
+[gd_scene load_steps=49 format=3 uid="uid://lddt3byglos5"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_jsddv"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_u3roj"]
@@ -25,17 +25,23 @@
 [ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="23_q2i8f"]
 [ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="24_jco2h"]
 [ext_resource type="Theme" uid="uid://bx6id4c70pdar" path="res://assets/container.tres" id="25_p18wk"]
-[ext_resource type="Texture2D" uid="uid://h7qj61vgn4qd" path="res://assets/textures/icons/sail_grey.png" id="26_v3lvl"]
-[ext_resource type="Texture2D" uid="uid://ba60dk3o0q4aq" path="res://assets/textures/icons/sail_black.png" id="27_1bcrn"]
-[ext_resource type="Texture2D" uid="uid://bf54fon2nc0xk" path="res://assets/textures/icons/sail_yellow.png" id="28_sy862"]
-[ext_resource type="Texture2D" uid="uid://hhcvc71eum3q" path="res://assets/textures/icons/sail_orange.png" id="29_dhvmb"]
-[ext_resource type="Texture2D" uid="uid://bui5nuh5uaj4w" path="res://assets/textures/icons/sail_red.png" id="30_2otyg"]
-[ext_resource type="Texture2D" uid="uid://5nmob6xsngy6" path="res://assets/textures/icons/sail_blue.png" id="31_vmmg6"]
-[ext_resource type="Texture2D" uid="uid://c2vmcv718grkg" path="res://assets/textures/icons/sail_green.png" id="32_lx2ec"]
-[ext_resource type="Texture2D" uid="uid://dwawhdbe4uy4j" path="res://assets/textures/icons/sail_brown.png" id="33_00r4f"]
-[ext_resource type="Texture2D" uid="uid://qr4dyu170mqp" path="res://assets/textures/icons/sail_beige.png" id="34_vjmwf"]
-[ext_resource type="Texture2D" uid="uid://doorwbp1nbwo1" path="res://assets/textures/icons/sail_pink.png" id="35_pl428"]
-[ext_resource type="Texture2D" uid="uid://cabr6osshngpe" path="res://assets/textures/icons/sail_purple.png" id="36_p5tv4"]
+[ext_resource type="Texture2D" uid="uid://h7qj61vgn4qd" path="res://assets/textures/icons/sail/sail_grey.png" id="26_v3lvl"]
+[ext_resource type="Texture2D" uid="uid://ba60dk3o0q4aq" path="res://assets/textures/icons/sail/sail_black.png" id="27_1bcrn"]
+[ext_resource type="Texture2D" uid="uid://bf54fon2nc0xk" path="res://assets/textures/icons/sail/sail_yellow.png" id="28_sy862"]
+[ext_resource type="Texture2D" uid="uid://hhcvc71eum3q" path="res://assets/textures/icons/sail/sail_orange.png" id="29_dhvmb"]
+[ext_resource type="Texture2D" uid="uid://bui5nuh5uaj4w" path="res://assets/textures/icons/sail/sail_red.png" id="30_2otyg"]
+[ext_resource type="Texture2D" uid="uid://5nmob6xsngy6" path="res://assets/textures/icons/sail/sail_blue.png" id="31_vmmg6"]
+[ext_resource type="Texture2D" uid="uid://c2vmcv718grkg" path="res://assets/textures/icons/sail/sail_green.png" id="32_lx2ec"]
+[ext_resource type="Texture2D" uid="uid://dwawhdbe4uy4j" path="res://assets/textures/icons/sail/sail_brown.png" id="33_00r4f"]
+[ext_resource type="Texture2D" uid="uid://qr4dyu170mqp" path="res://assets/textures/icons/sail/sail_beige.png" id="34_vjmwf"]
+[ext_resource type="Texture2D" uid="uid://doorwbp1nbwo1" path="res://assets/textures/icons/sail/sail_pink.png" id="35_pl428"]
+[ext_resource type="Texture2D" uid="uid://cabr6osshngpe" path="res://assets/textures/icons/sail/sail_purple.png" id="36_p5tv4"]
+[ext_resource type="Texture2D" uid="uid://bshqnvfdy10c2" path="res://assets/textures/icons/hull/ship_small_hull_brown.png" id="37_ky6c4"]
+[ext_resource type="Texture2D" uid="uid://f2almm48un4a" path="res://assets/textures/icons/hull/ship_small_hull_black.png" id="38_68147"]
+[ext_resource type="Texture2D" uid="uid://wwd1rd8lutg3" path="res://assets/textures/icons/hull/ship_small_hull_red.png" id="39_hbwy8"]
+[ext_resource type="Texture2D" uid="uid://c2px4hlnlyk1s" path="res://assets/textures/icons/hull/ship_small_hull_green.png" id="40_028lt"]
+[ext_resource type="Texture2D" uid="uid://bibtk0vbkcrio" path="res://assets/textures/icons/hull/ship_small_hull_blue.png" id="41_gh7r4"]
+[ext_resource type="Texture2D" uid="uid://mgaqwqxpbbe3" path="res://assets/textures/icons/hull/ship_small_hull_pink.png" id="42_bh6fp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlluh"]
 sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
@@ -62,9 +68,9 @@ fog_depth_begin = 0.0
 fog_depth_end = 300.0
 adjustment_enabled = true
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jkt0a"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4fpa8"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b0bkq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s1sju"]
 resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_u3roj")
@@ -82,10 +88,10 @@ shader_parameter/WaterOpacity = 1.0
 shader_parameter/FoamGlowIntensity = 0.3
 shader_parameter/water_texture1 = ExtResource("3_k00qw")
 shader_parameter/water_texture2 = ExtResource("3_k00qw")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_jkt0a")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_4fpa8")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_unwso"]
-material = SubResource("ShaderMaterial_b0bkq")
+[sub_resource type="PlaneMesh" id="PlaneMesh_xxm21"]
+material = SubResource("ShaderMaterial_s1sju")
 size = Vector2(128, 128)
 subdivide_width = 32
 subdivide_depth = 32
@@ -110,24 +116,79 @@ transform = Transform3D(0.999996, 0, -0.00279266, 0, 1, 0, 0.00279266, 0, 0.9999
 transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 0, 0, 0)
 
 [node name="Plane" type="MeshInstance3D" parent="Environment/Ocean"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("PlaneMesh_unwso")
-skeleton = NodePath("../..")
-
-[node name="Plane2" type="MeshInstance3D" parent="Environment/Ocean"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 1, -128)
-mesh = SubResource("PlaneMesh_unwso")
-skeleton = NodePath("../..")
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 0.877355, 1, 0.285933)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
 
 [node name="Plane3" type="MeshInstance3D" parent="Environment/Ocean"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -128)
-mesh = SubResource("PlaneMesh_unwso")
-skeleton = NodePath("../..")
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -21.7015, 1, -125.707)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane2" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 23.4562, 1, 126.279)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane7" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 126.87, 1, -22.2929)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane8" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 104.291, 1, -148.286)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane9" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 149.449, 1, 103.7)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
 
 [node name="Plane4" type="MeshInstance3D" parent="Environment/Ocean"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 1, 0)
-mesh = SubResource("PlaneMesh_unwso")
-skeleton = NodePath("../..")
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -125.115, 1, 22.8648)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane5" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -147.694, 1, -103.128)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane10" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -44.2804, 1, -251.7)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane11" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 81.7124, 1, -274.279)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane12" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -170.273, 1, -229.121)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane6" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -102.537, 1, 148.858)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane13" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 46.0351, 1, 252.272)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane14" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, 172.028, 1, 229.693)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
+
+[node name="Plane15" type="MeshInstance3D" parent="Environment/Ocean"]
+transform = Transform3D(0.176397, 0, -0.984319, 0, 1, 0, 0.984319, 0, 0.176397, -79.9577, 1, 274.85)
+mesh = SubResource("PlaneMesh_xxm21")
+skeleton = NodePath("../../..")
 
 [node name="Land" type="Node3D" parent="Environment"]
 transform = Transform3D(0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, 0.173648, 0, 0, 0)
@@ -390,10 +451,68 @@ visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
+[node name="HullGridContainer" type="GridContainer" parent="Menus/Boathouse_menu/Skins/Hull"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.0
+offset_top = -251.5
+offset_right = 185.0
+offset_bottom = 248.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 3
+
+[node name="Hull_brown" type="Button" parent="Menus/Boathouse_menu/Skins/Hull/HullGridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("25_p18wk")
+theme_override_icons/icon = ExtResource("37_ky6c4")
+
+[node name="Hull_black" type="Button" parent="Menus/Boathouse_menu/Skins/Hull/HullGridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("25_p18wk")
+theme_override_icons/icon = ExtResource("38_68147")
+
+[node name="Hull_red" type="Button" parent="Menus/Boathouse_menu/Skins/Hull/HullGridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("25_p18wk")
+theme_override_icons/icon = ExtResource("39_hbwy8")
+
+[node name="Hull_green" type="Button" parent="Menus/Boathouse_menu/Skins/Hull/HullGridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("25_p18wk")
+theme_override_icons/icon = ExtResource("40_028lt")
+
+[node name="Hull_blue" type="Button" parent="Menus/Boathouse_menu/Skins/Hull/HullGridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("25_p18wk")
+theme_override_icons/icon = ExtResource("41_gh7r4")
+
+[node name="Hull_pink" type="Button" parent="Menus/Boathouse_menu/Skins/Hull/HullGridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("25_p18wk")
+theme_override_icons/icon = ExtResource("42_bh6fp")
+
 [node name="Flag" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="Figurehead" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
 
 [node name="Back_boathouse" type="Button" parent="Menus/Boathouse_menu"]
 custom_minimum_size = Vector2(0, 40)
@@ -427,4 +546,10 @@ text = "Back"
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Sail/SailGridContainer/Sail_beige" to="Menus" method="_on_sail_beige_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Sail/SailGridContainer/Sail_pink" to="Menus" method="_on_sail_pink_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Sail/SailGridContainer/Sail_purple" to="Menus" method="_on_sail_purple_pressed"]
+[connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_brown" to="Menus" method="_on_hull_brown_pressed"]
+[connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_black" to="Menus" method="_on_hull_black_pressed"]
+[connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_red" to="Menus" method="_on_hull_red_pressed"]
+[connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_green" to="Menus" method="_on_hull_green_pressed"]
+[connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_blue" to="Menus" method="_on_hull_blue_pressed"]
+[connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_pink" to="Menus" method="_on_hull_pink_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Back_boathouse" to="Menus" method="_on_back_boathouse_pressed"]

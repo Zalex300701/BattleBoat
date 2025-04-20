@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3g4u7r1nwbtg"]
+[gd_scene load_steps=3 format=3 uid="uid://bccglomej840"]
 
 [ext_resource type="PackedScene" uid="uid://ck7w6qrvlgxdq" path="res://assets/models/upgrades/cannon.glb" id="1_32vmg"]
-[ext_resource type="Script" path="res://scripts/player/weapon_canon.gd" id="1_mifv0"]
+[ext_resource type="Script" path="res://scripts/player/weapon_cannon.gd" id="1_mifv0"]
 
 [node name="WeaponCanon" type="Node3D"]
 script = ExtResource("1_mifv0")
@@ -10,8 +10,10 @@ script = ExtResource("1_mifv0")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.6, 0, 0)
 
 [node name="left_cannon_marker" type="Marker3D" parent="left_cannon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1)
 
 [node name="right_cannon" parent="." instance=ExtResource("1_32vmg")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6, 0, 0)
 
 [node name="right_cannon_marker" type="Marker3D" parent="right_cannon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1)

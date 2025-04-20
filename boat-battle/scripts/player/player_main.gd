@@ -39,6 +39,7 @@ var is_dying = false
 
 func _ready():
 	apply_sail_skin(PlayerSettings.get_sail_skin())
+	apply_hull_skin(PlayerSettings.get_hull_skin())
 	initial_y = global_transform.origin.y
 	initial_rotation = rotation_degrees
 	current_health = max_health
@@ -162,3 +163,30 @@ func apply_sail_skin(sail_color: String) -> void:
 	sail_instance.queue_free()
 	
 	print("Skin de la voile appliqué : %s" % sail_color)
+
+func apply_hull_skin(hull_color: String) -> void:
+	var hull = get_node("ship_small")
+	if not hull or not hull is MeshInstance3D:
+		print("Erreur : Coque non trouvée ou n'est pas une MeshInstance3D")
+		return
+	
+	var hull_resource = load("res://assets/models/skins/hull/%s.glb" % hull_color)
+	if not hull_resource:
+		print("Erreur : Impossible de charger %s.glb" % hull_color)
+		return
+	
+	var hull_instance = hull_resource.instantiate()
+	var hull_mesh = null
+	for child in hull_instance.get_children():
+		if child is MeshInstance3D:
+			hull_mesh = child
+			break
+	
+	if not hull_mesh:
+		print("Erreur : Aucun MeshInstance3D trouvé dans %s.glb" % hull_color)
+		return
+	
+	hull.mesh = hull_mesh.mesh
+	hull_instance.queue_free()
+	
+	print("Skin de la coque appliqué : %s" % hull_color)
