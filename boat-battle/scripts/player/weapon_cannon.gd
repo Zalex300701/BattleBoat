@@ -39,6 +39,3 @@ func shoot(direction: int) -> void:
 	var shoot_direction = global_transform.basis.x.normalized() * direction
 	var speed = 50
 	cannonball.launch(shoot_direction, speed, player)
-
-func shoot_right():
-	print("Player is shooting right")

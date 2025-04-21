@@ -12,10 +12,11 @@ var initial_rotation: Vector3
 var is_leaving := false
 var leave_speed: float = 10.0
 var scene_to_load: String = "res://scenes/game.tscn"
-var exit_z_threshold: float = -20.0
+var exit_z_threshold: float = -10.0
 var current_speed: float = 0.0
 var acceleration_duration: float = 2.5
 var departure_time: float = 0.0
+var has_transitioned: bool = false
 
 func _ready() -> void:
 	initial_y = global_transform.origin.y
@@ -47,8 +48,10 @@ func handle_departure(delta: float) -> void:
 	position += -global_transform.basis.z * current_speed * delta
 
 	# Check for scene transition
-	if global_transform.origin.z < exit_z_threshold:
-		get_tree().change_scene_to_file(scene_to_load)
+	if !has_transitioned and global_transform.origin.z < exit_z_threshold:
+		has_transitioned = true
+		SceneTransition.change_scene(scene_to_load)
+		print("test")
 
 func leave_and_start(scene_path: String) -> void:
 	is_leaving = true
