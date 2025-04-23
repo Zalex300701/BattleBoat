@@ -26,6 +26,7 @@ var tilt_angle: float = 0.0  # Current tilt angle
 var last_rotation_y: float  # To calculate turn speed
 var turn_speed: float = 0.0  # Current turn speed (radians/sec)
 var is_dying: bool = false
+signal died
 
 var player: CharacterBody3D = null
 @onready var state_machine = $StateMachine
@@ -89,6 +90,7 @@ func update_health_bar():
 func die():
 	is_dying = true
 	state_machine.on_child_transitioned(state_machine.current_state, "EnemyDying")
+	emit_signal("died")
 
 func debug_lines():
 	var to_player = player.global_transform.origin - global_transform.origin

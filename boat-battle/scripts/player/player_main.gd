@@ -27,7 +27,7 @@ var tilt_angle: float = 0.0
 var tilt_smoothness: float = 3.0
 
 # Health variables
-@export var max_health: float = 2.0
+@export var max_health: float = 10.0
 var current_health: float = max_health
 signal health_changed(new_health, max_health)
 var has_initialized_health: bool = false

@@ -18,7 +18,7 @@ var mouse_sensitivity = 0.1 # Sensitivity for mouse rotation
 var is_rotating = false # Track if we're rotating
 var yaw = 0.0 # Store the Y rotation angle
 
-@onready var player: CharacterBody3D = get_node("/root/Game/Player") 
+@onready var player: CharacterBody3D = get_node("../Player")
 
 func _ready() -> void:
 	update_camera_position()

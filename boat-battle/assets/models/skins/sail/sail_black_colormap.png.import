@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://c34kx5eq74nwe"
+path="res://.godot/imported/sail_black_colormap.png-d21e1a7d6d07eefd544ece91b6c9d12c.ctex"
+metadata={
+"vram_texture": false
+}
+generator_parameters={
+"md5": "f78981fe761412fd1b049be7113965fd"
+}
+
+[deps]
+
+source_file="res://assets/models/skins/sail/sail_black_colormap.png"
+dest_files=["res://.godot/imported/sail_black_colormap.png-d21e1a7d6d07eefd544ece91b6c9d12c.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

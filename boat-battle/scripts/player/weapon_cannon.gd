@@ -38,4 +38,5 @@ func shoot(direction: int) -> void:
 	cannonball.global_transform.origin = marker.global_transform.origin
 	var shoot_direction = global_transform.basis.x.normalized() * direction
 	var speed = 50
+	print(player)
 	cannonball.launch(shoot_direction, speed, player)

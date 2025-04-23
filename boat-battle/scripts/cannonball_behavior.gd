@@ -37,7 +37,6 @@ func launch(dir: Vector3, spd: float, firing_owner: Node3D = null):
 	direction = dir
 	speed = spd
 	owner = firing_owner
-	print(owner)
 	fixed_y = global_transform.origin.y  # Store the Y position at launch
 	is_moving = true
 

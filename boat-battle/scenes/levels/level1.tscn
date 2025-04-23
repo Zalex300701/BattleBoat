@@ -1,0 +1,61 @@
+[gd_scene load_steps=11 format=3 uid="uid://canhghncnhqdd"]
+
+[ext_resource type="Script" path="res://scripts/level_manager.gd" id="1_47epo"]
+[ext_resource type="Script" path="res://scripts/camera_movement.gd" id="1_n7vhh"]
+[ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="2_fgjky"]
+[ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="3_f7cdk"]
+[ext_resource type="PackedScene" uid="uid://dp5lyuvq1kbpa" path="res://scenes/ocean.tscn" id="4_d5d3a"]
+[ext_resource type="PackedScene" uid="uid://5nwty3u5t10l" path="res://scenes/ui/health_bar.tscn" id="5_wqrts"]
+[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/pirate_medium.tscn" id="6_jjbdv"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hv1a1"]
+sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
+sky_horizon_color = Color(0.928497, 0.845944, 0.59001, 1)
+sky_curve = 1.0815
+ground_bottom_color = Color(0.298039, 0.603922, 1, 1)
+ground_horizon_color = Color(0.298039, 0.603922, 1, 1)
+sun_angle_max = 0.0
+sun_curve = 1.06464
+
+[sub_resource type="Sky" id="Sky_5vt1a"]
+sky_material = SubResource("ProceduralSkyMaterial_hv1a1")
+
+[sub_resource type="Environment" id="Environment_wlt4x"]
+background_mode = 2
+sky = SubResource("Sky_5vt1a")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.298512, 0.601815, 1, 1)
+fog_sun_scatter = 1.0
+fog_density = 1.0
+fog_sky_affect = 0.5
+fog_depth_begin = 0.0
+fog_depth_end = 500.0
+adjustment_enabled = true
+
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_47epo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wlt4x")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.707107, 0.612373, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 12)
+fov = 80.0
+script = ExtResource("1_n7vhh")
+
+[node name="Player" parent="." instance=ExtResource("2_fgjky")]
+
+[node name="Ocean" type="Node3D" parent="."]
+script = ExtResource("3_f7cdk")
+ocean_scene = ExtResource("4_d5d3a")
+
+[node name="HealthBar" parent="." instance=ExtResource("5_wqrts")]
+visible = false
+
+[node name="pirate_medium" parent="." instance=ExtResource("6_jjbdv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -100)

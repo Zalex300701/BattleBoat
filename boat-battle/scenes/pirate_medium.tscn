@@ -463,7 +463,7 @@ _data = {
 "sink_4": SubResource("Animation_gg6f3")
 }
 
-[node name="pirate_medium" type="CharacterBody3D"]
+[node name="pirate_medium" type="CharacterBody3D" groups=["Enemies"]]
 script = ExtResource("1_ijdjf")
 
 [node name="ship_model" type="MeshInstance3D" parent="."]

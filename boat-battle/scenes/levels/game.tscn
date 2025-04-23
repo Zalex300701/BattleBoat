@@ -79,12 +79,12 @@ ground_horizon_color = Color(0.298039, 0.603922, 1, 1)
 sun_angle_max = 0.0
 sun_curve = 1.06464
 
-[sub_resource type="Sky" id="Sky_5vt1a"]
+[sub_resource type="Sky" id="Sky_5s34w"]
 sky_material = SubResource("ProceduralSkyMaterial_bn25v")
 
 [sub_resource type="Environment" id="Environment_b0who"]
 background_mode = 2
-sky = SubResource("Sky_5vt1a")
+sky = SubResource("Sky_5s34w")
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.298512, 0.601815, 1, 1)
@@ -380,5 +380,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4229, 0, 4.62317)
 
 [node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
 visible = false
-
-[connection signal="health_changed" from="Player" to="HealthBar" method="update_health"]

@@ -11,9 +11,8 @@ func _ready() -> void:
 	apply_hull_skin(PlayerSettings.get_hull_skin())
 
 func _on_start_pressed():
-	if player and player.has_method("leave_and_start"):
-		$Main_menu.hide()
-		player.leave_and_start("res://scenes/levels/game.tscn")
+	$Main_menu.hide()
+	$Levels_menu.show()
 
 func _on_boathouse_button_pressed() -> void:
 	if camera and camera.has_method("boathouse_position"):
@@ -24,11 +23,19 @@ func _on_boathouse_button_pressed() -> void:
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
+func _on_back_levels_pressed() -> void:
+	$Main_menu.show()
+	$Levels_menu.hide()
+
 func _on_back_boathouse_pressed() -> void:
 	if camera and camera.has_method("main_position"):
 		camera.main_position()
 		$Main_menu.show()
 		$Boathouse_menu.hide()
+
+func _on_level_1_pressed() -> void:
+	$Levels_menu.hide()
+	player.leave_and_start("res://scenes/levels/level1.tscn")
 
 func _on_sail_white_pressed() -> void:
 	_on_sail_color_button_pressed("sail_white")
@@ -58,7 +65,7 @@ func _on_sail_brown_pressed() -> void:
 	_on_sail_color_button_pressed("sail_brown")
 
 func _on_sail_beige_pressed() -> void:
-	_on_sail_color_button_pressed("sail_beige")
+	_on_sail_color_button_pressed("sail_fieldlogs")
 
 func _on_sail_pink_pressed() -> void:
 	_on_sail_color_button_pressed("sail_pink")

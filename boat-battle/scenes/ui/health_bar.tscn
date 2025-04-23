@@ -26,5 +26,5 @@ offset_right = 529.0
 offset_bottom = 51.0
 theme = ExtResource("2_ddn18")
 max_value = 10.0
-value = 5.0
+value = 10.0
 show_percentage = false
