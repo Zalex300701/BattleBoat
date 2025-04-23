@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ba6ml8beqkvj8"]
+[gd_scene load_steps=31 format=3 uid="uid://b4myix760r88c"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_1db28"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_6a0f8"]
@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="21_gyx25"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="22_qhq3n"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="23_jqhwf"]
-[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="24_2aq3f"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="24_2aq3f"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlluh"]
 sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)

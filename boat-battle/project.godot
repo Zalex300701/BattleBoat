@@ -25,6 +25,7 @@ SceneTransition="*res://scenes/scene_transition.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://assets/textures/icons/ui/tile_0203.png"
 
 [file_customization]
 

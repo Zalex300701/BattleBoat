@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b3g4u7r1nwbtg"]
+[gd_scene load_steps=3 format=3 uid="uid://bccglomej840"]
 
 [ext_resource type="PackedScene" uid="uid://ck7w6qrvlgxdq" path="res://assets/models/upgrades/cannon.glb" id="1_32vmg"]
 [ext_resource type="Script" path="res://scripts/player/weapon_cannon.gd" id="1_mifv0"]

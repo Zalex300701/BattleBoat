@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dcj07cwphowgi"]
+[gd_scene load_steps=49 format=3 uid="uid://lddt3byglos5"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_jsddv"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_u3roj"]
@@ -23,8 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="21_qvmvd"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="22_i0lpp"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="23_q2i8f"]
-[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="24_jco2h"]
-[ext_resource type="Theme" uid="uid://cqphx3gy48jha" path="res://assets/container.tres" id="25_p18wk"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="24_jco2h"]
+[ext_resource type="Theme" uid="uid://bx6id4c70pdar" path="res://assets/container.tres" id="25_p18wk"]
 [ext_resource type="Texture2D" uid="uid://h7qj61vgn4qd" path="res://assets/textures/icons/sail/sail_grey.png" id="26_v3lvl"]
 [ext_resource type="Texture2D" uid="uid://ba60dk3o0q4aq" path="res://assets/textures/icons/sail/sail_black.png" id="27_1bcrn"]
 [ext_resource type="Texture2D" uid="uid://bf54fon2nc0xk" path="res://assets/textures/icons/sail/sail_yellow.png" id="28_sy862"]

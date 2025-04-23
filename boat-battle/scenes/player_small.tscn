@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player/player_main.gd" id="1_7p18m"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qck00"]
 [ext_resource type="PackedScene" uid="uid://bvrnry7a8guuy" path="res://scenes/ui/pause.tscn" id="2_5uno3"]
-[ext_resource type="PackedScene" uid="uid://b3g4u7r1nwbtg" path="res://scenes/weapon_canon.tscn" id="3_e22xx"]
+[ext_resource type="PackedScene" uid="uid://bccglomej840" path="res://scenes/weapon_canon.tscn" id="3_e22xx"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d1byq"]
 _surfaces = [{
