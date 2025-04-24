@@ -2,13 +2,49 @@ extends Node
 
 @onready var player = $"../Environment/Player"
 @onready var camera = $"../Camera3D"
+@onready var main_menu = $Main_menu
+@onready var levels_menu = $Levels_menu
+@onready var boathouse_menu = $Boathouse_menu
+@onready var level_grid = $Levels_menu/Panel/LevelContainer  # Adjust this path to match your scene structure
 
 func _ready() -> void:
+	# Reset for testing
+	#PlayerSettings.reset_progress()
+	
 	# Load skins from file
 	PlayerSettings.load_from_file()
 	# Load saved skins
 	apply_sail_skin(PlayerSettings.get_sail_skin())
 	apply_hull_skin(PlayerSettings.get_hull_skin())
+	
+	# Dynamically create level buttons
+	setup_level_buttons()
+
+func setup_level_buttons() -> void:
+	# Clear any existing buttons in the GridContainer (in case of placeholders)
+	for child in level_grid.get_children():
+		child.queue_free()
+	
+	# Create buttons for levels 1 to 24
+	for level in range(1, 25):
+		var button = Button.new()
+		button.text = "Level " + str(level)
+		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		
+		# Check if the level is unlocked using PlayerSettings
+		if level <= PlayerSettings.get_highest_unlocked_level():
+			button.disabled = false  # Unlocked levels are clickable
+		else:
+			button.disabled = true   # Locked levels are not clickable
+			button.modulate = Color(0.5, 0.5, 0.5, 1)  # Gray out locked levels
+		
+		# Connect the button's pressed signal to a single handler
+		button.pressed.connect(_on_level_button_pressed.bind(level))
+		level_grid.add_child(button)
+
+func _on_level_button_pressed(level: int) -> void:
+	levels_menu.hide()
+	player.leave_and_start("res://scenes/levels/level" + str(level) + ".tscn")
 
 func _on_start_pressed():
 	$Main_menu.hide()
@@ -32,10 +68,6 @@ func _on_back_boathouse_pressed() -> void:
 		camera.main_position()
 		$Main_menu.show()
 		$Boathouse_menu.hide()
-
-func _on_level_1_pressed() -> void:
-	$Levels_menu.hide()
-	player.leave_and_start("res://scenes/levels/level1.tscn")
 
 func _on_sail_white_pressed() -> void:
 	_on_sail_color_button_pressed("sail_white")
@@ -173,3 +205,7 @@ func apply_hull_skin(hull_color: String) -> void:
 	hull_instance.queue_free()
 	
 	print("Skin de la coque changé en %s" % hull_color)
+
+
+func _on_level_1_pressed() -> void:
+	pass # Replace with function body.

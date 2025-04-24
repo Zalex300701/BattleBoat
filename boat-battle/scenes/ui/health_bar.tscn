@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://5nwty3u5t10l"]
 
 [ext_resource type="Script" path="res://scripts/player/player_health_bar.gd" id="1_wk267"]
-[ext_resource type="Theme" uid="uid://bb6jvd7apfd7k" path="res://assets/Theme_test.tres" id="2_ddn18"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="2_ddn18"]
 
 [node name="HealthBar" type="Control"]
 light_mask = 16

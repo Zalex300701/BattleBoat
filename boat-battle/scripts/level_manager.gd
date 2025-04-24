@@ -18,6 +18,7 @@ func _ready():
 	get_tree().paused = false
 
 func _process(delta):
+	print(current_level)
 	if not get_tree().paused:
 		elapsed_time += delta
 
@@ -29,13 +30,14 @@ func _on_enemy_died():
 func complete_level():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
+	# Update the highest unlocked level in PlayerSettings
+	if current_level + 1 > PlayerSettings.get_highest_unlocked_level() and current_level < 24:
+		PlayerSettings.set_highest_unlocked_level(current_level + 1)
+	
 	level_complete_ui_instance = level_complete_ui_scene.instantiate()
 	add_child(level_complete_ui_instance)
 	
-	# Pass formatted time to UI
 	level_complete_ui_instance.set_level_time(elapsed_time)
-	
-	# Connect UI signals (assuming the UI emits signals for button presses)
 	level_complete_ui_instance.next_level_pressed.connect(_on_next_level_pressed)
 	level_complete_ui_instance.menu_pressed.connect(_on_menu_pressed)
 

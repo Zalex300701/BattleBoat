@@ -281,6 +281,7 @@ grow_vertical = 2
 script = ExtResource("23_q2i8f")
 
 [node name="Main_menu" type="Control" parent="Menus"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -532,7 +533,6 @@ theme = ExtResource("24_jco2h")
 text = "Back"
 
 [node name="Levels_menu" type="Control" parent="Menus"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -568,24 +568,24 @@ grow_horizontal = 2
 theme = ExtResource("24_jco2h")
 text = "Levels"
 
-[node name="GridContainer" type="GridContainer" parent="Menus/Levels_menu/Panel"]
+[node name="LevelContainer" type="GridContainer" parent="Menus/Levels_menu/Panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -442.0
-offset_top = -259.0
-offset_right = 442.0
-offset_bottom = 331.0
+offset_left = -426.0
+offset_top = -256.0
+offset_right = 426.0
+offset_bottom = 316.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 40
 columns = 4
 
-[node name="Level_1" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_1" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -593,7 +593,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 1"
 
-[node name="Level_2" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_2" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -601,7 +601,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 2"
 
-[node name="Level_3" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_3" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -609,7 +609,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 3"
 
-[node name="Level_4" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_4" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -617,7 +617,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 4"
 
-[node name="Level_5" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_5" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -625,7 +625,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 5"
 
-[node name="Level_6" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_6" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -633,7 +633,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 6"
 
-[node name="Level_7" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_7" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -641,7 +641,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 7"
 
-[node name="Level_8" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_8" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -649,7 +649,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 8"
 
-[node name="Level_9" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_9" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -657,7 +657,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 9"
 
-[node name="Level_10" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_10" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -665,7 +665,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 10"
 
-[node name="Level_11" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_11" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -673,7 +673,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 11"
 
-[node name="Level_12" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_12" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -681,7 +681,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 12"
 
-[node name="Level_13" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_13" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -689,7 +689,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 13"
 
-[node name="Level_14" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_14" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -697,7 +697,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 14"
 
-[node name="Level_15" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_15" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -705,7 +705,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 15"
 
-[node name="Level_16" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_16" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -713,7 +713,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 16"
 
-[node name="Level_17" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_17" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -721,7 +721,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 17"
 
-[node name="Level_18" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_18" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -729,7 +729,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 18"
 
-[node name="Level_19" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_19" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -737,7 +737,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 19"
 
-[node name="Level_20" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_20" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -745,7 +745,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 20"
 
-[node name="Level_21" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_21" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -753,7 +753,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 21"
 
-[node name="Level_22" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_22" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -761,7 +761,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 22"
 
-[node name="Level_23" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_23" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -769,7 +769,7 @@ size_flags_vertical = 2
 theme = ExtResource("24_jco2h")
 text = "Level 23"
 
-[node name="Level_24" type="Button" parent="Menus/Levels_menu/Panel/GridContainer"]
+[node name="Level_24" type="Button" parent="Menus/Levels_menu/Panel/LevelContainer"]
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -816,5 +816,28 @@ text = "Back"
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_blue" to="Menus" method="_on_hull_blue_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Hull/HullGridContainer/Hull_pink" to="Menus" method="_on_hull_pink_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Back_boathouse" to="Menus" method="_on_back_boathouse_pressed"]
-[connection signal="pressed" from="Menus/Levels_menu/Panel/GridContainer/Level_1" to="Menus" method="_on_level_1_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_1" to="Menus" method="_on_level_1_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_2" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_3" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_4" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_5" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_6" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_7" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_8" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_9" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_10" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_11" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_12" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_13" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_14" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_15" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_16" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_17" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_18" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_19" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_20" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_21" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_22" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_23" to="Menus" method="_on_level_button_pressed"]
+[connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_24" to="Menus" method="_on_level_button_pressed"]
 [connection signal="pressed" from="Menus/Levels_menu/Panel/Back_levels" to="Menus" method="_on_back_levels_pressed"]
