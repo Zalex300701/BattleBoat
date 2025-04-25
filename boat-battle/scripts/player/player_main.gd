@@ -55,7 +55,7 @@ func _physics_process(delta):
 	if !is_dying:
 		handle_position_player(delta)
 		handle_rotation_player(delta)
-		apply_buoyancy(delta)
+		#apply_buoyancy(delta)
 
 func apply_buoyancy(delta):
 	# Vertical bobbing (apply as part of velocity)

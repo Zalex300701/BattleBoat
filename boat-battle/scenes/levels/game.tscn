@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=75 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="1_p3lqc"]
 [ext_resource type="PackedScene" uid="uid://c26pojbwbk3kt" path="res://assets/models/environment/grass-patch.glb" id="2_c20gh"]
@@ -67,6 +67,7 @@
 [ext_resource type="PackedScene" uid="uid://dtttsgaytwc6i" path="res://assets/models/building/tower-middle.glb" id="67_we77v"]
 [ext_resource type="PackedScene" uid="uid://bdku2g8y0f880" path="res://assets/models/building/tower-roof.glb" id="68_73umr"]
 [ext_resource type="PackedScene" uid="uid://7mg2djqkyw5n" path="res://assets/models/building/tower-top.glb" id="69_tosst"]
+[ext_resource type="PackedScene" uid="uid://dbuwnm3lwqak2" path="res://scenes/ui/minimap.tscn" id="70_4exku"]
 [ext_resource type="PackedScene" uid="uid://jt6te1qlb71e" path="res://assets/models/building/tower-watch.glb" id="70_6bsc8"]
 [ext_resource type="PackedScene" uid="uid://5nwty3u5t10l" path="res://scenes/ui/health_bar.tscn" id="71_w6hix"]
 
@@ -109,6 +110,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 15, 12)
+cull_mask = 1048573
 fov = 80.0
 script = ExtResource("1_p3lqc")
 
@@ -173,7 +175,7 @@ ocean_scene = ExtResource("19_ohd0w")
 [node name="Enemies" type="Node3D" parent="."]
 
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_ydigl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.6369, 0, -103.312)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
 [node name="Models" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366, 0.9, 60.095)
@@ -380,3 +382,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4229, 0, 4.62317)
 
 [node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
 visible = false
+
+[node name="Minimap" parent="." instance=ExtResource("70_4exku")]
+layer = 2

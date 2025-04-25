@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://q244ru6ivdoo"]
+
+[ext_resource type="Texture2D" uid="uid://b8tweghkceve" path="res://assets/textures/icons/ui/progress_red_small.png" id="1_xfd8t"]
+
+[node name="EnemyIcon" type="Sprite3D"]
+layers = 2
+pixel_size = 0.2
+billboard = 1
+texture = ExtResource("1_xfd8t")

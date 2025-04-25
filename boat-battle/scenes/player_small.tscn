@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=4 uid="uid://d3i0vcna7waq5"]
+[gd_scene load_steps=21 format=4 uid="uid://d3i0vcna7waq5"]
 
 [ext_resource type="Script" path="res://scripts/player/player_main.gd" id="1_7p18m"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qck00"]
 [ext_resource type="PackedScene" uid="uid://bvrnry7a8guuy" path="res://scenes/ui/pause.tscn" id="2_5uno3"]
 [ext_resource type="PackedScene" uid="uid://bccglomej840" path="res://scenes/weapon_canon.tscn" id="3_e22xx"]
+[ext_resource type="Texture2D" uid="uid://ds5ah8wk3hk8m" path="res://assets/textures/icons/ui/minimap_arrow_a.png" id="4_hjgay"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_d1byq"]
 _surfaces = [{
@@ -323,6 +324,13 @@ shape = SubResource("BoxShape3D_wamof")
 
 [node name="WeaponCanon" parent="Weapons" instance=ExtResource("3_e22xx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04613, 0.552111)
+
+[node name="PlayerIcon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+layers = 2
+pixel_size = 1.0
+billboard = 1
+texture = ExtResource("4_hjgay")
 
 [node name="Pause" parent="." instance=ExtResource("2_5uno3")]
 visible = false
