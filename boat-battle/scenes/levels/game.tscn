@@ -1,6 +1,7 @@
-[gd_scene load_steps=75 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=73 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="1_p3lqc"]
+[ext_resource type="Environment" uid="uid://dkldvxlia5sen" path="res://assets/environment.tres" id="1_xwsb0"]
 [ext_resource type="PackedScene" uid="uid://c26pojbwbk3kt" path="res://assets/models/environment/grass-patch.glb" id="2_c20gh"]
 [ext_resource type="PackedScene" uid="uid://d33kvrkqtxhhh" path="res://assets/models/environment/grass.glb" id="3_hfv6i"]
 [ext_resource type="PackedScene" uid="uid://cxj6pm8onqfx8" path="res://assets/models/environment/hole.glb" id="4_v0w6n"]
@@ -71,38 +72,13 @@
 [ext_resource type="PackedScene" uid="uid://jt6te1qlb71e" path="res://assets/models/building/tower-watch.glb" id="70_6bsc8"]
 [ext_resource type="PackedScene" uid="uid://5nwty3u5t10l" path="res://scenes/ui/health_bar.tscn" id="71_w6hix"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bn25v"]
-sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
-sky_horizon_color = Color(0.928497, 0.845944, 0.59001, 1)
-sky_curve = 1.0815
-ground_bottom_color = Color(0.298039, 0.603922, 1, 1)
-ground_horizon_color = Color(0.298039, 0.603922, 1, 1)
-sun_angle_max = 0.0
-sun_curve = 1.06464
-
-[sub_resource type="Sky" id="Sky_5s34w"]
-sky_material = SubResource("ProceduralSkyMaterial_bn25v")
-
-[sub_resource type="Environment" id="Environment_b0who"]
-background_mode = 2
-sky = SubResource("Sky_5s34w")
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.298512, 0.601815, 1, 1)
-fog_sun_scatter = 1.0
-fog_density = 1.0
-fog_sky_affect = 0.5
-fog_depth_begin = 0.0
-fog_depth_end = 500.0
-adjustment_enabled = true
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_8kh8v"]
 size = Vector3(15.9331, 2.06131, 15.4117)
 
 [node name="Game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_b0who")
+environment = ExtResource("1_xwsb0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, 0.612373, -0.353553, 0, 0.5, 0.866025, 0.707107, -0.612372, 0.353553, 0, 0, 0)
@@ -176,6 +152,9 @@ ocean_scene = ExtResource("19_ohd0w")
 
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_ydigl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
+visible = false
 
 [node name="Models" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366, 0.9, 60.095)
@@ -380,8 +359,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5112, 0, 4.74693)
 [node name="tower-watch2" parent="Models/Buildings" instance=ExtResource("70_6bsc8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4229, 0, 4.62317)
 
-[node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
-visible = false
-
 [node name="Minimap" parent="." instance=ExtResource("70_4exku")]
-layer = 2

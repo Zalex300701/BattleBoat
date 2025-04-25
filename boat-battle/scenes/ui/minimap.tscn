@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbuwnm3lwqak2"]
+[gd_scene load_steps=6 format=3 uid="uid://dbuwnm3lwqak2"]
 
-[ext_resource type="Texture2D" uid="uid://dy0v440b4igat" path="res://assets/textures/icons/ui/minimap_ring_brown_detail.png" id="1_dfqt4"]
 [ext_resource type="Script" path="res://scripts/ui/minimap.gd" id="1_fqsw8"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="2_bgug7"]
+[ext_resource type="Shader" path="res://shader/circle_clip.gdshader" id="2_poyrk"]
+[ext_resource type="Texture2D" uid="uid://bjpyk1ri76y8h" path="res://assets/textures/icons/ui/minimap_ring_brown.png" id="2_rq1qo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_htuce"]
+shader = ExtResource("2_poyrk")
 
 [node name="Minimap" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_fqsw8")
 
 [node name="MinimapContainer" type="PanelContainer" parent="."]
@@ -11,20 +17,23 @@ clip_children = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -320.0
+offset_left = -270.0
 offset_top = 20.0
 offset_right = -20.0
-offset_bottom = 320.0
+offset_bottom = 270.0
 grow_horizontal = 0
-pivot_offset = Vector2(150, 150)
+pivot_offset = Vector2(125, 125)
+theme = ExtResource("2_bgug7")
 
 [node name="ViewportContainer" type="SubViewportContainer" parent="MinimapContainer"]
+material = SubResource("ShaderMaterial_htuce")
 layout_mode = 2
+theme = ExtResource("2_bgug7")
 stretch = true
 
 [node name="MinimapViewport" type="SubViewport" parent="MinimapContainer/ViewportContainer"]
 handle_input_locally = false
-size = Vector2i(300, 300)
+size = Vector2i(250, 250)
 render_target_update_mode = 4
 
 [node name="MinimapCamera" type="Camera3D" parent="MinimapContainer/ViewportContainer/MinimapViewport"]
@@ -34,4 +43,5 @@ projection = 1
 
 [node name="MinimapFrame" type="TextureRect" parent="MinimapContainer"]
 layout_mode = 2
-texture = ExtResource("1_dfqt4")
+theme = ExtResource("2_bgug7")
+texture = ExtResource("2_rq1qo")

@@ -329,7 +329,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04613, 0.552111)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 layers = 2
 pixel_size = 1.0
-billboard = 1
 texture = ExtResource("4_hjgay")
 
 [node name="Pause" parent="." instance=ExtResource("2_5uno3")]
