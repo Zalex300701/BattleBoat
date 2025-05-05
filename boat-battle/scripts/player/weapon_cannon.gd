@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var player: CharacterBody3D = get_parent().get_parent()
+@onready var player: CharacterBody3D = get_owner()
 var can_shoot: bool = true
 var shoot_cooldown: float = 1.0
 var current_cooldown: float = 0.0

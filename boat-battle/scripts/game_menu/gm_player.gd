@@ -51,7 +51,6 @@ func handle_departure(delta: float) -> void:
 	if !has_transitioned and global_transform.origin.z < exit_z_threshold:
 		has_transitioned = true
 		SceneTransition.change_scene(scene_to_load)
-		print("test")
 
 func leave_and_start(scene_path: String) -> void:
 	is_leaving = true

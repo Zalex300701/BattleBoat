@@ -153,6 +153,12 @@ ocean_scene = ExtResource("19_ohd0w")
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_ydigl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
+[node name="pirate_medium2" parent="Enemies" instance=ExtResource("20_ydigl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3944, 0, -57.6525)
+
+[node name="pirate_medium3" parent="Enemies" instance=ExtResource("20_ydigl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6713, 0, -189.804)
+
 [node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
 visible = false
 
@@ -360,3 +366,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5112, 0, 4.74693)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.4229, 0, 4.62317)
 
 [node name="Minimap" parent="." instance=ExtResource("70_4exku")]
+
+[connection signal="health_changed" from="Player" to="HealthBar" method="update_health"]

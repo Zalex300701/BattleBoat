@@ -172,8 +172,6 @@ func apply_sail_skin(sail_color: String) -> void:
 	
 	# Nettoyer l'instance pour éviter les fuites de mémoire
 	sail_instance.queue_free()
-	
-	print("Skin de la voile changé en %s" % sail_color)
 
 func apply_hull_skin(hull_color: String) -> void:
 	if not player:
@@ -203,9 +201,3 @@ func apply_hull_skin(hull_color: String) -> void:
 	
 	hull.mesh = hull_mesh.mesh
 	hull_instance.queue_free()
-	
-	print("Skin de la coque changé en %s" % hull_color)
-
-
-func _on_level_1_pressed() -> void:
-	pass # Replace with function body.

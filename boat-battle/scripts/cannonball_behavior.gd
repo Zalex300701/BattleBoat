@@ -45,7 +45,7 @@ func _on_body_entered(body):
 		return
 	
 	is_moving = false
-	print("Cannonball hit:", body.name)
+	#print("Cannonball hit:", body.name)
 	
 	# Check if the body is an enemy and if it has the take_damage method
 	if body.has_method("take_damage") and !body.is_dying:

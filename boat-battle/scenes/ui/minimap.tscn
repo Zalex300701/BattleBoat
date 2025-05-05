@@ -33,7 +33,7 @@ stretch = true
 
 [node name="MinimapViewport" type="SubViewport" parent="MinimapContainer/ViewportContainer"]
 handle_input_locally = false
-size = Vector2i(250, 250)
+size = Vector2i(2, 2)
 render_target_update_mode = 4
 
 [node name="MinimapCamera" type="Camera3D" parent="MinimapContainer/ViewportContainer/MinimapViewport"]

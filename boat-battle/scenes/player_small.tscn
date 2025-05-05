@@ -316,14 +316,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13852, -0.633372)
 mesh = SubResource("ArrayMesh_06rfp")
 skeleton = NodePath("")
 
+[node name="Weapons" type="Node3D" parent="ship_small"]
+transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0, 0, 0)
+
+[node name="WeaponCanon" parent="ship_small/Weapons" instance=ExtResource("3_e22xx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04613, 0.552111)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00210571, 1.64699, -0.256179)
 shape = SubResource("BoxShape3D_wamof")
-
-[node name="Weapons" type="Node3D" parent="."]
-
-[node name="WeaponCanon" parent="Weapons" instance=ExtResource("3_e22xx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.04613, 0.552111)
 
 [node name="PlayerIcon" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
