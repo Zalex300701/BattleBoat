@@ -1,7 +1,7 @@
-[gd_scene load_steps=73 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=74 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="1_p3lqc"]
-[ext_resource type="Environment" uid="uid://dkldvxlia5sen" path="res://assets/environment.tres" id="1_xwsb0"]
+[ext_resource type="Environment" uid="uid://dkldvxlia5sen" path="res://assets/others/environment.tres" id="1_xwsb0"]
 [ext_resource type="PackedScene" uid="uid://c26pojbwbk3kt" path="res://assets/models/environment/grass-patch.glb" id="2_c20gh"]
 [ext_resource type="PackedScene" uid="uid://d33kvrkqtxhhh" path="res://assets/models/environment/grass.glb" id="3_hfv6i"]
 [ext_resource type="PackedScene" uid="uid://cxj6pm8onqfx8" path="res://assets/models/environment/hole.glb" id="4_v0w6n"]
@@ -18,7 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="15_gij1i"]
 [ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="18_lt0cd"]
 [ext_resource type="PackedScene" uid="uid://dp5lyuvq1kbpa" path="res://scenes/ocean.tscn" id="19_ohd0w"]
-[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/pirate_medium.tscn" id="20_ydigl"]
+[ext_resource type="PackedScene" uid="uid://bsnv1wy0kur80" path="res://scenes/enemies/pirate_bomber.tscn" id="20_sgp22"]
+[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/enemies/pirate_medium.tscn" id="20_ydigl"]
 [ext_resource type="PackedScene" uid="uid://bdblupqnrk56a" path="res://assets/models/ships_player/boat-row-large.glb" id="21_pm3pf"]
 [ext_resource type="PackedScene" uid="uid://bome4c52dlklu" path="res://assets/models/ships_player/boat-row-small.glb" id="22_qk0b5"]
 [ext_resource type="PackedScene" uid="uid://cv8s55v6g3m84" path="res://assets/models/ships_player/ship-small.glb" id="23_7pdv5"]
@@ -154,10 +155,13 @@ ocean_scene = ExtResource("19_ohd0w")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
 [node name="pirate_medium2" parent="Enemies" instance=ExtResource("20_ydigl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.3944, 0, -57.6525)
+transform = Transform3D(1, -1.00847e-09, -1.16357e-11, 1.00847e-09, 0.999734, 0.0230712, -1.16357e-11, -0.0230712, 0.999734, -52.3944, 0, -57.6525)
 
 [node name="pirate_medium3" parent="Enemies" instance=ExtResource("20_ydigl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6713, 0, -189.804)
+
+[node name="pirate_bomber" parent="Enemies" instance=ExtResource("20_sgp22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 1, -20.585)
 
 [node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
 visible = false

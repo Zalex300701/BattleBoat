@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbuwnm3lwqak2"]
 
 [ext_resource type="Script" path="res://scripts/ui/minimap.gd" id="1_fqsw8"]
-[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="2_bgug7"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/others/Theme_test.tres" id="2_bgug7"]
 [ext_resource type="Shader" path="res://shader/circle_clip.gdshader" id="2_poyrk"]
 [ext_resource type="Texture2D" uid="uid://bjpyk1ri76y8h" path="res://assets/textures/icons/ui/minimap_ring_brown.png" id="2_rq1qo"]
 

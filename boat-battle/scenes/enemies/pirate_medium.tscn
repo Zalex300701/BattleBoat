@@ -1,13 +1,13 @@
 [gd_scene load_steps=38 format=4 uid="uid://dhk36f43a0gt8"]
 
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_dcbtf"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy.gd" id="1_ijdjf"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_pirate_medium.gd" id="1_ijdjf"]
 [ext_resource type="Script" path="res://scripts/state machine/state_machine.gd" id="3_k7w7j"]
 [ext_resource type="Texture2D" uid="uid://b8tweghkceve" path="res://assets/textures/icons/ui/progress_red_small.png" id="3_yn17g"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_wander.gd" id="4_vruwl"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_chase.gd" id="5_illlv"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_attack.gd" id="6_fs3ah"]
-[ext_resource type="Script" path="res://scripts/enemy/enemy_dying.gd" id="6_yaj8m"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_wander.gd" id="4_vruwl"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_chase.gd" id="5_illlv"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_attack.gd" id="6_fs3ah"]
+[ext_resource type="Script" path="res://scripts/enemies/enemy_dying.gd" id="6_yaj8m"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6e6co"]
 _surfaces = [{
@@ -578,7 +578,7 @@ pixel_size = 0.8
 billboard = 1
 texture = ExtResource("3_yn17g")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." groups=["Enemies"]]
 transparent_bg = true
 size = Vector2i(400, 32)
 render_target_update_mode = 4

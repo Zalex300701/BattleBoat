@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvrnry7a8guuy"]
 
 [ext_resource type="Script" path="res://scripts/pause.gd" id="1_tpboe"]
-[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="2_sakyn"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/others/Theme_test.tres" id="2_sakyn"]
 
 [node name="Pause" type="Control"]
 layout_mode = 3

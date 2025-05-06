@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="4_20okt"]
 [ext_resource type="PackedScene" uid="uid://dp5lyuvq1kbpa" path="res://scenes/ocean.tscn" id="5_48r2j"]
 [ext_resource type="PackedScene" uid="uid://5nwty3u5t10l" path="res://scenes/ui/health_bar.tscn" id="6_78r8w"]
-[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/pirate_medium.tscn" id="7_uowqj"]
+[ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/enemies/pirate_medium.tscn" id="7_uowqj"]
 [ext_resource type="PackedScene" uid="uid://dbuwnm3lwqak2" path="res://scenes/ui/minimap.tscn" id="8_2c3hd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hv1a1"]

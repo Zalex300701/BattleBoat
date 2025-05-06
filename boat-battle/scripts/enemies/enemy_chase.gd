@@ -8,8 +8,12 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
 func process(_delta: float):
-	if enemy.global_position.distance_to(player.global_position) < enemy.AttackDistance:
-		emit_signal("Transitioned", self, "EnemyAttack")
+	if get_parent().get_parent().name != "pirate_bomber":
+		if enemy.global_position.distance_to(player.global_position) < enemy.AttackDistance:
+			emit_signal("Transitioned", self, "EnemyAttack")
+	else:
+		if enemy.global_position.distance_to(player.global_position) < enemy.ExplodeDistance:
+			emit_signal("Transitioned", self, "EnemyExplode")
 	
 	if enemy.global_position.distance_to(player.global_position) > enemy.ChaseDistance:
 		emit_signal("Transitioned", self, "EnemyWander")

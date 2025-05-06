@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bnp43n5ldt8eo"]
 
 [ext_resource type="Script" path="res://scripts/ui/level_complete.gd" id="1_rwlb2"]
-[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/Theme_test.tres" id="1_wmqxd"]
+[ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/others/Theme_test.tres" id="1_wmqxd"]
 
 [node name="LevelComplete" type="Control"]
 layout_mode = 3
