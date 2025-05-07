@@ -18,7 +18,6 @@ func _ready():
 	get_tree().paused = false
 
 func _process(delta):
-	print(current_level)
 	if not get_tree().paused:
 		elapsed_time += delta
 

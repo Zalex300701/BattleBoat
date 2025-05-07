@@ -1,11 +1,10 @@
 extends CharacterBody3D
 
 @export var WanderSpeed: float = 1.5
-@export var RunSpeed: float = 3.5
+@export var RunSpeed: float = 4.0
 @export var ChaseDistance: float = 100.0
-@export var ExplodeDistance: float = 15.0
+@export var ExplodeDistance: float = 10.0
 @export var RotationSpeed: float = 4.0
-@export var ExplodeCooldown: float = 2.0
 
 # Buoyancy parameters
 @export var bobbing_speed: float = 2.0
