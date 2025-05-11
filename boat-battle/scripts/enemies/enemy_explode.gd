@@ -23,7 +23,7 @@ func process(delta: float) -> void:
 		explode()
 		can_explode = false
 
-func physics_process(delta: float) -> void:
+func physics_process(_delta: float) -> void:
 	# Lower forward movement at wander speed
 	var forward_direction = -enemy.global_transform.basis.z.normalized()  # Forward is -Z in Godot
 	enemy.velocity = forward_direction * enemy.WanderSpeed

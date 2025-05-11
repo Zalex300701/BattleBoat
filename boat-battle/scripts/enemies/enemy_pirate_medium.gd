@@ -31,6 +31,7 @@ signal died
 var player: CharacterBody3D = null
 @onready var state_machine = $StateMachine
 @onready var ship_model = $ship_model
+@onready var health_bar = $SubViewport/Panel/ProgressBar
 
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("Player")[0]
@@ -77,14 +78,13 @@ func apply_turn_tilt(delta: float):
 	# Smoothly adjust tilt
 	tilt_angle = lerp(tilt_angle, target_tilt, delta * tilt_smoothness)
 
-func take_damage(amount: float):
+func take_damage(amount: int):
 	current_health -= amount
 	update_health_bar()
 	if current_health <= 0:
 		die()
 
 func update_health_bar():
-	var health_bar = $SubViewport/Panel/ProgressBar
 	health_bar.value = float(current_health) / max_health * 100
 
 func die():

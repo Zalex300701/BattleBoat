@@ -5,6 +5,7 @@ var can_shoot: bool = true
 var shoot_cooldown: float = 1.0
 var current_cooldown: float = 0.0
 var cannonball_scene = load("res://scenes/cannonball.tscn")
+var explosion_scene = load("res://scenes/explosion.tscn")
 
 @onready var left_cannon_marker = $left_cannon/left_cannon_marker
 @onready var right_cannon_marker = $right_cannon/right_cannon_marker
@@ -38,5 +39,11 @@ func shoot(direction: int) -> void:
 	cannonball.global_transform.origin = marker.global_transform.origin
 	var shoot_direction = global_transform.basis.x.normalized() * direction
 	var speed = 50
-	print(player)
 	cannonball.launch(shoot_direction, speed, player)
+	
+	# Spawn explosion effect
+	var explosion = explosion_scene.instantiate()
+	get_parent().add_child(explosion)
+	explosion.global_transform.origin = cannonball.global_transform.origin
+	explosion.cannon_explosion()
+	explosion.rotation = rotation if direction > 0 else rotation + Vector3(0, deg_to_rad(180), 0)

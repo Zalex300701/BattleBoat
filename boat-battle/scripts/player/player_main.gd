@@ -161,8 +161,6 @@ func apply_sail_skin(sail_color: String) -> void:
 	
 	# Nettoyer l'instance pour éviter les fuites de mémoire
 	sail_instance.queue_free()
-	
-	print("Skin de la voile appliqué : %s" % sail_color)
 
 func apply_hull_skin(hull_color: String) -> void:
 	var hull = get_node("ship_small")
@@ -188,5 +186,3 @@ func apply_hull_skin(hull_color: String) -> void:
 	
 	hull.mesh = hull_mesh.mesh
 	hull_instance.queue_free()
-	
-	print("Skin de la coque appliqué : %s" % hull_color)

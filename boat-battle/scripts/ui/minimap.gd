@@ -12,7 +12,7 @@ func _ready():
 	minimap_camera.global_transform.origin = player.global_transform.origin + Vector3(0, 20, 0)
 	minimap_camera.size = 100 / zoom
 
-func _process(delta):
+func _process(_delta):
 	minimap_camera.global_transform.origin = player.global_transform.origin + Vector3(0, 20, 0)
 	if player_icon:
 		player_icon.global_position = player.global_position + Vector3(0, 1, 0)
