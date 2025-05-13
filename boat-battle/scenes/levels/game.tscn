@@ -154,14 +154,11 @@ ocean_scene = ExtResource("19_ohd0w")
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_ydigl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
 
-[node name="pirate_medium2" parent="Enemies" instance=ExtResource("20_ydigl")]
-transform = Transform3D(1, -1.00847e-09, -1.16357e-11, 1.00847e-09, 0.999734, 0.0230712, -1.16357e-11, -0.0230712, 0.999734, -52.3944, 0, -57.6525)
-
-[node name="pirate_medium3" parent="Enemies" instance=ExtResource("20_ydigl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.6713, 0, -189.804)
-
 [node name="pirate_bomber" parent="Enemies" instance=ExtResource("20_sgp22")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 1, -20.585)
+
+[node name="pirate_bomber2" parent="Enemies" instance=ExtResource("20_sgp22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 1, -50.6233)
 
 [node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
 visible = false

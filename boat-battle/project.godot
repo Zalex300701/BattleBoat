@@ -42,6 +42,8 @@ folder_colors={
 
 Player=""
 Enemies=""
+Enemy_Bomber=""
+Enemy_Medium=""
 
 [input]
 

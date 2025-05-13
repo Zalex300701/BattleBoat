@@ -67,3 +67,6 @@ func apply_turn_tilt(delta: float):
 	
 	# Smoothly adjust tilt
 	tilt_angle = lerp(tilt_angle, target_tilt, delta * tilt_smoothness)
+
+func chained_reaction(damage, raidus):
+	print("Il faut que je link la méthode explode au main pirate bomber pour les réactions chainées")
