@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://mvahx8lut7kk"]
+[gd_scene load_steps=53 format=3 uid="uid://mvahx8lut7kk"]
 
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_lul5k"]
 
@@ -60,13 +60,22 @@ scale_curve = SubResource("CurveTexture_1xvah")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfyb6"]
 albedo_color = Color(0.831775, 0.358722, 0, 1)
 emission_enabled = true
-emission = Color(0.942398, 0.404153, 1.92523e-07, 1)
+emission = Color(0.94, 0.579667, 0, 1)
 emission_energy_multiplier = 2.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_0xr3i"]
 material = SubResource("StandardMaterial3D_rfyb6")
 top_radius = 0.1
 bottom_radius = 0.0
+radial_segments = 4
+rings = 2
+
+[sub_resource type="Curve" id="Curve_uqt0f"]
+_data = [Vector2(0, 0.694972), 0.0, 2.61104, 0, 0, Vector2(0.231308, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.586033), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ymcwa"]
+curve = SubResource("Curve_uqt0f")
 
 [sub_resource type="Gradient" id="Gradient_tojdk"]
 colors = PackedColorArray(0.937083, 0.792326, 3.85046e-07, 1, 0.839425, 0.175025, 5.77569e-07, 1)
@@ -102,6 +111,7 @@ scale_max = 15.0
 scale_curve = SubResource("CurveTexture_xdwyn")
 color = Color(0.958967, 0.748797, 0.126802, 1)
 color_ramp = SubResource("GradientTexture1D_a2qhj")
+alpha_curve = SubResource("CurveTexture_ymcwa")
 emission_curve = SubResource("CurveTexture_w34id")
 
 [sub_resource type="Curve" id="Curve_wnjgp"]
@@ -248,6 +258,33 @@ albedo_color = Color(0.629589, 0.435712, 0.313304, 1)
 material = SubResource("StandardMaterial3D_0lsaj")
 size = Vector3(0.25, 1, 2)
 
+[sub_resource type="Curve" id="Curve_01hgu"]
+_data = [Vector2(0, 0.440782), 0.0, 2.41763, 0, 0, Vector2(0.71028, 0.938268), -0.475773, -0.475773, 0, 0, Vector2(1, 0), -6.33629, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ftrit"]
+curve = SubResource("Curve_01hgu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_841vs"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 15.0
+initial_velocity_min = 5.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.8
+scale_max = 1.3
+scale_curve = SubResource("CurveTexture_ftrit")
+color = Color(0.988054, 0.855616, 0.890866, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ihs4g"]
+material = SubResource("StandardMaterial3D_rfyb6")
+top_radius = 0.03
+bottom_radius = 0.0
+height = 0.3
+radial_segments = 4
+rings = 2
+
 [node name="Explosions" type="Node3D"]
 script = ExtResource("1_lul5k")
 
@@ -319,3 +356,11 @@ fixed_fps = 60
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_niw0f")
 draw_pass_1 = SubResource("BoxMesh_sf2hr")
+
+[node name="Spark" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 10
+lifetime = 0.5
+trail_lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_841vs")
+draw_pass_1 = SubResource("CylinderMesh_ihs4g")

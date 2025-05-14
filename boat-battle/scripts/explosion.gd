@@ -7,6 +7,7 @@ extends Node3D
 @onready var cannon_burst: GPUParticles3D = $Cannon_burst
 @onready var cannon_damage_smoke: GPUParticles3D = $Cannon_damage_smoke
 @onready var cannon_damage_wood: GPUParticles3D = $Cannon_damage_wood
+@onready var spark: GPUParticles3D = $Spark
 
 func cannon_explosion():
 	cannon_burst.emitting = true
@@ -17,6 +18,11 @@ func damage():
 	cannon_damage_smoke.emitting = true
 	cannon_damage_wood.emitting = true
 	await get_tree().create_timer(2.0).timeout
+	queue_free()
+
+func bomber_spark():
+	spark.emitting = true
+	await get_tree().create_timer(3.5).timeout
 	queue_free()
 
 func die_explosion():

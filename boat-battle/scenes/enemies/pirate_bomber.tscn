@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://scripts/state machine/state_machine.gd" id="1_i47x8"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_pirate_bomber.gd" id="1_m13ew"]
-[ext_resource type="Texture2D" uid="uid://b8tweghkceve" path="res://assets/textures/icons/ui/progress_red_small.png" id="2_833ci"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="2_mkgka"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_wander.gd" id="2_ybh03"]
 [ext_resource type="PackedScene" uid="uid://b8b41exrjm6q4" path="res://assets/models/ships_enemy/paddles_loop.glb" id="3_ey76s"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_chase.gd" id="3_hungx"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_explode.gd" id="4_fvifd"]
+[ext_resource type="Texture2D" uid="uid://csg4qes1ra07i" path="res://assets/textures/icons/ui/minimap_icon_jewel_yellow.png" id="4_m822t"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_28uqr"]
 _surfaces = [{
@@ -73,10 +73,13 @@ texture = SubResource("ViewportTexture_gwqeq")
 layers = 2
 pixel_size = 0.8
 billboard = 1
-texture = ExtResource("2_833ci")
+texture = ExtResource("4_m822t")
 
 [node name="explosion_marker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09373, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, 0)
+
+[node name="spark_marker" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0243517, 0.935329, 1.46887)
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("InitialState")]
 script = ExtResource("1_i47x8")

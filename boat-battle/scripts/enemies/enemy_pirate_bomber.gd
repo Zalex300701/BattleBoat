@@ -68,5 +68,9 @@ func apply_turn_tilt(delta: float):
 	# Smoothly adjust tilt
 	tilt_angle = lerp(tilt_angle, target_tilt, delta * tilt_smoothness)
 
-func chained_reaction(damage, raidus):
-	print("Il faut que je link la méthode explode au main pirate bomber pour les réactions chainées")
+func chained_reaction(damage, radius):
+	# Timer from a explosion to an other
+	await get_tree().create_timer(0.25).timeout
+	
+	var explode_node = get_node("StateMachine/EnemyExplode")
+	explode_node.explode(damage, radius)

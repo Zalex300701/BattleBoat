@@ -11,7 +11,7 @@ func process(_delta: float):
 	if get_parent().get_parent().is_in_group("Enemy_Medium"):
 		if enemy.global_position.distance_to(player.global_position) < enemy.AttackDistance:
 			emit_signal("Transitioned", self, "EnemyAttack")
-	else:
+	if get_parent().get_parent().is_in_group("Enemy_Bomber"):
 		if enemy.global_position.distance_to(player.global_position) < enemy.ExplodeDistance:
 			emit_signal("Transitioned", self, "EnemyExplode")
 	
@@ -24,5 +24,6 @@ func physics_process(delta: float) -> void:
 	
 	if direction.length() > 0:
 		enemy.rotation.y = lerp_angle(enemy.rotation.y, atan2(-direction.x, -direction.z), delta * enemy.RotationSpeed)
-
+	
 	enemy.velocity = direction * enemy.RunSpeed
+	

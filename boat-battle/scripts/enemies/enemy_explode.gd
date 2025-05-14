@@ -7,6 +7,7 @@ var explosion_scene = load("res://scenes/explosion.tscn")
 
 var explosion_cooldown: float = 3.5
 var can_explode: bool = true
+var spark_effect_status: bool = true
 
 @onready var ship_model: MeshInstance3D = $"../../ship_model"
 
@@ -15,6 +16,16 @@ func _ready():
 	var radius: float = 20.0
 
 func process(delta: float) -> void:
+	# Spark effect when in range
+	if spark_effect_status:
+		var explosion = explosion_scene.instantiate()
+		get_parent().get_parent().add_child(explosion)
+		var explosion_spawn = $"../../spark_marker"
+		explosion.global_transform.origin = explosion_spawn.global_transform.origin
+		explosion.bomber_spark()
+		spark_effect_status = false
+	
+	#  Explosion cooldown
 	explosion_cooldown -= delta
 	if explosion_cooldown <= 0:
 		explode()
@@ -45,7 +56,7 @@ func explode(damage: float = 5.0, radius: float = 20.0) -> void:
 		
 		# Spawn explosion effect
 		var explosion = explosion_scene.instantiate()
-		get_parent().add_child(explosion)
+		get_parent().get_parent().add_child(explosion)
 		var explosion_spawn = $"../../explosion_marker"
 		explosion.global_transform.origin = explosion_spawn.global_transform.origin
 		explosion.die_explosion()
