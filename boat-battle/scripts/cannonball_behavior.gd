@@ -9,15 +9,29 @@ var is_moving: bool = false
 var fixed_y: float = 0.0  # Stores the initial Y position
 var traveled_distance: float = 0.0 # Tracks how far the cannonball has moved
 var falling: bool = false # Flag to indicate if it should fall
+var target: Node3D = null  # Reference to the player for guided movement
 
 func _process(delta):
 	if is_moving:
-		var move_vector = direction * speed * delta
-		traveled_distance += move_vector.length()
-		
-		# Move cannonball
-		global_transform.origin.x += move_vector.x
-		global_transform.origin.z += move_vector.z
+		if target != null:  # Guided mode
+			# Calculate direction toward the player's current position
+			var player_pos = target.global_transform.origin
+			player_pos.y = fixed_y  # Keep the Y position fixed
+			direction = (player_pos - global_transform.origin).normalized()
+			
+			var move_vector = direction * speed * delta
+			traveled_distance += move_vector.length()
+			
+			# Move cannonball to player
+			global_transform.origin.x += move_vector.x
+			global_transform.origin.z += move_vector.z
+		else:
+			var move_vector = direction * speed * delta
+			traveled_distance += move_vector.length()
+			
+			# Move cannonball straight
+			global_transform.origin.x += move_vector.x
+			global_transform.origin.z += move_vector.z
 		
 		# Start falling after reaching the fall distance
 		if traveled_distance >= fall_distance:
@@ -34,10 +48,19 @@ func _process(delta):
 			queue_free()
 
 func launch(dir: Vector3, spd: float, firing_owner: Node3D = null):
+	$cannonball_classic.show()
 	direction = dir
 	speed = spd
 	owner = firing_owner
 	fixed_y = global_transform.origin.y  # Store the Y position at launch
+	is_moving = true
+
+func launch_guided(spd: float, firing_owner: Node3D = null, player: Node3D = null):
+	$cannonball_ghost.show()
+	speed = spd
+	owner = firing_owner
+	fixed_y = global_transform.origin.y  # Store the Y position at launch
+	target = player  # Set the player as the target
 	is_moving = true
 
 func _on_body_entered(body):

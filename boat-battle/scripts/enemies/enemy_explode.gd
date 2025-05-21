@@ -5,7 +5,7 @@ class_name EnemyExplode
 
 var explosion_scene = load("res://scenes/explosion.tscn")
 
-var explosion_cooldown: float = 3.5
+var explosion_cooldown: float = 4.0
 var can_explode: bool = true
 var spark_effect_status: bool = true
 

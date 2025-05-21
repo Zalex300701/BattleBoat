@@ -44,6 +44,7 @@ Player=""
 Enemies=""
 Enemy_Bomber=""
 Enemy_Medium=""
+Enemy_Ghost=""
 
 [input]
 

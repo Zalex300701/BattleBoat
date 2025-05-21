@@ -21,7 +21,7 @@ func process(_delta: float) -> void:
 func physics_process(delta: float) -> void:
 	var to_player = (player.global_transform.origin - enemy.global_transform.origin).normalized()
 	to_player.y = 0
-	align_for_firing(delta, to_player)
+	align_for_firing(delta, to_player, enemy.alignment_tolerance)
 	
 	# Maintain forward movement at chase speed
 	var forward_direction = -enemy.global_transform.basis.z.normalized()  # Forward is -Z in Godot
@@ -33,7 +33,7 @@ func physics_process(delta: float) -> void:
 		if current_cooldown <= 0:
 			can_shoot = true
 
-func align_for_firing(delta: float, direction: Vector3):
+func align_for_firing(delta: float, direction: Vector3, alignment_tolerance: float):
 	# Get the enemy's right and left side vectors
 	var right_side = enemy.global_transform.basis.x.normalized()  # Local +X axis (right)
 	var left_side = -right_side  # Local -X axis (left)
@@ -55,7 +55,7 @@ func align_for_firing(delta: float, direction: Vector3):
 
 	# Check if the enemy is aligned well enough to fire
 	var angle_diff = abs(wrapf(enemy.rotation.y - target_rotation, -PI, PI))
-	if angle_diff < 0.2 and can_shoot:  # Adjust threshold for firing (wider tolerance for continuous firing)
+	if angle_diff < alignment_tolerance and can_shoot:  # Adjust threshold for firing (wider tolerance for continuous firing)
 		fire_cannons(direction, firing_right_side)
 
 func fire_cannons(player_direction: Vector3, firing_right_side: bool):
@@ -70,7 +70,11 @@ func fire_cannons(player_direction: Vector3, firing_right_side: bool):
 	cannonball.global_transform.origin = cannon_spawn.global_transform.origin
 	
 	# Fire toward player
-	cannonball.launch(player_direction, enemy.CannonballSpeed, enemy)
+	if get_parent().get_parent().is_in_group("Enemy_Medium"):
+		cannonball.launch(player_direction, enemy.CannonballSpeed, enemy)
+	if get_parent().get_parent().is_in_group("Enemy_Ghost"):
+		print("enemy.CannonballSpeed, enemy, player")
+		cannonball.launch_guided(enemy.CannonballSpeed, enemy, player)
 	
 	# Spawn explosion effect
 	var explosion = explosion_scene.instantiate()

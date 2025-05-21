@@ -1,13 +1,13 @@
 extends CharacterBody3D
 
-@export var WanderSpeed: float = 1.5
-@export var RunSpeed: float = 2.5
-@export var ChaseDistance: float = 100.0
-@export var AttackDistance: float = 50.0
+@export var WanderSpeed: float = 1.25
+@export var RunSpeed: float = 2.25
+@export var ChaseDistance: float = 130.0
+@export var AttackDistance: float = 80.0
 @export var RotationSpeed: float = 0.5
-@export var CannonballSpeed: float = 50.0
-@export var CannonCooldown: float = 3.0
-@export var alignment_tolerance: float = 0.2
+@export var CannonballSpeed: float = 10.0
+@export var CannonCooldown: float = 5.0
+@export var alignment_tolerance: float = 0.5
 
 # Buoyancy parameters
 @export var bobbing_speed: float = 2.0
@@ -19,7 +19,7 @@ extends CharacterBody3D
 @export var max_turn_tilt: float = 5.0  # Maximum roll angle when turning
 @export var tilt_smoothness: float = 3.0  # How smoothly tilt adjusts
 
-var max_health: int = 3
+var max_health: int = 10
 var current_health: int = max_health
 var initial_y: float
 var initial_rotation: Vector3

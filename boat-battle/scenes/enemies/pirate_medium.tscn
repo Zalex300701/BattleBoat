@@ -559,9 +559,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.54746, -4.00727)
 mesh = SubResource("ArrayMesh_21gm0")
 skeleton = NodePath("")
 
-[node name="explosion_marker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93776, 1.19951)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.10803, 0.352564)
 shape = SubResource("BoxShape3D_mdxva")
