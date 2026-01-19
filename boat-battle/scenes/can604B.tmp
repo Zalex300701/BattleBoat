@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://b624no6rxtdbj"]
+[gd_scene load_steps=8 format=4 uid="uid://b624no6rxtdbj"]
 
 [ext_resource type="Script" path="res://scripts/cannonball_behavior.gd" id="1_enh0e"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qt57o"]
-[ext_resource type="Texture2D" uid="uid://dqgewpkuen642" path="res://assets/textures/sfx/circle_04.png" id="4_2m18u"]
 [ext_resource type="AudioStream" uid="uid://bf288qe385vk0" path="res://assets/sounds/sfx_splash.mp3" id="4_qkaq0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_riwyj"]
@@ -45,39 +44,6 @@ shadow_mesh = SubResource("ArrayMesh_hy0n0")
 [sub_resource type="SphereShape3D" id="SphereShape3D_v1fos"]
 radius = 0.302062
 
-[sub_resource type="Curve" id="Curve_1qcy3"]
-_data = [Vector2(0, 0.980807), 0.0, 0.0, 0, 0, Vector2(1, 0.0531497), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_xf44f"]
-curve = SubResource("Curve_1qcy3")
-
-[sub_resource type="Curve" id="Curve_na41o"]
-_data = [Vector2(0, 0.0403544), 0.0, 3.74262, 0, 0, Vector2(0.194872, 0.603346), 1.32092, 1.32092, 0, 0, Vector2(0.979487, 0.987205), 0.239911, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_0gww3"]
-curve = SubResource("Curve_na41o")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0g056"]
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_0gww3")
-alpha_curve = SubResource("CurveTexture_xf44f")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fisv"]
-transparency = 1
-blend_mode = 1
-cull_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_2m18u")
-
-[sub_resource type="QuadMesh" id="QuadMesh_mo55t"]
-lightmap_size_hint = Vector2i(7, 7)
-material = SubResource("StandardMaterial3D_1fisv")
-size = Vector2(6, 6)
-orientation = 1
-
 [node name="Cannonball" type="Area3D"]
 script = ExtResource("1_enh0e")
 
@@ -100,15 +66,7 @@ skeleton = NodePath("")
 
 [node name="sfx_splash" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_qkaq0")
-volume_db = -12.0
-
-[node name="Splash" type="GPUParticles3D" parent="."]
-emitting = false
-amount = 1
-lifetime = 2.0
-one_shot = true
-process_material = SubResource("ParticleProcessMaterial_0g056")
-draw_pass_1 = SubResource("QuadMesh_mo55t")
+volume_db = 14.388
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

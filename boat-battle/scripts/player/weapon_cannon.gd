@@ -2,13 +2,14 @@ extends Node3D
 
 @onready var player: CharacterBody3D = get_owner()
 var can_shoot: bool = true
-var shoot_cooldown: float = 1.0
+var shoot_cooldown: float = 3.0
 var current_cooldown: float = 0.0
 var cannonball_scene = load("res://scenes/cannonball.tscn")
 var explosion_scene = load("res://scenes/explosion.tscn")
 
 @onready var left_cannon_marker = $left_cannon/left_cannon_marker
 @onready var right_cannon_marker = $right_cannon/right_cannon_marker
+@onready var sfx_cannon: AudioStreamPlayer3D = $sfx_cannon
 
 func _ready() -> void:
 	pass
@@ -21,7 +22,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.is_pressed() and can_shoot:
-		if event.keycode == KEY_A:
+		if event.keycode == KEY_Q:
 			shoot(-1)
 			start_cooldown()
 		elif event.keycode == KEY_E:
@@ -33,6 +34,7 @@ func start_cooldown() -> void:
 	current_cooldown = shoot_cooldown
 
 func shoot(direction: int) -> void:
+	sfx_cannon.play()
 	var marker = right_cannon_marker if direction > 0 else left_cannon_marker
 	var cannonball = cannonball_scene.instantiate()
 	get_tree().root.add_child(cannonball)

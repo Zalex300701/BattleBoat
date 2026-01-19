@@ -57,9 +57,10 @@ script = ExtResource("3_f7cdk")
 ocean_scene = ExtResource("4_d5d3a")
 
 [node name="HealthBar" parent="." instance=ExtResource("5_wqrts")]
-visible = false
 
 [node name="pirate_medium" parent="." instance=ExtResource("6_jjbdv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -100)
 
 [node name="Minimap" parent="." instance=ExtResource("8_afj3m")]
+
+[connection signal="health_changed" from="Player" to="HealthBar" method="update_health"]

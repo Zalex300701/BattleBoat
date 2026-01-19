@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bsnv1wy0kur80"]
+[gd_scene load_steps=12 format=4 uid="uid://bsnv1wy0kur80"]
 
 [ext_resource type="Script" path="res://scripts/state machine/state_machine.gd" id="1_i47x8"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_pirate_bomber.gd" id="1_m13ew"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b8b41exrjm6q4" path="res://assets/models/ships_enemy/paddles_loop.glb" id="3_ey76s"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_chase.gd" id="3_hungx"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_explode.gd" id="4_fvifd"]
-[ext_resource type="Texture2D" uid="uid://csg4qes1ra07i" path="res://assets/textures/icons/ui/minimap_icon_jewel_yellow.png" id="4_m822t"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_28uqr"]
 _surfaces = [{
@@ -68,12 +67,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.1812, 0)
 billboard = 1
 texture_filter = 0
 texture = SubResource("ViewportTexture_gwqeq")
-
-[node name="EnemyIcon" type="Sprite3D" parent="."]
-layers = 2
-pixel_size = 0.8
-billboard = 1
-texture = ExtResource("4_m822t")
 
 [node name="explosion_marker" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74, 0)

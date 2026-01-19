@@ -12,6 +12,12 @@ shader = ExtResource("2_poyrk")
 layer = 2
 script = ExtResource("1_fqsw8")
 
+[node name="MinimapIcons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="MinimapContainer" type="PanelContainer" parent="."]
 clip_children = 1
 anchors_preset = 1

@@ -3,6 +3,8 @@ extends Node
 var highest_unlocked_level: int = 1
 var current_sail_skin: String = "sail_white"
 var current_hull_skin: String = "ship_small_hull_brown"
+var max_health: int = 10
+var current_health: int = 10
 
 func _ready():
 	load_from_file()  # Load settings when the game starts

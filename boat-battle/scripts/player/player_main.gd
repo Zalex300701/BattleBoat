@@ -37,6 +37,8 @@ var has_initialized_health: bool = false
 var sink_animations := ["player_sink_1", "player_sink_2", "player_sink_3", "player_sink_4"]
 var is_dying = false
 
+@onready var sfx_wood_break: AudioStreamPlayer3D = $sfx_wood_break
+
 func _ready():
 	apply_sail_skin(PlayerSettings.get_sail_skin())
 	apply_hull_skin(PlayerSettings.get_hull_skin())
@@ -117,6 +119,7 @@ func take_damage(amount: float):
 	if current_health <= 0:
 		is_dying = true
 		die()
+	sfx_wood_break.play()
 
 func heal(amount: float):
 	current_health = clamp(current_health + amount, 0, max_health)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnp43n5ldt8eo"]
+[gd_scene load_steps=4 format=3 uid="uid://bnp43n5ldt8eo"]
 
 [ext_resource type="Script" path="res://scripts/ui/level_complete.gd" id="1_rwlb2"]
 [ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/others/Theme_test.tres" id="1_wmqxd"]
+[ext_resource type="AudioStream" uid="uid://cckxog2d17ud4" path="res://assets/sounds/sfx_level_finished.mp3" id="3_iqjdn"]
 
 [node name="LevelComplete" type="Control"]
 layout_mode = 3
@@ -75,6 +76,10 @@ text = "Next Level"
 [node name="Menu_button" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 text = "Menu"
+
+[node name="sfx_level_finished" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iqjdn")
+volume_db = -16.0
 
 [connection signal="pressed" from="Panel/VBoxContainer/NextLevel_button" to="." method="_on_next_level_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Menu_button" to="." method="_on_menu_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://c0wnepni2pp05"]
+[gd_scene load_steps=74 format=3 uid="uid://c0wnepni2pp05"]
 
 [ext_resource type="Script" path="res://scripts/camera_movement.gd" id="1_p3lqc"]
 [ext_resource type="Environment" uid="uid://dkldvxlia5sen" path="res://assets/others/environment.tres" id="1_xwsb0"]
@@ -18,9 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d3i0vcna7waq5" path="res://scenes/player_small.tscn" id="15_gij1i"]
 [ext_resource type="Script" path="res://scripts/ocean_generation.gd" id="18_lt0cd"]
 [ext_resource type="PackedScene" uid="uid://dp5lyuvq1kbpa" path="res://scenes/ocean.tscn" id="19_ohd0w"]
-[ext_resource type="PackedScene" uid="uid://bsnv1wy0kur80" path="res://scenes/enemies/pirate_bomber.tscn" id="20_sgp22"]
 [ext_resource type="PackedScene" uid="uid://dhk36f43a0gt8" path="res://scenes/enemies/pirate_medium.tscn" id="20_ydigl"]
-[ext_resource type="PackedScene" uid="uid://24jocrl4rpeo" path="res://scenes/enemies/pirate_ghost.tscn" id="21_cobkf"]
+[ext_resource type="PackedScene" uid="uid://24jocrl4rpeo" path="res://scenes/enemies/pirate_ghost.tscn" id="21_o7qow"]
 [ext_resource type="PackedScene" uid="uid://bdblupqnrk56a" path="res://assets/models/ships_player/boat-row-large.glb" id="21_pm3pf"]
 [ext_resource type="PackedScene" uid="uid://bome4c52dlklu" path="res://assets/models/ships_player/boat-row-small.glb" id="22_qk0b5"]
 [ext_resource type="PackedScene" uid="uid://cv8s55v6g3m84" path="res://assets/models/ships_player/ship-small.glb" id="23_7pdv5"]
@@ -152,17 +151,13 @@ ocean_scene = ExtResource("19_ohd0w")
 
 [node name="Enemies" type="Node3D" parent="."]
 
+[node name="pirate_ghost" parent="Enemies" instance=ExtResource("21_o7qow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -71.9568)
+
 [node name="pirate_medium" parent="Enemies" instance=ExtResource("20_ydigl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
-
-[node name="pirate_bomber" parent="Enemies" instance=ExtResource("20_sgp22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 1, -20.585)
-
-[node name="pirate_ghost" parent="Enemies" instance=ExtResource("21_cobkf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9525, 0, -71.2754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7453, 0, -34.5318)
 
 [node name="HealthBar" parent="." instance=ExtResource("71_w6hix")]
-visible = false
 
 [node name="Models" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.366, 0.9, 60.095)

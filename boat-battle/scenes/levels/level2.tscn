@@ -72,3 +72,5 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -85, 0
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 85, 0, -75)
 
 [node name="Minimap" parent="." instance=ExtResource("8_2c3hd")]
+
+[connection signal="health_changed" from="Player" to="HealthBar" method="update_health"]

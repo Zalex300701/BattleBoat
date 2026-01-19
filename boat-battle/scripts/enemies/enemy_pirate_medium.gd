@@ -34,6 +34,8 @@ var player: CharacterBody3D = null
 @onready var ship_model = $ship_model
 @onready var health_bar = $SubViewport/Panel/ProgressBar
 
+@onready var sfx_wood_break: AudioStreamPlayer3D = $sfx_wood_break
+
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("Player")[0]
 	update_health_bar()
@@ -82,6 +84,7 @@ func apply_turn_tilt(delta: float):
 func take_damage(amount: int):
 	current_health -= amount
 	update_health_bar()
+	sfx_wood_break.play()
 	if current_health <= 0 and !is_dying:
 		die()
 

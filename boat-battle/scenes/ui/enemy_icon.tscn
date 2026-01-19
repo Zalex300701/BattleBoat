@@ -4,6 +4,6 @@
 
 [node name="EnemyIcon" type="Sprite3D"]
 layers = 2
-pixel_size = 0.2
+pixel_size = 0.7
 billboard = 1
 texture = ExtResource("1_xfd8t")

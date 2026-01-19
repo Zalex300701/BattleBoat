@@ -8,6 +8,7 @@ signal menu_pressed
 @onready var stats_label = $Panel/VBoxContainer/Stats_text
 @onready var next_level_button = $Panel/VBoxContainer/NextLevel_button
 @onready var menu_button = $Panel/VBoxContainer/Menu_button
+@onready var sfx_level_finished: AudioStreamPlayer = $sfx_level_finished
 
 func _ready():
 	title_label.text = "[rainbow freq=0.12 sat=0.75 val=1][center][wave amp=20 freq=8]Level Completed![/wave][/center][/rainbow]"
@@ -15,6 +16,7 @@ func _ready():
 	next_level_button.pressed.connect(_on_next_level_button_pressed)
 	menu_button.pressed.connect(_on_menu_button_pressed)
 	next_level_button.grab_focus()
+	sfx_level_finished.play()
 
 func set_level_time(time_seconds: float):
 	var minutes = int(time_seconds / 60)

@@ -11,6 +11,8 @@ var player: CharacterBody3D = null
 var can_shoot: bool = true
 var current_cooldown: float = 0.0
 
+@onready var sfx_cannon: AudioStreamPlayer3D = $"../../sfx_cannon"
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
@@ -73,8 +75,9 @@ func fire_cannons(player_direction: Vector3, firing_right_side: bool):
 	if get_parent().get_parent().is_in_group("Enemy_Medium"):
 		cannonball.launch(player_direction, enemy.CannonballSpeed, enemy)
 	if get_parent().get_parent().is_in_group("Enemy_Ghost"):
-		print("enemy.CannonballSpeed, enemy, player")
 		cannonball.launch_guided(enemy.CannonballSpeed, enemy, player)
+	
+	sfx_cannon.play()
 	
 	# Spawn explosion effect
 	var explosion = explosion_scene.instantiate()
