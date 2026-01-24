@@ -4,7 +4,8 @@ extends Area3D
 @export var fall_distance: float = 50.0 # Distance before gravity applies
 @export var despawn_depth: float = -20.0
 @onready var sfx_splash: AudioStreamPlayer3D = $sfx_splash
-@onready var splash: GPUParticles3D = $Splash
+@onready var splash_waves: GPUParticles3D = $Splash_waves
+@onready var splash_middle: GPUParticles3D = $Splah_middle
 
 var direction: Vector3 = Vector3.ZERO
 var is_moving: bool = false
@@ -51,7 +52,8 @@ func _process(delta):
 		if falling and global_transform.origin.y <= 0.0 and !has_splashed:
 			has_splashed = true
 			sfx_splash.play()
-			splash.emitting = true
+			splash_waves.emitting = true
+			splash_middle.emitting = true
 		
 		# Despawn if it sinks too deep
 		if global_transform.origin.y <= despawn_depth:
