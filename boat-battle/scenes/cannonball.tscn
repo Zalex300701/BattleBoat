@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/cannonball_behavior.gd" id="1_enh0e"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_qt57o"]
+[ext_resource type="AudioStream" uid="uid://b1coufedb1pjs" path="res://assets/sounds/sfx_splash.ogg" id="4_1ngyi"]
 [ext_resource type="Texture2D" uid="uid://dqgewpkuen642" path="res://assets/textures/sfx/circle_04.png" id="4_2m18u"]
-[ext_resource type="AudioStream" uid="uid://bf288qe385vk0" path="res://assets/sounds/sfx_splash.mp3" id="4_qkaq0"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_riwyj"]
 radius = 1.32311
@@ -98,10 +98,6 @@ shape = SubResource("SphereShape3D_v1fos")
 mesh = SubResource("ArrayMesh_tpa17")
 skeleton = NodePath("")
 
-[node name="sfx_splash" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("4_qkaq0")
-volume_db = -12.0
-
 [node name="Splash" type="GPUParticles3D" parent="."]
 emitting = false
 amount = 1
@@ -109,6 +105,9 @@ lifetime = 2.0
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_0g056")
 draw_pass_1 = SubResource("QuadMesh_mo55t")
+
+[node name="sfx_splash" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_1ngyi")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

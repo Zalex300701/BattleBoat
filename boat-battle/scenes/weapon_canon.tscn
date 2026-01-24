@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ck7w6qrvlgxdq" path="res://assets/models/upgrades/cannon.glb" id="1_32vmg"]
 [ext_resource type="Script" path="res://scripts/player/weapon_cannon.gd" id="1_mifv0"]
-[ext_resource type="AudioStream" uid="uid://bisk7aftrcq66" path="res://assets/sounds/sfx_cannon.mp3" id="3_5b4hb"]
+[ext_resource type="AudioStream" uid="uid://dyu1fgr0n8kc" path="res://assets/sounds/sfx_cannon.ogg" id="3_egdeq"]
 
 [node name="WeaponCanon" type="Node3D"]
 script = ExtResource("1_mifv0")
@@ -20,5 +20,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.6, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 1)
 
 [node name="sfx_cannon" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_5b4hb")
-volume_db = -20.0
+stream = ExtResource("3_egdeq")

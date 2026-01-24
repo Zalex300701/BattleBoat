@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://x7jaxpbss2e5"]
+[gd_scene load_steps=32 format=3 uid="uid://x7jaxpbss2e5"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_1db28"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_6a0f8"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://scripts/game_menu/gm_player.gd" id="22_qhq3n"]
 [ext_resource type="Script" path="res://scripts/game_menu/gm_ui.gd" id="23_jqhwf"]
 [ext_resource type="Theme" uid="uid://clr5v8s2yo3ra" path="res://assets/others/Theme_test.tres" id="24_2aq3f"]
+[ext_resource type="AudioStream" uid="uid://np83sehfx0bl" path="res://assets/sounds/sfx_ambient_ocean.ogg" id="25_xs0o6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlluh"]
 sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
@@ -336,6 +337,10 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("24_2aq3f")
 text = "Back"
+
+[node name="sfx_ambient_ocean" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("25_xs0o6")
+autoplay = true
 
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Start_button" to="Menus" method="_on_start_pressed"]
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Boathouse_button" to="Menus" method="_on_boathouse_button_pressed"]

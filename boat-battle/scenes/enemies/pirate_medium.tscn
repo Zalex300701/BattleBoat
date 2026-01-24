@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://dhk36f43a0gt8"]
+[gd_scene load_steps=38 format=4 uid="uid://dhk36f43a0gt8"]
 
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="1_dcbtf"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_pirate_medium.gd" id="1_ijdjf"]
@@ -7,8 +7,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemy_chase.gd" id="5_illlv"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_attack.gd" id="6_fs3ah"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_dying.gd" id="6_yaj8m"]
-[ext_resource type="AudioStream" uid="uid://vi82i1pijhws" path="res://assets/sounds/sfx_wood_break.mp3" id="8_g0vln"]
-[ext_resource type="AudioStream" uid="uid://bisk7aftrcq66" path="res://assets/sounds/sfx_cannon.mp3" id="9_1pxhu"]
+[ext_resource type="AudioStream" uid="uid://dyu1fgr0n8kc" path="res://assets/sounds/sfx_cannon.ogg" id="8_5kdfi"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6e6co"]
 _surfaces = [{
@@ -622,10 +621,5 @@ libraries = {
 "": SubResource("AnimationLibrary_rlyi8")
 }
 
-[node name="sfx_wood_break" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("8_g0vln")
-volume_db = -15.0
-
 [node name="sfx_cannon" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("9_1pxhu")
-volume_db = -15.0
+stream = ExtResource("8_5kdfi")

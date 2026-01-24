@@ -84,7 +84,6 @@ func apply_turn_tilt(delta: float):
 func take_damage(amount: int):
 	current_health -= amount
 	update_health_bar()
-	sfx_wood_break.play()
 	if current_health <= 0 and !is_dying:
 		die()
 
