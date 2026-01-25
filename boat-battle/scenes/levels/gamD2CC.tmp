@@ -74,8 +74,8 @@
 [ext_resource type="PackedScene" uid="uid://jt6te1qlb71e" path="res://assets/models/building/tower-watch.glb" id="70_6bsc8"]
 [ext_resource type="PackedScene" uid="uid://5nwty3u5t10l" path="res://scenes/ui/health_bar.tscn" id="71_w6hix"]
 [ext_resource type="AudioStream" uid="uid://np83sehfx0bl" path="res://assets/sounds/sfx_ambient_ocean.ogg" id="73_r35fq"]
-[ext_resource type="Texture2D" uid="uid://c0pbjvmfw13mi" path="res://assets/textures/icons/ui/boost_logo.png" id="75_6s1uj"]
-[ext_resource type="Texture2D" uid="uid://c3i5vhvb5y0jv" path="res://assets/textures/icons/ui/white_background.png" id="76_rsre3"]
+[ext_resource type="Texture2D" uid="uid://dp88aarjyf0nc" path="res://assets/textures/icons/ui/cannon_logo.png" id="75_bjaiw"]
+[ext_resource type="Texture2D" uid="uid://d2h4kmlcmpv8p" path="res://assets/textures/icons/ui/white_background.png" id="76_rsre3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8kh8v"]
 size = Vector3(15.9331, 2.06131, 15.4117)
@@ -378,66 +378,38 @@ stream = ExtResource("73_r35fq")
 volume_db = -15.0
 autoplay = true
 
-[node name="Cooldowns" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 940.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="GridContainer" type="HBoxContainer" parent="Cooldowns"]
-custom_minimum_size = Vector2(400, 100)
-layout_mode = 1
+[node name="CannonButton" type="TextureButton" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -100.0
-offset_right = 200.0
+offset_left = -45.0
+offset_top = -180.0
+offset_right = 45.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 0
+texture_normal = ExtResource("75_bjaiw")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="BoostProgressBar" type="TextureProgressBar" parent="Cooldowns/GridContainer"]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CannonButton"]
 z_index = 10
-layout_mode = 2
-size_flags_horizontal = 4
-step = 0.01
-value = 100.0
-fill_mode = 5
-nine_patch_stretch = true
-texture_over = ExtResource("75_6s1uj")
-texture_progress = ExtResource("76_rsre3")
-tint_progress = Color(1, 1, 1, 0.5)
-
-[node name="Panel" type="Panel" parent="Cooldowns/GridContainer/BoostProgressBar"]
-modulate = Color(1, 1, 1, 0.2)
-light_mask = 16
-visibility_layer = 16
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CannonProgressBar" type="TextureProgressBar" parent="Cooldowns/GridContainer"]
-z_index = 10
-layout_mode = 2
 step = 0.01
-value = 100.0
 fill_mode = 5
 nine_patch_stretch = true
-texture_over = ExtResource("75_6s1uj")
 texture_progress = ExtResource("76_rsre3")
-tint_progress = Color(1, 1, 1, 0.5)
+tint_over = Color(1, 1, 1, 0.492)
+tint_progress = Color(1, 1, 1, 0.4)
 
-[node name="Panel" type="Panel" parent="Cooldowns/GridContainer/CannonProgressBar"]
+[node name="Panel" type="Panel" parent="CannonButton"]
 modulate = Color(1, 1, 1, 0.2)
 light_mask = 16
 visibility_layer = 16
@@ -445,8 +417,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -4.0
-offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
