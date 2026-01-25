@@ -37,6 +37,14 @@ var has_initialized_health: bool = false
 var sink_animations := ["player_sink_1", "player_sink_2", "player_sink_3", "player_sink_4"]
 var is_dying = false
 
+# Speed boost variables
+@export var boost_multiplier: float = 3.0
+@export var boost_duration: float = 0.5
+@export var boost_cooldown: float = 5.0
+var is_boosting : bool = false
+var boost_timer : float = 0.0
+var cooldown_timer : float = 0.0
+
 @onready var sfx_wood_break: AudioStreamPlayer3D = $sfx_wood_break
 
 func _ready():
@@ -55,6 +63,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	if !is_dying:
+		boost(delta)
 		handle_position_player(delta)
 		handle_rotation_player(delta)
 		apply_buoyancy(delta)
@@ -80,11 +89,22 @@ func handle_position_player(delta):
 	elif Input.is_action_pressed("move_backward"):
 		target_speed = max_backward_speed
 	
+	# Apply boost multiplier
+	var effective_target = target_speed
+	if is_boosting and target_speed < 0:
+		effective_target = target_speed * boost_multiplier
+	var accel_used = acceleration
+	if is_boosting:
+		accel_used *= 5.0
+	var decel_used = deceleration
+	if is_boosting:
+		decel_used *= 2.0
+	
 	# Smooth position acceleration/deceleration
-	if current_speed < target_speed:
-		current_speed += acceleration * delta
-	elif current_speed > target_speed:
-		current_speed -= deceleration * delta
+	if current_speed < effective_target:
+		current_speed += accel_used * delta
+	elif current_speed > effective_target:
+		current_speed -= decel_used * delta
 	
 	# Apply movement with physics (along local Z-axis)
 	velocity.x = transform.basis.z.x * current_speed
@@ -131,6 +151,23 @@ func die():
 	var chosen_animation = sink_animations[randi() % sink_animations.size()]
 	animation_player.play(chosen_animation)
 	await animation_player.animation_finished
+
+func boost(delta):
+	if cooldown_timer > 0:
+		cooldown_timer -= delta
+
+	if Input.is_action_just_pressed("boost") and cooldown_timer <= 0 and not is_boosting:
+		print("🚀 BOOST ACTIVATED!")
+		is_boosting = true
+		boost_timer = boost_duration
+		current_speed = -max_forward_speed * boost_multiplier
+	
+	if is_boosting:
+		boost_timer -= delta
+		if boost_timer <= 0:
+			print("⏹️ BOOST ENDED")
+			is_boosting = false
+			cooldown_timer = boost_cooldown
 
 func apply_sail_skin(sail_color: String) -> void:
 	# Accéder à la MeshInstance3D de la voile (sail-1)
