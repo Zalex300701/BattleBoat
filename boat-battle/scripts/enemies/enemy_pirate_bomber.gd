@@ -8,9 +8,9 @@ extends CharacterBody3D
 
 # Buoyancy parameters
 @export var bobbing_speed: float = 2.0
-@export var bobbing_amplitude: float = 0.1
-@export var rotation_speed: float = 1.5
-@export var rotation_amplitude: float = 1.0
+@export var bobbing_amplitude: float = 0.05
+@export var rotation_speed: float = 2.5
+@export var rotation_amplitude: float = 5.0
 
 # Tilt parameters
 @export var max_turn_tilt: float = 5.0  # Maximum roll angle when turning
