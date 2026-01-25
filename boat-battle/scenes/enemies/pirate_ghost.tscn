@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://24jocrl4rpeo"]
+[gd_scene load_steps=41 format=4 uid="uid://24jocrl4rpeo"]
 
 [ext_resource type="Script" path="res://scripts/enemies/enemy_pirate_ghost.gd" id="1_2kbb1"]
 [ext_resource type="Material" uid="uid://dcsk441a6vo1h" path="res://assets/materials/color_map.tres" id="2_p2p0y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/enemies/enemy_attack.gd" id="7_c4jdw"]
 [ext_resource type="AudioStream" uid="uid://dyu1fgr0n8kc" path="res://assets/sounds/sfx_cannon.ogg" id="8_cy0op"]
 [ext_resource type="Script" path="res://scripts/enemies/enemy_dying.gd" id="8_gnnyt"]
+[ext_resource type="AudioStream" uid="uid://dbcndty0l8dwv" path="res://assets/sounds/sfx_sink.ogg" id="10_lela4"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_td0jg"]
 _surfaces = [{
@@ -510,5 +511,8 @@ libraries = {
 
 [node name="sfx_cannon" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_cy0op")
+
+[node name="sfx_sink" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_lela4")
 
 [node name="cannon-ghost" type="Node3D" parent="."]

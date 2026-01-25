@@ -44,6 +44,12 @@ var is_dying = false
 var is_boosting : bool = false
 var boost_timer : float = 0.0
 var cooldown_timer : float = 0.0
+@export var boost_pitch_amplitude: float = 8.0
+@export var boost_pitch_rise_time: float = 1.0
+@export var boost_pitch_fall_time: float = 10.0
+
+var boost_pitch_target: float = 0.0
+var boost_pitch_current: float = 0.0
 
 @onready var sfx_wood_break: AudioStreamPlayer3D = $sfx_wood_break
 
@@ -77,7 +83,7 @@ func apply_buoyancy(delta):
 	var roll = sin(Time.get_ticks_msec() * 0.001 * rotation_speed) * rotation_amplitude
 	var pitch = cos(Time.get_ticks_msec() * 0.001 * rotation_speed) * rotation_amplitude
 	
-	rotation_degrees.x = initial_rotation.x + roll
+	rotation_degrees.x = initial_rotation.x + roll + boost_pitch_current
 	rotation_degrees.z = initial_rotation.z + pitch + tilt_angle
 
 func handle_position_player(delta):
@@ -161,6 +167,8 @@ func boost(delta):
 		is_boosting = true
 		boost_timer = boost_duration
 		current_speed = -max_forward_speed * boost_multiplier
+		
+		boost_pitch_target = boost_pitch_amplitude
 	
 	if is_boosting:
 		boost_timer -= delta
@@ -168,6 +176,23 @@ func boost(delta):
 			print("⏹️ BOOST ENDED")
 			is_boosting = false
 			cooldown_timer = boost_cooldown
+			boost_pitch_target = 0.0
+	
+	update_boost_pitch(delta)
+
+func update_boost_pitch(delta: float) -> void:
+	if is_boosting:
+		if boost_timer > boost_duration - boost_pitch_rise_time:
+			# Montée rapide
+			boost_pitch_current = move_toward(boost_pitch_current, boost_pitch_target, delta * 150.0)
+		else:
+			# Descente smooth avec ease-out quad (ralentit fortement à la fin)
+			var fall_progress = 1.0 - (boost_timer / boost_duration)  # 0 → 1 pendant descente
+			var eased = 1.0 - pow(1.0 - fall_progress, 2.0)           # easeOutQuad
+			boost_pitch_current = boost_pitch_amplitude * (1.0 - eased)
+	else:
+		# Retour final rapide
+		boost_pitch_current = move_toward(boost_pitch_current, 0.0, delta * boost_pitch_fall_time)
 
 func apply_sail_skin(sail_color: String) -> void:
 	# Accéder à la MeshInstance3D de la voile (sail-1)
