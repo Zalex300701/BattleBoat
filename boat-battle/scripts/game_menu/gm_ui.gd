@@ -19,6 +19,10 @@ func _ready() -> void:
 	
 	# Dynamically create level buttons
 	setup_level_buttons()
+	
+	# Music
+	MusicManager.play_music()
+	MusicManager.restore_volume()
 
 func setup_level_buttons() -> void:
 	# Clear any existing buttons in the GridContainer (in case of placeholders)

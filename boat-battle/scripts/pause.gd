@@ -24,6 +24,9 @@ func _on_resume_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	SceneTransition.change_scene(game_menu_scene)
+	
+	# Restore music volume
+	MusicManager.restore_volume()
 
 func pause_menu():
 	if paused:

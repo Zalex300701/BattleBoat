@@ -51,6 +51,10 @@ func handle_departure(delta: float) -> void:
 	if !has_transitioned and global_transform.origin.z < exit_z_threshold:
 		has_transitioned = true
 		SceneTransition.change_scene(scene_to_load)
+		
+		# Reduce music volume on levels
+		print("done")
+		MusicManager.reduce_volume()
 
 func leave_and_start(scene_path: String) -> void:
 	is_leaving = true
