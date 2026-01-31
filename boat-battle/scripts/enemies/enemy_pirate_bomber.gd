@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var WanderSpeed: float = 1.5
-@export var RunSpeed: float = 4.0
+@export var WanderSpeed: float = 2.0
+@export var RunSpeed: float = 5.0
 @export var ChaseDistance: float = 100.0
 @export var ExplodeDistance: float = 10.0
 @export var RotationSpeed: float = 4.0

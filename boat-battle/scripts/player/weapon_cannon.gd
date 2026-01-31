@@ -10,13 +10,30 @@ var explosion_scene = load("res://scenes/explosion.tscn")
 @onready var left_cannon_marker = $left_cannon/left_cannon_marker
 @onready var right_cannon_marker = $right_cannon/right_cannon_marker
 @onready var sfx_cannon: AudioStreamPlayer3D = $sfx_cannon
+@onready var cannon_progress_bar: TextureProgressBar = $Cooldowns/GridContainer/CannonProgressBar
 
 func _ready() -> void:
-	pass
+	# Chercher la barre avec différents chemins possibles
+	cannon_progress_bar = get_node_or_null("../Cooldowns/GridContainer/CannonProgressBar")
+	
+	if not cannon_progress_bar:
+		cannon_progress_bar = get_node_or_null("/root/Game/Cooldowns/GridContainer/CannonProgressBar")
+	
+	if cannon_progress_bar:
+		print("✓ Barre de cannon trouvée")
+		cannon_progress_bar.value = 100
+	else:
+		print("✗ Barre de cannon NON trouvée")
+		print("Chemin du script cannon: ", get_path())
 
 func _process(delta: float) -> void:
 	if not can_shoot:
 		current_cooldown -= delta
+		if cannon_progress_bar:
+			var progress = (shoot_cooldown - current_cooldown) / shoot_cooldown
+			cannon_progress_bar.value = progress * 100
+		
+		# Réactiver le tir quand le cooldown est terminé
 		if current_cooldown <= 0:
 			can_shoot = true
 
@@ -32,6 +49,8 @@ func _input(event: InputEvent) -> void:
 func start_cooldown() -> void:
 	can_shoot = false
 	current_cooldown = shoot_cooldown
+	if cannon_progress_bar:
+		cannon_progress_bar.value = 0
 
 func shoot(direction: int) -> void:
 	sfx_cannon.play()

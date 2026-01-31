@@ -325,6 +325,154 @@ size = Vector3(4.76, 3.70288, 9.51733)
 [sub_resource type="ViewportTexture" id="ViewportTexture_0yuyv"]
 viewport_path = NodePath("SubViewport")
 
+[sub_resource type="Animation" id="Animation_1068p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_28j0t"]
+resource_name = "sink_1"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(-1.13446, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ujhhf"]
+resource_name = "sink_2"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(1.13446, -3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4ui6j"]
+resource_name = "sink_3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -7, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.698132, -3.14159, -1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_gg6f3"]
+resource_name = "sink_4"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ship_model:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.8025, 1.8025),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -7, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ship_model:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1.7411, 1.7411),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0.698132, -3.14159, 1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlyi8"]
+_data = {
+"RESET": SubResource("Animation_1068p"),
+"sink_1": SubResource("Animation_28j0t"),
+"sink_2": SubResource("Animation_ujhhf"),
+"sink_3": SubResource("Animation_4ui6j"),
+"sink_4": SubResource("Animation_gg6f3")
+}
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g7v1p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulhnv"]
@@ -348,39 +496,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_bottom = 3.0
 
-[sub_resource type="Animation" id="Animation_1068p"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_28j0t"]
-resource_name = "sink_1"
-length = 3.0
-
-[sub_resource type="Animation" id="Animation_ujhhf"]
-resource_name = "sink_2"
-length = 3.0
-
-[sub_resource type="Animation" id="Animation_4ui6j"]
-resource_name = "sink_3"
-length = 3.0
-
-[sub_resource type="Animation" id="Animation_gg6f3"]
-resource_name = "sink_4"
-length = 3.0
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlyi8"]
-_data = {
-"RESET": SubResource("Animation_1068p"),
-"sink_1": SubResource("Animation_28j0t"),
-"sink_2": SubResource("Animation_ujhhf"),
-"sink_3": SubResource("Animation_4ui6j"),
-"sink_4": SubResource("Animation_gg6f3")
-}
-
 [node name="pirate_ghost" type="CharacterBody3D" groups=["Enemies", "Enemy_Ghost"]]
 script = ExtResource("1_2kbb1")
 
 [node name="ship_model" type="MeshInstance3D" parent="."]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_s0j7s")
 skeleton = NodePath("")
 
@@ -457,6 +577,11 @@ billboard = 1
 texture_filter = 0
 texture = SubResource("ViewportTexture_0yuyv")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rlyi8")
+}
+
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
 size = Vector2i(400, 32)
@@ -503,11 +628,6 @@ script = ExtResource("7_c4jdw")
 
 [node name="EnemyDying" type="Node" parent="StateMachine"]
 script = ExtResource("8_gnnyt")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_rlyi8")
-}
 
 [node name="sfx_cannon" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("8_cy0op")

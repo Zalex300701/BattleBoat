@@ -40,7 +40,7 @@ var is_dying = false
 # Speed boost variables
 @export var boost_multiplier: float = 3.0
 @export var boost_duration: float = 0.5
-@export var boost_cooldown: float = 5.0
+@export var boost_cooldown: float = 7.0
 var is_boosting : bool = false
 var boost_timer : float = 0.0
 var cooldown_timer : float = 0.0
@@ -51,7 +51,7 @@ var cooldown_timer : float = 0.0
 var boost_pitch_target: float = 0.0
 var boost_pitch_current: float = 0.0
 
-@onready var cannon_progress_bar: TextureProgressBar = $"../CannonButton/TextureProgressBar"
+@onready var boost_progress_bar: TextureProgressBar = $"../Cooldowns/GridContainer/BoostProgressBar"
 
 @onready var sfx_wood_break: AudioStreamPlayer3D = $sfx_wood_break
 
@@ -164,10 +164,9 @@ func boost(delta):
 	if cooldown_timer > 0:
 		cooldown_timer -= delta
 		
-		if cannon_progress_bar:
+		if boost_progress_bar:
 			var progress = (boost_cooldown - cooldown_timer) / boost_cooldown
-			cannon_progress_bar.value = progress * 100
-			print("Cooldown: ", cooldown_timer, " Progress: ", progress * 100)
+			boost_progress_bar.value = progress * 100
 	
 	if Input.is_action_just_pressed("boost") and cooldown_timer <= 0 and not is_boosting:
 		is_boosting = true
@@ -175,8 +174,8 @@ func boost(delta):
 		current_speed = -max_forward_speed * boost_multiplier
 		boost_pitch_target = boost_pitch_amplitude
 		cooldown_timer = boost_cooldown  # ← Démarrer le cooldown immédiatement
-		if cannon_progress_bar:
-			cannon_progress_bar.value = 0
+		if boost_progress_bar:
+			boost_progress_bar.value = 0
 	
 	if is_boosting:
 		boost_timer -= delta
