@@ -182,7 +182,6 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_qs7sn")
 RichTextLabel/font_sizes/normal_font_size = 60
 RichTextLabel/fonts/normal_font = ExtResource("1_nc001")
 TabContainer/colors/font_unselected_color = Color(0.941176, 0.933333, 0.92549, 1)
-TabContainer/constants/side_margin = 10
 TabContainer/font_sizes/font_size = 30
 TabContainer/fonts/font = ExtResource("1_nc001")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_7y6v8")

@@ -21,6 +21,7 @@ func _ready() -> void:
 	setup_level_buttons()
 	
 	# Music
+	MusicManager.stop_music()
 	MusicManager.play_music()
 	MusicManager.restore_volume()
 
@@ -30,7 +31,7 @@ func setup_level_buttons() -> void:
 		child.queue_free()
 	
 	# Create buttons for levels 1 to 24
-	for level in range(1, 25):
+	for level in range(1, 10):
 		var button = Button.new()
 		button.text = "Level " + str(level)
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL

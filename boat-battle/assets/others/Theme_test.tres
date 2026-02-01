@@ -106,7 +106,7 @@ shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y6v8"]
 bg_color = Color(0.941176, 0.615686, 0.317647, 1)
-border_width_bottom = 10
+border_width_bottom = 5
 border_color = Color(0.633982, 0.374032, 0.105141, 1)
 corner_radius_top_left = 15
 corner_radius_top_right = 15
@@ -114,7 +114,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 corner_detail = 5
 expand_margin_left = 10.0
-expand_margin_top = 5.0
+expand_margin_top = 15.0
 expand_margin_right = 10.0
 shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 5
@@ -122,8 +122,11 @@ shadow_size = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2s2gu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0v3t0"]
+content_margin_top = 489.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5l05"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.976471, 0.72549, 0.509804, 1)
 border_width_bottom = 5
 border_color = Color(0.633982, 0.374032, 0.105141, 1)
@@ -137,6 +140,8 @@ shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obfsb"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.670588, 0.396078, 0.113725, 1)
 border_color = Color(0.633982, 0.374032, 0.105141, 1)
 corner_radius_top_left = 6
@@ -148,6 +153,8 @@ shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0gwx"]
+content_margin_left = 10.0
+content_margin_right = 10.0
 bg_color = Color(0.941176, 0.615686, 0.317647, 1)
 border_width_bottom = 5
 border_color = Color(0.633982, 0.374032, 0.105141, 1)
@@ -182,7 +189,6 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_qs7sn")
 RichTextLabel/font_sizes/normal_font_size = 60
 RichTextLabel/fonts/normal_font = ExtResource("1_nc001")
 TabContainer/colors/font_unselected_color = Color(0.941176, 0.933333, 0.92549, 1)
-TabContainer/constants/side_margin = 0
 TabContainer/font_sizes/font_size = 30
 TabContainer/fonts/font = ExtResource("1_nc001")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_7y6v8")

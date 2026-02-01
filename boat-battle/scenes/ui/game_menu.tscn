@@ -257,7 +257,6 @@ theme = ExtResource("24_2aq3f")
 text = "Exit"
 
 [node name="Boathouse_menu" type="Control" parent="Menus"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,7 +278,9 @@ offset_bottom = 287.0
 grow_horizontal = 0
 grow_vertical = 2
 theme = ExtResource("24_2aq3f")
+theme_override_constants/icon_separation = 550
 current_tab = 0
+drag_to_rearrange_enabled = true
 
 [node name="Sail" type="TabBar" parent="Menus/Boathouse_menu/Skins"]
 layout_mode = 2
@@ -337,6 +338,11 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("24_2aq3f")
 text = "Back"
+
+[node name="Options_menu" type="Control" parent="Menus"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="sfx_ambient_ocean" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_xs0o6")
