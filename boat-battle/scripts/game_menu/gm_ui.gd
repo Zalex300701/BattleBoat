@@ -5,6 +5,7 @@ extends Node
 @onready var main_menu = $Main_menu
 @onready var levels_menu = $Levels_menu
 @onready var boathouse_menu = $Boathouse_menu
+@onready var options_menu = get_node_or_null("Options_menu")
 @onready var level_grid = $Levels_menu/Panel/LevelContainer  # Adjust this path to match your scene structure
 
 func _ready() -> void:
@@ -24,6 +25,21 @@ func _ready() -> void:
 	MusicManager.stop_music()
 	MusicManager.play_music()
 	MusicManager.restore_volume()
+	
+	print("=== DEBUG START ===")
+	print("main_menu: ", main_menu)
+	print("levels_menu: ", levels_menu)
+	print("boathouse_menu: ", boathouse_menu)
+	print("options_menu: ", options_menu)  # Ajoute cette ligne
+	print("=== DEBUG END ===")
+	
+	if options_menu == null:
+		print("OPTIONS_MENU EST NULL - Recherche manuelle...")
+		for child in get_children():
+			print("Enfant trouvé: ", child.name, " - Type: ", child.get_class())
+			if "option" in child.name.to_lower():
+				print(">>> TROUVÉ UN MATCH: ", child.name)
+				options_menu = child
 
 func setup_level_buttons() -> void:
 	# Clear any existing buttons in the GridContainer (in case of placeholders)
@@ -52,27 +68,37 @@ func _on_level_button_pressed(level: int) -> void:
 	player.leave_and_start("res://scenes/levels/level" + str(level) + ".tscn")
 
 func _on_start_pressed():
-	$Main_menu.hide()
-	$Levels_menu.show()
+	main_menu.hide()
+	levels_menu.show()
 
 func _on_boathouse_button_pressed() -> void:
+	print(options_menu)
 	if camera and camera.has_method("boathouse_position"):
 		camera.boathouse_position()
-		$Main_menu.hide()
-		$Boathouse_menu.show()
+		main_menu.hide()
+		boathouse_menu.show()
+
+func _on_options_button_pressed() -> void:
+	print('options')
+	main_menu.hide()
+	options_menu.show()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 func _on_back_levels_pressed() -> void:
-	$Main_menu.show()
-	$Levels_menu.hide()
+	main_menu.show()
+	levels_menu.hide()
+
+func _on_back_options_pressed() -> void:
+	main_menu.show()
+	options_menu.hide()
 
 func _on_back_boathouse_pressed() -> void:
 	if camera and camera.has_method("main_position"):
 		camera.main_position()
-		$Main_menu.show()
-		$Boathouse_menu.hide()
+		main_menu.show()
+		boathouse_menu.hide()
 
 func _on_sail_white_pressed() -> void:
 	_on_sail_color_button_pressed("sail_white")

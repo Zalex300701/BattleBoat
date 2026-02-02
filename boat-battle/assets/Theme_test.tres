@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://ke0e3qwjfsnd"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://ke0e3qwjfsnd"]
 
 [ext_resource type="FontFile" uid="uid://doyawtcmrr7x5" path="res://assets/fonts/LeagueSpartan-Bold.otf" id="1_nc001"]
 
@@ -55,6 +55,56 @@ expand_margin_right = 5.0
 shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 5
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_clspu"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0a0mk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xvic7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pgxod"]
+bg_color = Color(0.489667, 0.72828, 0.918192, 1)
+border_width_left = 300
+border_color = Color(0.295081, 0.4901, 0.780006, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 3
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkv3r"]
+bg_color = Color(0.489667, 0.72828, 0.918192, 1)
+border_width_left = 300
+border_color = Color(0.295081, 0.4901, 0.780006, 1)
+border_blend = true
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 3
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nw8ox"]
+bg_color = Color(0.663735, 0.426326, 0.329299, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.89105, 0.600197, 0.365966, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hl0i"]
 bg_color = Color(0.975242, 0.716637, 0.497091, 1)
 border_width_bottom = 10
@@ -64,14 +114,28 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 corner_detail = 5
-expand_margin_left = 10.0
-expand_margin_top = 5.0
-expand_margin_right = 10.0
+expand_margin_left = 30.0
+expand_margin_top = 20.0
+expand_margin_right = 30.0
+expand_margin_bottom = 20.0
 shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_56aqt"]
-bg_color = Color(0.513233, 0.513233, 0.513233, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kalw"]
+bg_color = Color(0.941176, 0.615686, 0.317647, 1)
+border_width_bottom = 6
+border_color = Color(0.633982, 0.374032, 0.105141, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+expand_margin_left = 30.0
+expand_margin_top = 30.0
+expand_margin_right = 30.0
+expand_margin_bottom = 30.0
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hr0ue"]
 bg_color = Color(0.941176, 0.615686, 0.317647, 1)
@@ -172,11 +236,24 @@ Button/styles/focus = SubResource("StyleBoxEmpty_pm5m3")
 Button/styles/hover = SubResource("StyleBoxFlat_1esns")
 Button/styles/normal = SubResource("StyleBoxFlat_fbalb")
 Button/styles/pressed = SubResource("StyleBoxFlat_2pv1n")
+CheckButton/constants/check_v_offset = -3
+CheckButton/constants/h_separation = 20
+CheckButton/font_sizes/font_size = 25
+HSlider/icons/grabber = SubResource("ViewportTexture_clspu")
+HSlider/icons/grabber_disabled = SubResource("ViewportTexture_0a0mk")
+HSlider/icons/grabber_highlight = SubResource("ViewportTexture_xvic7")
+HSlider/icons/tick = null
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_pgxod")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_kkv3r")
+HSlider/styles/slider = SubResource("StyleBoxFlat_nw8ox")
 Label/colors/font_color = Color(0.195545, 0.195545, 0.195545, 1)
-Label/font_sizes/font_size = 50
+Label/font_sizes/font_size = 25
 Label/fonts/font = ExtResource("1_nc001")
+OptionButton/colors/font_focus_color = Color(0.192157, 0.211765, 0.219608, 1)
+OptionButton/constants/modulate_arrow = 1
+OptionButton/font_sizes/font_size = 25
 Panel/styles/panel = SubResource("StyleBoxFlat_1hl0i")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_56aqt")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_2kalw")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_hr0ue")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_qs7sn")
 RichTextLabel/font_sizes/normal_font_size = 60

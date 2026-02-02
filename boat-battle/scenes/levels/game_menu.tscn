@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://lddt3byglos5"]
+[gd_scene load_steps=51 format=3 uid="uid://lddt3byglos5"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_jsddv"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_u3roj"]
@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://c2px4hlnlyk1s" path="res://assets/textures/icons/hull/ship_small_hull_green.png" id="40_028lt"]
 [ext_resource type="Texture2D" uid="uid://bibtk0vbkcrio" path="res://assets/textures/icons/hull/ship_small_hull_blue.png" id="41_gh7r4"]
 [ext_resource type="Texture2D" uid="uid://mgaqwqxpbbe3" path="res://assets/textures/icons/hull/ship_small_hull_pink.png" id="42_bh6fp"]
+[ext_resource type="Theme" uid="uid://ke0e3qwjfsnd" path="res://assets/Theme_test.tres" id="43_h1h4v"]
+[ext_resource type="AudioStream" uid="uid://np83sehfx0bl" path="res://assets/sounds/sfx_ambient_ocean.ogg" id="43_reqpx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tlluh"]
 sky_top_color = Color(0.416898, 0.809394, 0.989375, 1)
@@ -795,8 +797,233 @@ grow_vertical = 0
 theme = ExtResource("24_jco2h")
 text = "Back"
 
+[node name="Options_menu" type="Control" parent="Menus"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="Panel" parent="Menus/Options_menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 701.0
+offset_top = 224.0
+offset_right = -701.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("43_h1h4v")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menus/Options_menu/PanelContainer"]
+layout_mode = 2
+offset_right = 518.0
+offset_bottom = 738.0
+theme_override_constants/separation = 50
+
+[node name="Options_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Options"
+horizontal_alignment = 1
+
+[node name="Audio_container" type="VBoxContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Audio_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio"
+
+[node name="Audio_options" type="GridContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="Master_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container/Audio_options"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 25
+text = "Master"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Master_slider" type="HSlider" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container/Audio_options"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("43_h1h4v")
+step = 5.0
+value = 50.0
+
+[node name="Music_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container/Audio_options"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.976471, 0.976471, 0.976471, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 25
+text = "Music"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Music_slider" type="HSlider" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container/Audio_options"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("43_h1h4v")
+step = 5.0
+value = 50.0
+
+[node name="SFX_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container/Audio_options"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.976471, 0.976471, 0.976471, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 25
+text = "SFX"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SFX_slider" type="HSlider" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Audio_container/Audio_options"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("43_h1h4v")
+step = 5.0
+value = 50.0
+
+[node name="Video_container" type="VBoxContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Video_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Video_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Video"
+
+[node name="Video_options" type="VBoxContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Video_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 20
+
+[node name="Fullscreen_check" type="CheckButton" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Video_container/Video_options"]
+layout_mode = 2
+theme = ExtResource("43_h1h4v")
+theme_override_colors/font_disabled_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.964706, 0.964706, 0.964706, 1)
+theme_override_colors/font_hover_color = Color(0.964742, 0.964742, 0.964742, 1)
+theme_override_colors/font_pressed_color = Color(0.964706, 0.964706, 0.964706, 1)
+theme_override_colors/font_focus_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_colors/font_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.203922, 1)
+text = "Fullscreen"
+alignment = 1
+
+[node name="Resolution_Dropdown" type="OptionButton" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Video_container/Video_options"]
+layout_mode = 2
+theme = ExtResource("43_h1h4v")
+selected = 1
+item_count = 4
+popup/item_0/text = "1280x720"
+popup/item_0/id = 2
+popup/item_1/text = " 1920x1080"
+popup/item_2/text = "2560x1440"
+popup/item_2/id = 1
+popup/item_3/text = "3840x2160"
+popup/item_3/id = 3
+
+[node name="Gameplay_container" type="VBoxContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Gameplay_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Gameplay_container"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Gameplay
+"
+
+[node name="Gameplay_options" type="VBoxContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Gameplay_container"]
+layout_mode = 2
+theme_override_constants/separation = 35
+
+[node name="Mouse_sensitivity_options" type="GridContainer" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Gameplay_container/Gameplay_options"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="Mouse_sensitivity_label" type="Label" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Gameplay_container/Gameplay_options/Mouse_sensitivity_options"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 25
+text = "Mouse sensitivity"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Mouse_sensitivity_slider" type="HSlider" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Gameplay_container/Gameplay_options/Mouse_sensitivity_options"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("43_h1h4v")
+step = 5.0
+value = 50.0
+
+[node name="Invert_Y_check" type="CheckButton" parent="Menus/Options_menu/PanelContainer/VBoxContainer/Gameplay_container/Gameplay_options"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("43_h1h4v")
+theme_override_colors/font_disabled_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.964706, 0.964706, 0.964706, 1)
+theme_override_colors/font_hover_color = Color(0.964742, 0.964742, 0.964742, 1)
+theme_override_colors/font_pressed_color = Color(0.964706, 0.964706, 0.964706, 1)
+theme_override_colors/font_focus_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_colors/font_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_outline_color = Color(0.203922, 0.203922, 0.203922, 1)
+text = "Invert Y-axis"
+
+[node name="Back_options" type="Button" parent="Menus/Options_menu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -96.0
+offset_right = 44.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_jco2h")
+text = "Back"
+
+[node name="sfx_ambient_ocean" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("43_reqpx")
+autoplay = true
+
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Start_button" to="Menus" method="_on_start_pressed"]
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Boathouse_button" to="Menus" method="_on_boathouse_button_pressed"]
+[connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Options_button" to="Menus" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Exit_button" to="Menus" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Sail/SailGridContainer/Sail_white" to="Menus" method="_on_sail_white_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Skins/Sail/SailGridContainer/Sail_grey" to="Menus" method="_on_sail_grey_pressed"]
@@ -842,3 +1069,4 @@ text = "Back"
 [connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_23" to="Menus" method="_on_level_button_pressed"]
 [connection signal="pressed" from="Menus/Levels_menu/Panel/LevelContainer/Level_24" to="Menus" method="_on_level_button_pressed"]
 [connection signal="pressed" from="Menus/Levels_menu/Panel/Back_levels" to="Menus" method="_on_back_levels_pressed"]
+[connection signal="pressed" from="Menus/Options_menu/Back_options" to="Menus" method="_on_back_options_pressed"]

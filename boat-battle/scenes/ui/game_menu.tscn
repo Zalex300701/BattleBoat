@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://x7jaxpbss2e5"]
+[gd_scene load_steps=32 format=3 uid="uid://gfyl2mq2058u"]
 
 [ext_resource type="Script" path="res://scripts/game_menu/gm_camera.gd" id="1_1db28"]
 [ext_resource type="Shader" path="res://shader/ocean.gdshader" id="2_6a0f8"]
@@ -340,9 +340,30 @@ theme = ExtResource("24_2aq3f")
 text = "Back"
 
 [node name="Options_menu" type="Control" parent="Menus"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back_options" type="Button" parent="Menus/Options_menu"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -96.0
+offset_right = 44.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("24_2aq3f")
+text = "Back"
 
 [node name="sfx_ambient_ocean" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("25_xs0o6")
@@ -350,6 +371,8 @@ autoplay = true
 
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Start_button" to="Menus" method="_on_start_pressed"]
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Boathouse_button" to="Menus" method="_on_boathouse_button_pressed"]
+[connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Options_button" to="Menus" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Menus/Main_menu/VBoxContainer/Exit_button" to="Menus" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Menus/Boathouse_menu/Back_boathouse" to="Menus" method="_on_back_boathouse_pressed"]
 [connection signal="pressed" from="Menus/Levels_menu/Back_boathouse" to="Menus" method="_on_back_boathouse_pressed"]
+[connection signal="pressed" from="Menus/Options_menu/Back_options" to="Menus" method="_on_back_options_pressed"]
